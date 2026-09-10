@@ -1,0 +1,246 @@
+{
+  "artifact": "G_OSM_operativo",
+  "version": "v01",
+  "status": "FROZEN",
+  "phase": "5.6",
+  "freeze_gate": "E4",
+  "canonical_directory": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm",
+  "frozen_source": {
+    "PBF": "C:\\Tesi\\Tesi_QGIS\\00_originali\\rete_stradale\\osm\\nord-est_2026-08-03.osm.pbf",
+    "PBF_sha256": "e3b8be938c6acc58be516d988f0162c768e092a5674398d9c0f43ea9d9663813"
+  },
+  "routing_contract": {
+    "graph": "directed OSM light automobile graph",
+    "turn_model": "B5 selective state-expanded turn-aware",
+    "source_semantics": "physical node base-state",
+    "destination_semantics": "minimum over all B5 states sharing target physical node",
+    "ordinary_routing": "routing_code=1 CORE",
+    "local_restricted": "routing_code=2; excluded from ordinary through-routing/B5 CORE"
+  },
+  "structural_metrics": {
+    "B1_unique_OSM_ways": 112209,
+    "B1_distinct_nodes": 914333,
+    "B2_physical_nodes": 912562,
+    "B2_segments": 944219,
+    "B2_directed_edges": 1698857,
+    "B2_CORE_edges": 1691766,
+    "B2_LOCAL_edges": 7091,
+    "B3_giant_SCC_nodes": 889440,
+    "B4_canonical_relations": 6876,
+    "B4_sequences": 6833,
+    "B5_base_states": 897857,
+    "B5_total_states": 904607,
+    "B5_transitions": 1699994
+  },
+  "final_gate": {
+    "F1": {
+      "status": "PASS",
+      "sites": 4,
+      "technical_failures": 0,
+      "B5_regressions": 0
+    },
+    "F2": {
+      "status": "PASS",
+      "way_semantic_samples": 6,
+      "turn_restriction_samples": 4,
+      "pipeline_discordances": 0
+    },
+    "F3": {
+      "status": "PASS_NO_SYSTEMIC_SIGNAL",
+      "N_OD": 10951,
+      "N_finite": 10951,
+      "N_unreachable": 0,
+      "ratio_median": 1.0093024353495388,
+      "ratio_p95": 1.2067548109725736,
+      "MAE_km": 2.3489932603052592,
+      "median_absolute_error_km": 1.3055213014589278,
+      "p95_absolute_error_km": 8.044002685431813,
+      "systemic_flags": {
+        "SYSTEMIC_CONNECTIVITY_ERROR": false,
+        "SYSTEMIC_DISTANCE_INFLATION": false,
+        "SYSTEMIC_ROUTING_BIAS": false
+      },
+      "anomaly_classes": {
+        "EXPECTED_MODEL_DIFFERENCE": 10750,
+        "LOCAL_ROUTING_ANOMALY": 178,
+        "ACCESS_EFFECT": 23
+      }
+    }
+  },
+  "Gamma_OSM_reference": {
+    "status": "FROZEN",
+    "EXP_REL_300": "FROZEN",
+    "GPKG": "C:\\Tesi\\Tesi_QGIS\\02_package\\accessi_comunali_osm_light\\Gamma_OSM_L_comuni_fvg_v01.gpkg",
+    "GPKG_sha256": "b899a2e0e29d7ef366c42f4b68ef43a25b4ba1150052b6275770dd9ae23e1d3f",
+    "CSV": "C:\\Tesi\\Tesi_QGIS\\02_package\\accessi_comunali_osm_light\\Gamma_OSM_L_comuni_fvg_v01.csv",
+    "CSV_sha256": "a2ec905f84a2df2f566d670a7522ed583e4d9235664f77e3920f96e3fca1ebb5",
+    "manifest": "C:\\Tesi\\Tesi_QGIS\\02_package\\accessi_comunali_osm_light\\Gamma_OSM_FINAL_manifest_v01.json",
+    "manifest_sha256": "31ee2d78cd06c75cdf07014a8cecac4af2c58adeb26ec7285362ab4c02b11416"
+  },
+  "spatial_artifact": {
+    "filename": "G_OSM_operativo_v01.gpkg",
+    "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\G_OSM_operativo_v01.gpkg",
+    "layer": "G_OSM_operativo_segments_v01",
+    "CRS": "EPSG:32632",
+    "features": 944219,
+    "sha256": "f1d87245d1bc28f3ecab16e126514f8a3ab718b73ce7bd244db2f12628697ef3",
+    "role": "GIS/reference representation of physical OSM segments"
+  },
+  "computational_artifacts": [
+    {
+      "filename": "osm_topology_raw_v01.sqlite",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\build_b1\\osm_topology_raw_v01.sqlite",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\osm_topology_raw_v01.sqlite",
+      "size_bytes": 97107968,
+      "sha256": "4ae835123d2490ecd35a2f62a04e2d178cbe7e542c24b71d29f85b1722da95d0"
+    },
+    {
+      "filename": "osm_directed_edges_v02.sqlite",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\build_b2\\osm_directed_edges_v02.sqlite",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\osm_directed_edges_v02.sqlite",
+      "size_bytes": 695599104,
+      "sha256": "04809af9e13dc32de45e18a34a0917222e3ab9c0794406b1b242a8bab6c11859"
+    },
+    {
+      "filename": "osm_core_connectivity_qa_v01.sqlite",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\build_b3\\osm_core_connectivity_qa_v01.sqlite",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\osm_core_connectivity_qa_v01.sqlite",
+      "size_bytes": 67817472,
+      "sha256": "3992b640239ed70293380cc9e55fea5b9a262e5b6dd19d4ca4a639eb40ed0d46"
+    },
+    {
+      "filename": "osm_turn_restrictions_compiled_v01.sqlite",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\build_b4\\osm_turn_restrictions_compiled_v01.sqlite",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\osm_turn_restrictions_compiled_v01.sqlite",
+      "size_bytes": 3121152,
+      "sha256": "53b352e12aac674513bf6e37458b30775712892a52a9f4011e9bd75d62fcf4bd"
+    },
+    {
+      "filename": "osm_turn_state_index_v01.sqlite",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\build_b5\\osm_turn_state_index_v01.sqlite",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\osm_turn_state_index_v01.sqlite",
+      "size_bytes": 651264,
+      "sha256": "c8af04daa3a588001faa5fdf24d942361845d4081693a19ccfccf94605771bff"
+    },
+    {
+      "filename": "osm_turn_state_time_v01.npz",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\build_b5\\osm_turn_state_time_v01.npz",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\osm_turn_state_time_v01.npz",
+      "size_bytes": 15425761,
+      "sha256": "b258872cb4ef23b3a11d8e93e28e5df2ca778f6c2103ed072211d82b130a0c72"
+    },
+    {
+      "filename": "osm_turn_state_length_v01.npz",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\build_b5\\osm_turn_state_length_v01.npz",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\osm_turn_state_length_v01.npz",
+      "size_bytes": 15273764,
+      "sha256": "22c108e5f0707f26ff47043de0e98759114d8feffca7c82ecd3d5903e16780a2"
+    },
+    {
+      "filename": "osm_turn_state_edgeid_v01.npz",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\build_b5\\osm_turn_state_edgeid_v01.npz",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\osm_turn_state_edgeid_v01.npz",
+      "size_bytes": 8111980,
+      "sha256": "dac4b68bb0f1aac363680202f1c0f7881c49d0af9257c727408f6e938ebee185"
+    },
+    {
+      "filename": "osm_turn_state_base_nodes_v01.npy",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\build_b5\\osm_turn_state_base_nodes_v01.npy",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\osm_turn_state_base_nodes_v01.npy",
+      "size_bytes": 7182984,
+      "sha256": "de02faa32628af6099118e08bd3e13847fbb0330d1aa7d824df47220b2f947d7"
+    },
+    {
+      "filename": "osm_turn_state_node_id_v01.npy",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\build_b5\\osm_turn_state_node_id_v01.npy",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\osm_turn_state_node_id_v01.npy",
+      "size_bytes": 7236984,
+      "sha256": "0468f8f3ba1352a1a7b4998059bf2cf18cf0f52b3489aacec42cb9661fde4935"
+    }
+  ],
+  "gate_evidence": [
+    {
+      "filename": "G_OSM_F1_shadow_regression_movements_v01.csv",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\final_gate\\f1\\G_OSM_F1_shadow_regression_movements_v01.csv",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\G_OSM_F1_shadow_regression_movements_v01.csv",
+      "size_bytes": 2952,
+      "sha256": "86a36f128148c830cbb9c73761f5e3f56afa811e0b84a43d1975af4fb44532c6"
+    },
+    {
+      "filename": "G_OSM_F1_shadow_regression_summary_v01.csv",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\final_gate\\f1\\G_OSM_F1_shadow_regression_summary_v01.csv",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\G_OSM_F1_shadow_regression_summary_v01.csv",
+      "size_bytes": 715,
+      "sha256": "56764e5ef8dcf53c967783fd4d90eb518eb9519b61187005e1261572b42b003b"
+    },
+    {
+      "filename": "G_OSM_F1_shadow_regression_manifest_v01.json",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\final_gate\\f1\\G_OSM_F1_shadow_regression_manifest_v01.json",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\G_OSM_F1_shadow_regression_manifest_v01.json",
+      "size_bytes": 3766,
+      "sha256": "43ba21ec5782a518a97f8a1c2227e397bddb6a3c0ff5b6ee5ed7ff12dc9632b5"
+    },
+    {
+      "filename": "G_OSM_F2_build_fidelity_samples_v02.csv",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\final_gate\\f2\\G_OSM_F2_build_fidelity_samples_v02.csv",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\G_OSM_F2_build_fidelity_samples_v02.csv",
+      "size_bytes": 1864,
+      "sha256": "44e517746972f57a9af46c5d770ed8cffb3af1c617b04bd1c375fa9daf79447a"
+    },
+    {
+      "filename": "G_OSM_F2_build_fidelity_detail_v02.csv",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\final_gate\\f2\\G_OSM_F2_build_fidelity_detail_v02.csv",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\G_OSM_F2_build_fidelity_detail_v02.csv",
+      "size_bytes": 2631,
+      "sha256": "4738f60ed13a66fc3fdcc5c1c1335db9a6bc0255aa12e6a47f2eaf84dfa9a746"
+    },
+    {
+      "filename": "G_OSM_F2_build_fidelity_manifest_v02.json",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\final_gate\\f2\\G_OSM_F2_build_fidelity_manifest_v02.json",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\G_OSM_F2_build_fidelity_manifest_v02.json",
+      "size_bytes": 2046,
+      "sha256": "6147d821ba8ca392ed66a01f22bc077237d4d459713e40a5f98c75991964638d"
+    },
+    {
+      "filename": "G_OSM_F3_access_pair_timeoptimal_v01.csv",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\final_gate\\f3\\G_OSM_F3_access_pair_timeoptimal_v01.csv",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\G_OSM_F3_access_pair_timeoptimal_v01.csv",
+      "size_bytes": 18947077,
+      "sha256": "edbcc784aad11c2a1860bee8667bfabf8987fad5f6ba8665490d8557fbf90ffd"
+    },
+    {
+      "filename": "G_OSM_F3_OD_metric_audit_v01.csv",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\final_gate\\f3\\G_OSM_F3_OD_metric_audit_v01.csv",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\G_OSM_F3_OD_metric_audit_v01.csv",
+      "size_bytes": 4598054,
+      "sha256": "6ff06cda072211eda47e64bbc404267649eaba2ce1370e081c463dfe1354e386"
+    },
+    {
+      "filename": "G_OSM_F3_extreme_outliers_v01.csv",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\final_gate\\f3\\G_OSM_F3_extreme_outliers_v01.csv",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\G_OSM_F3_extreme_outliers_v01.csv",
+      "size_bytes": 89861,
+      "sha256": "df050d972eb764e9c2d59d66d81d978b8b78db27fdd63a5ad8ef2157ac35b8bd"
+    },
+    {
+      "filename": "G_OSM_F3_summary_v01.json",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_6_osm_operativo\\final_gate\\f3\\G_OSM_F3_summary_v01.json",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\G_OSM_F3_summary_v01.json",
+      "size_bytes": 3719,
+      "sha256": "cec961763da1ef9b993665711b3c745f3218d10beb533e6538ed2948a425f359"
+    },
+    {
+      "filename": "Gamma_OSM_FINAL_manifest_v01.json",
+      "source_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\accessi_comunali_osm_light\\Gamma_OSM_FINAL_manifest_v01.json",
+      "canonical_path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\Gamma_OSM_FINAL_manifest_v01.json",
+      "size_bytes": 2676,
+      "sha256": "31ee2d78cd06c75cdf07014a8cecac4af2c58adeb26ec7285362ab4c02b11416"
+    }
+  ],
+  "freeze_rule": {
+    "network_audit": "STOP",
+    "reopen_only_if": "downstream error demonstrated BLOCKING",
+    "next_phase": "impedenze/costi definitivi -> shortest path OD -> gateway/rete esterna -> seed matrix -> assignment -> ANAS -> calibration -> path flows -> FRLM"
+  },
+  "elapsed_seconds_before_manifest": 26.133148699998856
+}

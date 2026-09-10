@@ -1,0 +1,108 @@
+{
+  "phase": "FASE_5_7",
+  "gate": "B2_CANONICAL_CANDIDATE",
+  "verdict": "PASS",
+  "IMPORTANT": "CANDIDATE ONLY. No canonical 02_package promotion has occurred in B2.",
+  "cost_contract": "TIME_B5",
+  "distance": "PATH_ATTRIBUTE",
+  "weight_contract": "PRODUCT_LAMBDA / EXP_REL_300",
+  "counts": {
+    "municipal_OD": 46010,
+    "access_pair_paths": 414090,
+    "finite": 414090,
+    "unreachable": 0,
+    "reconstruction_failures": 0,
+    "transition_slots": 598707601
+  },
+  "qa": {
+    "sequence_discontinuities": 0,
+    "source_mismatch": 0,
+    "destination_mismatch": 0,
+    "forbidden_transition_slot_violations": 0,
+    "transition_count_mismatch": 0,
+    "nonpositive_time": 0,
+    "nonpositive_distance": 0,
+    "nonpositive_pair_weight": 0,
+    "PRODUCT_LAMBDA_max_OD_sum_error": 1.1102230246251565e-15,
+    "B1_max_path_reconstruction_error_s": 4.3655745685100555e-11,
+    "F3_matched_paths": 98559,
+    "F3_max_time_error_s": 9.094947017729282e-13,
+    "F3_max_distance_error_m": 9.022187441587448e-10,
+    "F3_target_state_mismatches": 0,
+    "F3_transition_count_mismatches": 0,
+    "F1_sites": 4,
+    "F1_technical_failures": 0,
+    "F1_real_B5_regressions": 0,
+    "F1_result": "PASS"
+  },
+  "summary_time_statistics_s": {
+    "min": 194.2582408409493,
+    "p05": 1066.7693577776952,
+    "p50": 3461.853333988787,
+    "mean": 3527.8920288176832,
+    "p95": 6185.428972078238,
+    "max": 9337.871794651184
+  },
+  "summary_distance_statistics_km": {
+    "min": 1.8397864282322334,
+    "p05": 14.785445603592178,
+    "p50": 58.0279823232799,
+    "mean": 61.04106762740054,
+    "p95": 115.14196450104994,
+    "max": 192.48533966471172
+  },
+  "summary_time_spread_statistics_s": {
+    "min": 4.517899838263929,
+    "p05": 38.50532366765448,
+    "p50": 95.85512896295563,
+    "mean": 125.46655925327632,
+    "p95": 308.6055266189596,
+    "max": 1863.5257092715196
+  },
+  "summary_distance_spread_statistics_km": {
+    "min": 0.09423546308270488,
+    "p05": 0.3845415520829916,
+    "p50": 0.9148062870682934,
+    "mean": 1.4228713748582782,
+    "p95": 3.844773351156108,
+    "max": 32.1481191766079
+  },
+  "candidate_artifacts": {
+    "OSM_OD_access_paths_v01.csv": {
+      "size_bytes": 133747914,
+      "sha256": "3c0a8786a05719db4ca2a4258250bde8937b8dd017d93fea0c8f4a8a101c8dd3"
+    },
+    "OSM_OD_municipal_summary_v01.csv": {
+      "size_bytes": 13646684,
+      "sha256": "dfa2db5e3b18c9c1c7f05e2c7b7445848904971f35c916390bfc4d1b34571441"
+    },
+    "OSM_OD_path_offsets_v01.npy": {
+      "size_bytes": 3312856,
+      "sha256": "478efd3a3f6eba6964db9f0a785dfd9405d5ae61af30e4f84538b0699a7a3a08"
+    },
+    "OSM_OD_transition_slots_v01.npy": {
+      "size_bytes": 2394830532,
+      "sha256": "2a6b06d21b6d3eea7132a0154bbb4c74d305a4ea582d780e07b5abeed24d2c1d"
+    },
+    "OSM_OD_sequence_contract_v01.json": {
+      "size_bytes": 1257,
+      "sha256": "59ea1121d56c7cc1515e5aa5d40087a66fcf51ce6a1b1b763797baed70844364"
+    },
+    "OSM_OD_F1_regression_v01.csv": {
+      "size_bytes": 566,
+      "sha256": "11310670ed7ccf2cb99d2a56b59f656e64940cd68354d712944b4a77e379b2bc"
+    }
+  },
+  "frozen_F1_artifacts_sha256": {
+    "G_OSM_F1_shadow_regression_movements_v01.csv": "86a36f128148c830cbb9c73761f5e3f56afa811e0b84a43d1975af4fb44532c6",
+    "G_OSM_F1_shadow_regression_summary_v01.csv": "56764e5ef8dcf53c967783fd4d90eb518eb9519b61187005e1261572b42b003b",
+    "G_OSM_F1_shadow_regression_manifest_v01.json": "43ba21ec5782a518a97f8a1c2227e397bddb6a3c0ff5b6ee5ed7ff12dc9632b5"
+  },
+  "A1_log_sha256": "7952e2076c7ae4209c088f0384a280bbd0fef5756cc9340cd3c2acdcae98e2bd",
+  "B1_gate_sha256": "5fb119455f857a774e82bcf5289867ecbc23c98f1e10e1a1e97be698aa302aef",
+  "SYSTEMIC_issues": 0,
+  "BLOCKING_issues": 0,
+  "OD_PATH_SYSTEM_OSM": "NOT_FROZEN_YET",
+  "next_step": "B3 final promotion/freeze after review of this gate output.",
+  "elapsed_seconds": 99.22082019993104
+}

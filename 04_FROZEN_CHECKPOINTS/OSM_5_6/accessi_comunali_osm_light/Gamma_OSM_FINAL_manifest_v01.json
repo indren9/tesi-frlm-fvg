@@ -1,0 +1,62 @@
+{
+  "phase": "FASE_5_6_GAMMA_OSM_FINAL",
+  "version": "v01",
+  "status": "FROZEN",
+  "freeze_timestamp": "20260821_172151",
+  "rules": {
+    "K": 3,
+    "primary": "nearest eligible structural node",
+    "secondary_selection": "adaptive anchored lexicographic",
+    "minimum_pair_separation_m": 100,
+    "topological_independence": "no shared incident OSM topological segment",
+    "candidate_search": "adaptive",
+    "weight_rule": "EXP_REL_300",
+    "tau_m": 300
+  },
+  "E1": {
+    "status": "PASS",
+    "municipalities": 215,
+    "accesses": 645,
+    "required_depth_median": 6.0,
+    "required_depth_p95": 16.0,
+    "required_depth_max": 29,
+    "minimum_pair_separation_min_m": 100.16831341506334
+  },
+  "E2": {
+    "status": "PASS",
+    "sources": 645,
+    "full_matrix_cells": 416025,
+    "intermunicipal_ordered_pairs": 414090,
+    "intramunicipal_ordered_pairs": 1290,
+    "unreachable_intermunicipal": 0,
+    "unreachable_intramunicipal": 0,
+    "bad_triplets": 0,
+    "zero_time_offdiagonal": 0,
+    "negative_time": 0,
+    "physical_bound_violations": 0
+  },
+  "weights": {
+    "status": "FROZEN",
+    "rule": "EXP_REL_300",
+    "nonpositive": 0,
+    "max_sum_error": 2.220446049250313e-16
+  },
+  "issues": {
+    "SYSTEMIC": 0,
+    "BLOCKING": 0
+  },
+  "files_sha256": {
+    "Gamma_OSM_L_comuni_fvg_v01.gpkg": "b899a2e0e29d7ef366c42f4b68ef43a25b4ba1150052b6275770dd9ae23e1d3f",
+    "Gamma_OSM_L_comuni_fvg_v01.csv": "a2ec905f84a2df2f566d670a7522ed583e4d9235664f77e3920f96e3fca1ebb5",
+    "Gamma_OSM_L_diagnostics_v01.csv": "0561dd7f6b83e98ec4645180bfc059334d3c1e9257c53126c447ff85b5337a0f",
+    "Gamma_OSM_E2_time_matrix_645x645_v01.npy": "b787665e7c4064cf6ec68e1905d8db5654a69aad1538919f1d0a92adafa006db",
+    "Gamma_OSM_E2_access_summary_v01.csv": "28c6924f86c1ffd7faeb966a63795c0e55e78c4c2bc90135690824c61c626fac",
+    "Gamma_OSM_E2_triplet_summary_v01.csv": "dd767d1985cbfbaf7874c5a4716e0cffb0deb40d434679c9ebd6b1a83ba0b836",
+    "Gamma_OSM_E2_intermunicipal_pairs_v01.csv": "07d371be745d37115186cd9cba74727f03de1b2d82a59b1f07764943d9e5ac85",
+    "Gamma_OSM_E2_intramunicipal_pairs_v01.csv": "bad88f7e3e9caa0fca18931655e85d80207393eb6785fb20f0cc6c82a192f0c1",
+    "Gamma_OSM_E2_top_asymmetry_v01.csv": "ec0654657b5d98f879e523729ed34248564a04985edf390278fdc0a625d7c18a",
+    "Gamma_OSM_E2_top_detour_proxy_v01.csv": "01c170fb222af7ed177ef5c50bc8aa1bb0da19973ee89c758939f56afa81a51a",
+    "Gamma_OSM_E1_manifest_v01.json": "5bb4def52902cc32dae9b6886570456ab577c1e3a789fcf26a43a7717a1a969c",
+    "Gamma_OSM_E2_manifest_v01.json": "9ab9e2ec75f622ac08e28e8be82bfddd8c3d768cce4bcb957c4099cab78b8469"
+  }
+}

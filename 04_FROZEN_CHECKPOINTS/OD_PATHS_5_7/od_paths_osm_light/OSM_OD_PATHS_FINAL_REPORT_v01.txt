@@ -1,0 +1,59 @@
+============================================================================================================================
+FASE 5.7 — FINAL FREEZE REPORT
+============================================================================================================================
+
+FINAL VERDICT = PASS
+
+OD_PATH_SYSTEM_OSM = FROZEN
+CANONICAL_ROUTE_IMPEDANCE = TIME_B5
+DISTANCE = PATH_ATTRIBUTE
+PRODUCT_LAMBDA_PATH_WEIGHTS = FROZEN
+ACCESS_WEIGHT_MODEL = EXP_REL_300
+
+DOMAIN
+----------------------------------------------------------------------------------------------------------------------------
+Municipalities                 = 215
+Ordered intermunicipal OD      = 46,010
+Accesses per municipality      = 3
+Access-pair paths              = 414,090
+Finite access-pair paths       = 414,090
+Unreachable                    = 0
+B5 transition slots stored     = 598,707,601
+
+QA
+----------------------------------------------------------------------------------------------------------------------------
+Path reconstruction            = 100%
+Sequence discontinuities       = 0
+Source mismatch                = 0
+Destination mismatch           = 0
+Forbidden transition violation = 0
+PRODUCT-LAMBDA                 = PASS
+B5/E2/F3 regression            = PASS
+F1 SHADOW regression           = PASS
+SYSTEMIC issues                = 0
+BLOCKING issues                = 0
+
+CANONICAL REPRESENTATION
+----------------------------------------------------------------------------------------------------------------------------
+Path sequence = ordered CSR-like B5 transition-slot sequence.
+Transition slots reference the frozen B5 TIME/LENGTH/EDGEID arrays.
+Physical directed edges are recovered through frozen B2 edge_id.
+
+MUNICIPAL SUMMARY
+----------------------------------------------------------------------------------------------------------------------------
+Municipal time and distance are PRODUCT-LAMBDA weighted summaries of the nine access-pair paths.
+The municipal summary does NOT replace the elementary path system.
+
+REGRESSION
+----------------------------------------------------------------------------------------------------------------------------
+Full F3 matched paths           = 98,559 / 98,559
+F3 target-state mismatch        = 0
+F3 transition mismatch          = 0
+F1 sites                       = 4 / 4 PASS
+
+FREEZE CONSEQUENCE
+----------------------------------------------------------------------------------------------------------------------------
+Phase 5.7 is closed. Do not alter canonical routes, TIME_B5 or PRODUCT-LAMBDA path weights without formally reopening the causal gate.
+The next roadmap block starts downstream from this frozen OD-path system.
+
+=== FASE 5.7 CHIUSA ===

@@ -1,0 +1,144 @@
+G_OSM_FINAL_GATE_REPORT
+
+======================================================================
+VERDETTO
+======================================================================
+
+F1 shadow regression                  = PASS
+F2 build fidelity                     = PASS
+F3 regional metric audit              = PASS_NO_SYSTEMIC_SIGNAL
+
+Gamma_OSM                             = FROZEN
+EXP_REL_300                           = FROZEN
+
+SYSTEMIC_CONNECTIVITY_ERROR           = NO
+SYSTEMIC_DISTANCE_INFLATION           = NO
+SYSTEMIC_ROUTING_BIAS                 = NO
+
+SYSTEMIC issues                       = 0
+BLOCKING issues                       = 0
+
+G_OSM_operativo                       = FROZEN
+
+======================================================================
+BACKBONE
+======================================================================
+
+Version                                = G_OSM_operativo_v01
+Frozen PBF                             = nord-est_2026-08-03.osm.pbf
+PBF SHA256                             = e3b8be938c6acc58be516d988f0162c768e092a5674398d9c0f43ea9d9663813
+
+B2 physical nodes                      = 912,562
+B2 segments                            = 944,219
+B2 directed edges                      = 1,698,857
+B2 CORE edges                          = 1,691,766
+B2 LOCAL edges                         = 7,091
+
+B3 giant SCC nodes                     = 889,440
+
+B4 canonical relations                 = 6,876
+B4 compiled sequences                  = 6,833
+
+B5 base states                         = 897,857
+B5 total states                        = 904,607
+B5 transitions                         = 1,699,994
+
+======================================================================
+F1
+======================================================================
+
+Sites                                  = 4
+Technical failures                     = 0
+B5 regressions                         = 0
+
+SHADOW-01                              = PASS
+SHADOW-02                              = PASS/PASS
+SHADOW-03                              = PASS/PASS
+SHADOW-04B                             = PASS/PASS
+
+F1                                     = PASS
+
+======================================================================
+F2
+======================================================================
+
+Way-semantic samples                   = 6
+Turn-restriction samples               = 4
+Total samples                          = 10
+Pipeline discordances                  = 0
+
+F2                                     = PASS
+
+======================================================================
+F3
+======================================================================
+
+N_OD                                   = 10,951
+N_finite                               = 10,951
+N_unreachable                          = 0
+
+Median D_OSM_TIME / KM_TOT             = 1.009302
+p95 D_OSM_TIME / KM_TOT                = 1.206755
+
+MAE                                    = 2.3490 km
+Median absolute error                  = 1.3055 km
+p95 absolute error                     = 8.0440 km
+
+POSSIBLE_SYSTEMIC                      = 0
+UNRESOLVED                             = 0
+
+F3                                     = PASS_NO_SYSTEMIC_SIGNAL
+
+======================================================================
+GAMMA REFERENCE
+======================================================================
+
+Gamma_OSM                              = FROZEN
+EXP_REL_300                            = FROZEN
+
+Gamma GPKG SHA256:
+b899a2e0e29d7ef366c42f4b68ef43a25b4ba1150052b6275770dd9ae23e1d3f
+
+Gamma FINAL manifest SHA256:
+31ee2d78cd06c75cdf07014a8cecac4af2c58adeb26ec7285362ab4c02b11416
+
+======================================================================
+CANONICAL PACKAGE
+======================================================================
+
+C:\Tesi\Tesi_QGIS\02_package\grafo_operativo_osm
+
+Spatial artifact:
+G_OSM_operativo_v01.gpkg
+
+GPKG SHA256:
+f1d87245d1bc28f3ecab16e126514f8a3ab718b73ce7bd244db2f12628697ef3
+
+Final manifest:
+G_OSM_FINAL_manifest_v01.json
+
+Final manifest SHA256:
+c4ea80c9c660f6a513b20400d0c3edb2f9e6ec10c3364f0a4b0beed91af55da3
+
+======================================================================
+FREEZE RULE
+======================================================================
+
+G_OSM_operativo = FROZEN
+
+STOP NETWORK AUDIT.
+
+NON riaprire:
+- audit GSFVG;
+- Gamma sensitivity;
+- directional sampling;
+- shadow review;
+- metric audit;
+- structural build B1-B5.
+
+Riapertura consentita esclusivamente in presenza di errore downstream
+dimostrato BLOCKING.
+
+NEXT:
+impedenze/costi definitivi -> shortest path OD -> gateway/rete esterna ->
+seed matrix -> assignment -> ANAS -> calibrazione -> path flows -> FRLM.

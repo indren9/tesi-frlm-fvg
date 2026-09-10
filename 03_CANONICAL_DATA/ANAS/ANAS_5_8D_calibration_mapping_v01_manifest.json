@@ -1,0 +1,62 @@
+{
+  "artifact": "ANAS_5_8D_calibration_mapping_v01.csv",
+  "artifact_version": "v01",
+  "phase": "5.8D",
+  "phase_status": "CLOSED / FROZEN",
+  "promotion_status": "CANONICAL",
+  "created_at_local": "2026-08-28T15:19:05+02:00",
+  "target_directory": "C:\\Tesi\\Tesi_QGIS\\02_package\\anas_calibration_v0",
+  "sha256_csv": "f4029065d2f0284dbdf517fdc84611eccd2c0150ce9667f84dacc9078f180f59",
+  "row_count": 16,
+  "quality_counts": {
+    "A": 7,
+    "B": 4,
+    "C": 5
+  },
+  "role_counts": {
+    "PRIMARY": 3,
+    "SENSITIVITY": 13
+  },
+  "primary_sections": [
+    "920034",
+    "920032",
+    "920039"
+  ],
+  "sensitivity_sections": [
+    "920044",
+    "920022",
+    "920028",
+    "920035",
+    "920037",
+    "920024",
+    "920026",
+    "920038",
+    "920042",
+    "920029",
+    "920030",
+    "920031",
+    "920040"
+  ],
+  "measurement_operator": "BIDIRECTIONAL_SUM",
+  "measurement_mapping": "TGMA ANAS compared with the sum of the two relevant directed OSM/B2 edge flows for the same counted physical road section.",
+  "provenance": [
+    "ANAS 2024 frozen target dataset: TGMA_LIGHT_2024 and quality classes A/B/C.",
+    "FASE 5.8D automated spatial match against frozen G_OSM_operativo_v01.",
+    "Manual QGIS review completed for all 16 A/B/C logical sections: OSM_MATCH=OK, QGIS_REVIEW_STATUS=CLOSED.",
+    "Read-only B2 directed-edge lookup completed for separated carriageways: PASS_ALL_7.",
+    "Approved 5.8D role screening preserved unchanged: PRIMARY={920034,920032,920039}; remaining 13=SENSITIVITY.",
+    "Working review register: C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\Ricerca bibliografica\\Dati elaborati\\ANAS\\ANAS_5_8D_QGIS_review.csv"
+  ],
+  "frozen_dependencies": {
+    "osm_graph": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\G_OSM_operativo_v01.gpkg",
+    "osm_segment_layer": "G_OSM_operativo_segments_v01",
+    "directed_edge_db": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\osm_directed_edges_v02.sqlite"
+  },
+  "safety": {
+    "overwrite_policy": "FORBIDDEN",
+    "frozen_artifacts_modified": false,
+    "routing_recomputed": false,
+    "shortest_paths_rerun": false,
+    "qgis_reopened_for_analysis": false
+  }
+}

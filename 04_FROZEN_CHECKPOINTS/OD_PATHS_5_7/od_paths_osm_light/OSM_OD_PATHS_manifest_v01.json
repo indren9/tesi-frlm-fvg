@@ -1,0 +1,104 @@
+{
+  "phase": "FASE_5_7",
+  "version": "v01",
+  "status": "FROZEN",
+  "verdict": "PASS",
+  "freeze": {
+    "OD_PATH_SYSTEM_OSM": "FROZEN",
+    "CANONICAL_ROUTE_IMPEDANCE": "TIME_B5",
+    "DISTANCE": "PATH_ATTRIBUTE",
+    "PRODUCT_LAMBDA_PATH_WEIGHTS": "FROZEN",
+    "ACCESS_WEIGHT_MODEL": "EXP_REL_300"
+  },
+  "domain": {
+    "municipalities": 215,
+    "ordered_intermunicipal_OD": 46010,
+    "accesses_per_municipality": 3,
+    "access_pair_paths": 414090,
+    "finite_paths": 414090,
+    "unreachable": 0,
+    "transition_slots": 598707601
+  },
+  "qa": {
+    "sequence_discontinuities": 0,
+    "source_mismatch": 0,
+    "destination_mismatch": 0,
+    "forbidden_transition_slot_violations": 0,
+    "transition_count_mismatch": 0,
+    "nonpositive_time": 0,
+    "nonpositive_distance": 0,
+    "nonpositive_pair_weight": 0,
+    "PRODUCT_LAMBDA_max_OD_sum_error": 1.1102230246251565e-15,
+    "B1_max_path_reconstruction_error_s": 4.3655745685100555e-11,
+    "F3_matched_paths": 98559,
+    "F3_max_time_error_s": 9.094947017729282e-13,
+    "F3_max_distance_error_m": 9.022187441587448e-10,
+    "F3_target_state_mismatches": 0,
+    "F3_transition_count_mismatches": 0,
+    "F1_sites": 4,
+    "F1_technical_failures": 0,
+    "F1_real_B5_regressions": 0,
+    "F1_result": "PASS"
+  },
+  "candidate_manifest_sha256": "f49c0a891a6529f106ea65985e9edabbc0b115de76723f9c0cff2defc48e0269",
+  "candidate_artifacts": {
+    "OSM_OD_access_paths_v01.csv": {
+      "size_bytes": 133747914,
+      "sha256": "3c0a8786a05719db4ca2a4258250bde8937b8dd017d93fea0c8f4a8a101c8dd3"
+    },
+    "OSM_OD_municipal_summary_v01.csv": {
+      "size_bytes": 13646684,
+      "sha256": "dfa2db5e3b18c9c1c7f05e2c7b7445848904971f35c916390bfc4d1b34571441"
+    },
+    "OSM_OD_path_offsets_v01.npy": {
+      "size_bytes": 3312856,
+      "sha256": "478efd3a3f6eba6964db9f0a785dfd9405d5ae61af30e4f84538b0699a7a3a08"
+    },
+    "OSM_OD_transition_slots_v01.npy": {
+      "size_bytes": 2394830532,
+      "sha256": "2a6b06d21b6d3eea7132a0154bbb4c74d305a4ea582d780e07b5abeed24d2c1d"
+    },
+    "OSM_OD_sequence_contract_v01.json": {
+      "size_bytes": 1257,
+      "sha256": "59ea1121d56c7cc1515e5aa5d40087a66fcf51ce6a1b1b763797baed70844364"
+    },
+    "OSM_OD_F1_regression_v01.csv": {
+      "size_bytes": 566,
+      "sha256": "11310670ed7ccf2cb99d2a56b59f656e64940cd68354d712944b4a77e379b2bc"
+    }
+  },
+  "final_report": {
+    "file": "OSM_OD_PATHS_FINAL_REPORT_v01.txt",
+    "sha256": "370aff831af437cc8f09d895f16d78f9fd8ed3856bbb2a726863c1b078787075"
+  },
+  "upstream": {
+    "A1_log_sha256": "7952e2076c7ae4209c088f0384a280bbd0fef5756cc9340cd3c2acdcae98e2bd",
+    "B1_gate_sha256": "5fb119455f857a774e82bcf5289867ecbc23c98f1e10e1a1e97be698aa302aef",
+    "frozen_F1_artifacts_sha256": {
+      "G_OSM_F1_shadow_regression_movements_v01.csv": "86a36f128148c830cbb9c73761f5e3f56afa811e0b84a43d1975af4fb44532c6",
+      "G_OSM_F1_shadow_regression_summary_v01.csv": "56764e5ef8dcf53c967783fd4d90eb518eb9519b61187005e1261572b42b003b",
+      "G_OSM_F1_shadow_regression_manifest_v01.json": "43ba21ec5782a518a97f8a1c2227e397bddb6a3c0ff5b6ee5ed7ff12dc9632b5"
+    }
+  },
+  "method_contract": {
+    "route_choice": "One deterministic time-optimal B5 path per ordered access pair.",
+    "route_impedance": "TIME_B5",
+    "distance": "Physical path length computed ex post.",
+    "municipal_access_weight": "lambda_origin * lambda_destination",
+    "weight_model": "EXP_REL_300",
+    "municipal_aggregation": "PRODUCT-LAMBDA weighted summary over 9 access pairs."
+  },
+  "canonical_files": [
+    "OSM_OD_access_paths_v01.csv",
+    "OSM_OD_municipal_summary_v01.csv",
+    "OSM_OD_path_offsets_v01.npy",
+    "OSM_OD_transition_slots_v01.npy",
+    "OSM_OD_sequence_contract_v01.json",
+    "OSM_OD_F1_regression_v01.csv",
+    "OSM_OD_PATHS_FINAL_REPORT_v01.txt",
+    "OSM_OD_PATHS_B2_candidate_manifest_v01.json"
+  ],
+  "SYSTEMIC_issues": 0,
+  "BLOCKING_issues": 0,
+  "roadmap_next": "Gateway/external block, then seed demand/assignment/ANAS according to the authoritative roadmap."
+}

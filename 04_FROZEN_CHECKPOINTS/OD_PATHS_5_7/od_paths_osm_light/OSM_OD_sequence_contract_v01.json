@@ -1,0 +1,25 @@
+{
+  "version": "v01",
+  "path_order": "path_idx 0..414089 in canonical Gamma municipality/access order",
+  "offsets_file": "OSM_OD_path_offsets_v01.npy",
+  "transition_slots_file": "OSM_OD_transition_slots_v01.npy",
+  "representation": "CSR-like ordered sequence. For path_idx p, transition slots are transition_slots[offsets[p]:offsets[p+1]].",
+  "transition_slot_semantics": {
+    "slot_reference": "zero-based CSR data position in frozen B5 arrays",
+    "to_state": "osm_turn_state_time_v01.npz:indices[slot]",
+    "time_s": "osm_turn_state_time_v01.npz:data[slot]",
+    "length_m": "osm_turn_state_length_v01.npz:data[slot]",
+    "edge_id": "osm_turn_state_edgeid_v01.npz:data[slot]",
+    "physical_edge_lookup": "edge_id -> directed_edges.edge_id in osm_directed_edges_v02.sqlite",
+    "osm_physical_segment_lookup": "directed_edges.edge_id -> directed_edges.segment_uid",
+    "cumulative_time": "prefix sum of B5 time_s over ordered path slots",
+    "cumulative_length": "prefix sum of B5 length_m over ordered path slots"
+  },
+  "cost_contract": "TIME_B5",
+  "distance_semantics": "PATH_ATTRIBUTE",
+  "weight_contract": "PRODUCT_LAMBDA / EXP_REL_300",
+  "counts": {
+    "paths": 414090,
+    "transition_slots": 598707601
+  }
+}
