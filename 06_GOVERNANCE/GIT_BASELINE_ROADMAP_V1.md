@@ -1,5 +1,36 @@
 # GIT_BASELINE_ROADMAP_V1
 
+## FINAL BASELINE DECISION — 10 settembre 2026
+
+Questa sezione SUPERA le conclusioni preliminari di ricostruzione
+riportate più sotto nel documento.
+
+COMMON_BASELINE_LOGICAL = POST_5.8E / PRE_5.9D
+
+COMMON_BASELINE_NOTEBOOK =
+Tesi_FRLM_FVG v0.29
+(canonical repository name: Tesi_FRLM_FVG.ipynb)
+
+COMMON_BASELINE_COMMIT =
+d35d9ac13d4fa0543144f80deaf70e0e0f30d690
+
+BASELINE_TAG =
+baseline-post-5.8E-pre-5.9D
+
+Il lavoro 5.9D relativo agli external gateways è escluso dalla baseline
+comune e appartiene alla successiva linea scientifica della tesi.
+
+I branch:
+
+- thesis
+- delivery-october
+
+sono stati materializzati a partire dallo stesso common baseline.
+
+La futura separazione Light Duty / Heavy Duty sarà materializzata solo
+al relativo gate naturale e non fa parte della baseline corrente.
+
+---
 **Project:** TESI FRLM FVG  
 **Timebox massimo:** 2 ore  
 **Obiettivo:** arrivare a una baseline Git pronta, con inventario ricostruito e punto di separazione tra linea `delivery-october` e linea `thesis` definito e verificato.
@@ -177,3 +208,4 @@ Priorità:
 - inizio `delivery-october` identificato;
 - branch `delivery-october` e `thesis` creati solo se il fork è sufficientemente sicuro;
 - Artifact Register pronto a essere popolato dalla baseline significativa.
+
