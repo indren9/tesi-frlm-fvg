@@ -1,0 +1,260 @@
+{
+  "architecture": {
+    "composition": "PHYSICAL_CROSSING_MIN_COMBINED_TIME",
+    "external_router": "GRAPHHOPPER_11",
+    "internal_router": "B5_FROZEN",
+    "source_relation": "NEAR_CONTEMPORANEOUS_NOT_IDENTICAL"
+  },
+  "blocking_reasons": [
+    "IGNORED_RESTRICTION_USED_WAY_INTERSECTION_CANDIDATE"
+  ],
+  "gateway_usage": {
+    "expected_veneto_only": true,
+    "rows": [
+      {
+        "Pendolari_raw_sum": 54.0,
+        "b1_rows": 40,
+        "direction": "EI",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 23.141700000000014,
+        "gateway_id": "A1V01"
+      },
+      {
+        "Pendolari_raw_sum": 130.0,
+        "b1_rows": 47,
+        "direction": "EI",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 55.711499999999994,
+        "gateway_id": "A1V02"
+      },
+      {
+        "Pendolari_raw_sum": 3367.0,
+        "b1_rows": 291,
+        "direction": "EI",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 1442.9278499999996,
+        "gateway_id": "A1V03"
+      },
+      {
+        "Pendolari_raw_sum": 961.0,
+        "b1_rows": 120,
+        "direction": "EI",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 411.83654999999953,
+        "gateway_id": "A1V04"
+      },
+      {
+        "Pendolari_raw_sum": 1017.0,
+        "b1_rows": 151,
+        "direction": "EI",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 435.83535000000006,
+        "gateway_id": "A1V05"
+      },
+      {
+        "Pendolari_raw_sum": 93.0,
+        "b1_rows": 8,
+        "direction": "EI",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 39.85515,
+        "gateway_id": "A1V06"
+      },
+      {
+        "Pendolari_raw_sum": 1318.0,
+        "b1_rows": 699,
+        "direction": "EI",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 564.8288999999938,
+        "gateway_id": "VE01"
+      },
+      {
+        "Pendolari_raw_sum": 1437.0,
+        "b1_rows": 367,
+        "direction": "EI",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 615.8263499999963,
+        "gateway_id": "VE02"
+      },
+      {
+        "Pendolari_raw_sum": 2958.0,
+        "b1_rows": 804,
+        "direction": "EI",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 1267.6509000000012,
+        "gateway_id": "VE03"
+      },
+      {
+        "Pendolari_raw_sum": 1538.0,
+        "b1_rows": 149,
+        "direction": "EI",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 659.1098999999988,
+        "gateway_id": "VE04"
+      },
+      {
+        "Pendolari_raw_sum": 1383.0,
+        "b1_rows": 178,
+        "direction": "EI",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 592.6846499999988,
+        "gateway_id": "VE05"
+      },
+      {
+        "Pendolari_raw_sum": 202.0,
+        "b1_rows": 41,
+        "direction": "EI",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 86.56710000000004,
+        "gateway_id": "VE06"
+      },
+      {
+        "Pendolari_raw_sum": 54.0,
+        "b1_rows": 40,
+        "direction": "IE",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 23.141700000000014,
+        "gateway_id": "A1V01"
+      },
+      {
+        "Pendolari_raw_sum": 130.0,
+        "b1_rows": 47,
+        "direction": "IE",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 55.711499999999994,
+        "gateway_id": "A1V02"
+      },
+      {
+        "Pendolari_raw_sum": 3396.0,
+        "b1_rows": 305,
+        "direction": "IE",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 1455.3557999999996,
+        "gateway_id": "A1V03"
+      },
+      {
+        "Pendolari_raw_sum": 965.0,
+        "b1_rows": 119,
+        "direction": "IE",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 413.55074999999965,
+        "gateway_id": "A1V04"
+      },
+      {
+        "Pendolari_raw_sum": 1077.0,
+        "b1_rows": 212,
+        "direction": "IE",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 461.54835,
+        "gateway_id": "A1V05"
+      },
+      {
+        "Pendolari_raw_sum": 95.0,
+        "b1_rows": 9,
+        "direction": "IE",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 40.712250000000004,
+        "gateway_id": "A1V06"
+      },
+      {
+        "Pendolari_raw_sum": 1212.0,
+        "b1_rows": 624,
+        "direction": "IE",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 519.402599999995,
+        "gateway_id": "VE01"
+      },
+      {
+        "Pendolari_raw_sum": 1483.0,
+        "b1_rows": 396,
+        "direction": "IE",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 635.5396499999958,
+        "gateway_id": "VE02"
+      },
+      {
+        "Pendolari_raw_sum": 2463.0,
+        "b1_rows": 672,
+        "direction": "IE",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 1055.5186499999954,
+        "gateway_id": "VE03"
+      },
+      {
+        "Pendolari_raw_sum": 1989.0,
+        "b1_rows": 249,
+        "direction": "IE",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 852.3859499999976,
+        "gateway_id": "VE04"
+      },
+      {
+        "Pendolari_raw_sum": 1391.0,
+        "b1_rows": 180,
+        "direction": "IE",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 596.1130499999988,
+        "gateway_id": "VE05"
+      },
+      {
+        "Pendolari_raw_sum": 203.0,
+        "b1_rows": 42,
+        "direction": "IE",
+        "expected_veneto_gateway": true,
+        "flow_daily_sum": 86.99565000000004,
+        "gateway_id": "VE06"
+      }
+    ],
+    "unexpected_gateway_count": 0,
+    "unexpected_gateways": [],
+    "used_gateway_count": 12
+  },
+  "ignored_restrictions": {
+    "candidate_intersections": 132,
+    "import_log_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\heavy_import_runs\\run_20260904_113049\\graphhopper_b1_ext_heavy_import.log",
+    "import_log_sha256": "baddbb9ebcf47b40ea84eeaac27eb156bbd277a609945b891ed5e186d6a9e852",
+    "intersection_rule": "CONSERVATIVE_MEMBER_WAY_INTERSECTION_AGAINST_ACTUALLY_USED_OSM_WAY_IDS",
+    "no_way_member_malformed_relations": 724,
+    "total_ignored_relations": 2942
+  },
+  "integrity": {
+    "frozen_fvg_hashes": "UNCHANGED",
+    "gh08f_v02_outputs_modified": false,
+    "graph_manifest_sha256": "710b2013429cde70eb9fba1652d7af7f4e24a73504be64b9d609ea619fd93189",
+    "italy_graph_byte_identical": "YES",
+    "italy_pbf_sha256": "f7b305c6a267a426619fd03dd0c63b3da3ec72f89defe6431dee71d64b172538"
+  },
+  "next_gate": "TARGETED_RESTRICTION_DIAGNOSIS",
+  "qa": {
+    "GH06_manifest_sha256": "a7590ed3b5dd61670ee509843b6707d14d66fc609ded37056a81aa8214f0353d",
+    "GH06_summary_sha256": "d13d2266635fe4de6da094a3de533981b9a71e66654788f94558d20440c2725f",
+    "graph_load_qa": "PASS",
+    "selected_route_detail_qa": "PASS",
+    "targeted_qa": "PASS"
+  },
+  "routing": {
+    "B1_relations": 2895,
+    "EI_daily_flow": 6195.9758999999995,
+    "EI_routed": 2895,
+    "EI_unreachable": 0,
+    "IE_daily_flow": 6195.9758999999995,
+    "IE_routed": 2895,
+    "IE_unreachable": 0,
+    "ambiguous_gateway_mapping": 0,
+    "max_destination_snap_m": 3382.2110407302835
+  },
+  "schema": "B1_EXT_GH_09_SELECTED_ROUTE_DIAGNOSTICS_SUMMARY_V01",
+  "used_subgraph": {
+    "edge_semantics": "UNIQUE_EDGE_ID_OSM_WAY_ID_NORMALIZED_ENDPOINT_SIGNATURES_TO_PROTECT_AGAINST_QUERYGRAPH_VIRTUAL_ID_COLLISIONS",
+    "geometry_fallback_edge_observations": 0,
+    "length_semantics": "SUM_MAX_OBSERVED_DISTANCE_PATH_DETAIL_PER_UNIQUE_EDGE_SIGNATURE",
+    "node_semantics": "UNIQUE_ROUTE_INDUCED_EDGE_BOUNDARY_COORDINATES_FROM_GH_PATH_DETAILS",
+    "unique_selected_external_routes": 2048,
+    "used_edge_signatures": 56838,
+    "used_edge_union_length_km": 10051.077058316889,
+    "used_osm_way_ids": 39113,
+    "used_raw_edge_ids": 56741,
+    "used_route_induced_nodes": 54043,
+    "zero_geometry_edge_observations": 3496
+  },
+  "verdict": "NOT_READY"
+}

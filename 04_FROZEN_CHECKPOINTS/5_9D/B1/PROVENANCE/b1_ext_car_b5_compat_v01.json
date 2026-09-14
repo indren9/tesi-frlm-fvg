@@ -1,0 +1,127 @@
+{
+  "distance_influence": 0,
+  "priority": [
+    {
+      "if": "!car_access",
+      "multiply_by": "0"
+    },
+    {
+      "if": "road_class != MOTORWAY && road_class != TRUNK && road_class != PRIMARY && road_class != SECONDARY && road_class != TERTIARY && road_class != UNCLASSIFIED && road_class != RESIDENTIAL && road_class != LIVING_STREET",
+      "multiply_by": "0"
+    }
+  ],
+  "speed": [
+    {
+      "if": "true",
+      "limit_to": "car_average_speed"
+    },
+    {
+      "if": "road_class == MOTORWAY && !road_class_link",
+      "multiply_by": "3.0000000000"
+    },
+    {
+      "if": "road_class == MOTORWAY && !road_class_link",
+      "limit_to": "90"
+    },
+    {
+      "if": "road_class == MOTORWAY && road_class_link",
+      "multiply_by": "1.5000000000"
+    },
+    {
+      "if": "road_class == MOTORWAY && road_class_link",
+      "limit_to": "45"
+    },
+    {
+      "if": "road_class == TRUNK && !road_class_link",
+      "multiply_by": "2.8333333333"
+    },
+    {
+      "if": "road_class == TRUNK && !road_class_link",
+      "limit_to": "85"
+    },
+    {
+      "if": "road_class == TRUNK && road_class_link",
+      "multiply_by": "1.3333333333"
+    },
+    {
+      "if": "road_class == TRUNK && road_class_link",
+      "limit_to": "40"
+    },
+    {
+      "if": "road_class == PRIMARY && !road_class_link",
+      "multiply_by": "2.1666666667"
+    },
+    {
+      "if": "road_class == PRIMARY && !road_class_link",
+      "limit_to": "65"
+    },
+    {
+      "if": "road_class == PRIMARY && road_class_link",
+      "multiply_by": "1.1111111111"
+    },
+    {
+      "if": "road_class == PRIMARY && road_class_link",
+      "limit_to": "30"
+    },
+    {
+      "if": "road_class == SECONDARY && !road_class_link",
+      "multiply_by": "1.8333333333"
+    },
+    {
+      "if": "road_class == SECONDARY && !road_class_link",
+      "limit_to": "55"
+    },
+    {
+      "if": "road_class == SECONDARY && road_class_link",
+      "multiply_by": "1.1111111111"
+    },
+    {
+      "if": "road_class == SECONDARY && road_class_link",
+      "limit_to": "25"
+    },
+    {
+      "if": "road_class == TERTIARY && !road_class_link",
+      "multiply_by": "1.3333333333"
+    },
+    {
+      "if": "road_class == TERTIARY && !road_class_link",
+      "limit_to": "40"
+    },
+    {
+      "if": "road_class == TERTIARY && road_class_link",
+      "multiply_by": "1.1111111111"
+    },
+    {
+      "if": "road_class == TERTIARY && road_class_link",
+      "limit_to": "20"
+    },
+    {
+      "if": "road_class == UNCLASSIFIED",
+      "multiply_by": "1.1111111111"
+    },
+    {
+      "if": "road_class == UNCLASSIFIED",
+      "limit_to": "25"
+    },
+    {
+      "if": "road_class == RESIDENTIAL",
+      "multiply_by": "1.1111111111"
+    },
+    {
+      "if": "road_class == RESIDENTIAL",
+      "limit_to": "25"
+    },
+    {
+      "if": "road_class == LIVING_STREET",
+      "multiply_by": "1.6666666667"
+    },
+    {
+      "if": "road_class == LIVING_STREET",
+      "limit_to": "10"
+    },
+    {
+      "if": "max_speed < 150",
+      "limit_to": "max_speed"
+    }
+  ]
+}

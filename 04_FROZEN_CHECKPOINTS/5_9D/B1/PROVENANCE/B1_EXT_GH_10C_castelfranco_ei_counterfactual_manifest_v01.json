@@ -1,0 +1,63 @@
+{
+  "created_utc": "2026-09-05T10:10:59.839981+00:00",
+  "inputs": {
+    "GH08F_manifest": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\hybrid_routing_materialization_v02_endpoint_fallback\\B1_EXT_GH_08F_targeted_endpoint_fallback_manifest_v02.json",
+      "sha256": "1e6b53f93db0219f6ee5b6a961c96a5bf6eb1332ede8a4037dded6f7e4aa1433"
+    },
+    "GH08_tool": {
+      "path": "C:\\Tesi\\tools\\B1_EXT_GH_08_hybrid_routing_materialization.py",
+      "sha256": "e60b6655644e50d554c1399a0c7a61cae590ed7add4d12b4970d816c8ee1fe38"
+    },
+    "GH10B_manifest": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\targeted_restriction_topology_semantic_audit_v01\\B1_EXT_GH_10B_targeted_restriction_topology_semantic_manifest_v01.json",
+      "sha256": "8ecc369fcf59cdf80672797a128381e10ec3d3a9cf291b03cb0e7354cad7e129"
+    },
+    "graph_manifest": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\heavy_import_runs\\run_20260904_113049\\B1_EXT_GH_graph_file_manifest.json",
+      "sha256": "710b2013429cde70eb9fba1652d7af7f4e24a73504be64b9d609ea619fd93189"
+    }
+  },
+  "manual_evidence": {
+    "date": "2026-09-04",
+    "observation": "Via P. Piazza joins Via Giacomo Matteotti only in the permitted direction; to return in the opposite direction Google routes to the roundabout and back. Direct shortcut is not allowed.",
+    "roundabout_center_lat": 45.66843920366166,
+    "roundabout_center_lon": 11.928326770104913,
+    "source": "GOOGLE_MAPS_USER_MANUAL_VALIDATION"
+  },
+  "next_gate": "TARGETED_EXTERNAL_ROUTE_OVERRIDE_MATERIALIZATION",
+  "outputs": [
+    {
+      "filename": "B1_EXT_GH_10C_castelfranco_ei_counterfactual_route_v01.json",
+      "sha256": "26d32d84d3789d24f4184a6613b7674da27d3a48b3807b831d2b14f619fce7e2",
+      "size_bytes": 11929
+    },
+    {
+      "filename": "B1_EXT_GH_10C_affected_b1_rows_v01.csv",
+      "sha256": "de7fa8efb40473102e5187d2db586e4992f5c5f0782b3a86d1eb34ffc01fa0c5",
+      "size_bytes": 1248
+    },
+    {
+      "filename": "B1_EXT_GH_10C_gateway_flow_delta_v01.csv",
+      "sha256": "43b330019d7fddc4fbb5b643a952edfa6c586d6f4874fe24c521dc7c1d935970",
+      "size_bytes": 141
+    },
+    {
+      "filename": "B1_EXT_GH_10C_castelfranco_ei_counterfactual_summary_v01.json",
+      "sha256": "f8271d04e4bf626d235bc064993f19f9cd571aa0b6b59b09b7611d41cb49f0c5",
+      "size_bytes": 1654
+    },
+    {
+      "filename": "graphhopper_b1_ext_server_gh10c_v01.yml",
+      "sha256": "46544f65dbd9525b420b16cf57253bad14bfe6480a8f08d0a19e970b5617f2e2",
+      "size_bytes": 1322
+    },
+    {
+      "filename": "graphhopper_b1_ext_server_gh10c_v01.log",
+      "sha256": "b6b1e875accf5cd56d2853369cee87fe3f084decf488a19f03bfc081397f08f9",
+      "size_bytes": 366
+    }
+  ],
+  "schema": "B1_EXT_GH_10C_CASTELFRANCO_EI_COUNTERFACTUAL_MANIFEST_V01",
+  "verdict": "PASS"
+}

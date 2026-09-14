@@ -1,0 +1,73 @@
+FASE_5_9D_B1_CLOSE_GATEWAY_AGGREGATION_REPORT
+
+====================================================================================================
+VERDETTO
+====================================================================================================
+
+FASE_5_9D_B1 = PASS
+GATEWAYS_AGGREGATED = 12 / 12
+TOTAL_IE = 6195.97590
+TOTAL_EI = 6195.97590
+TOTAL_BIDIRECTIONAL = 12391.95180
+TOP_GATEWAY_BY_COMMUTING_FLOW = A1V03 / Brugnera-Prata/Livenza / 2898.28365
+ZERO_FLOW_GATEWAYS = NONE
+MASS_BALANCE = PASS
+AMBIGUOUS = 0
+UNASSIGNED_ROWS = 0
+ALL_IE_ROWS_ASSIGNED = 2895 / 2895
+ALL_EI_ROWS_ASSIGNED = 2895 / 2895
+
+====================================================================================================
+CANONICAL GATEWAY TABLE — OBSERVED COMMUTING COMPONENT OF GATEWAY FLOW
+====================================================================================================
+
+gateway_id | gateway_name | IE_OD | EI_OD | IE_raw | EI_raw | IE_daily | EI_daily | TOTAL_daily | IE_share | EI_share | TOTAL_share | crossings_used
+A1V03 | Brugnera-Prata/Livenza | 305 | 291 | 3396 | 3367 | 1455.35580 | 1442.92785 | 2898.28365 | 23.4887% | 23.2881% | 23.3884% | 5
+VE03 | A28 west / Sacile-Cordignano | 672 | 804 | 2463 | 2958 | 1055.51865 | 1267.65090 | 2323.16955 | 17.0356% | 20.4593% | 18.7474% | 5
+VE04 | SS13 / Sacile group | 249 | 149 | 1989 | 1538 | 852.38595 | 659.10990 | 1511.49585 | 13.7571% | 10.6377% | 12.1974% | 3
+VE02 | A28 south / Portogruaro-Sesto | 396 | 367 | 1483 | 1437 | 635.53965 | 615.82635 | 1251.36600 | 10.2573% | 9.9391% | 10.0982% | 6
+VE05 | SS14 Latisana-Fossalta | 180 | 178 | 1391 | 1383 | 596.11305 | 592.68465 | 1188.79770 | 9.6210% | 9.5656% | 9.5933% | 1
+VE01 | A4 regional boundary | 624 | 699 | 1212 | 1318 | 519.40260 | 564.82890 | 1084.23150 | 8.3829% | 9.1161% | 8.7495% | 3
+A1V05 | Cordovado/SR463 | 212 | 151 | 1077 | 1017 | 461.54835 | 435.83535 | 897.38370 | 7.4492% | 7.0342% | 7.2417% | 5
+A1V04 | Postumia/SR53 | 119 | 120 | 965 | 961 | 413.55075 | 411.83655 | 825.38730 | 6.6745% | 6.6468% | 6.6607% | 4
+VE06 | SR251 Erto-Bellunese | 42 | 41 | 203 | 202 | 86.99565 | 86.56710 | 173.56275 | 1.4041% | 1.3972% | 1.4006% | 1
+A1V02 | SR355 Sappada | 47 | 47 | 130 | 130 | 55.71150 | 55.71150 | 111.42300 | 0.8992% | 0.8992% | 0.8992% | 1
+A1V06 | Bevazzana-Lignano | 9 | 8 | 95 | 93 | 40.71225 | 39.85515 | 80.56740 | 0.6571% | 0.6432% | 0.6502% | 1
+A1V01 | SS52 Passo Mauria | 40 | 40 | 54 | 54 | 23.14170 | 23.14170 | 46.28340 | 0.3735% | 0.3735% | 0.3735% | 1
+
+====================================================================================================
+OBSERVED GATEWAY COUNT — DIAGNOSTIC ONLY
+====================================================================================================
+
+Only VE04 and VE05 currently have materialized Veneto counts; both are OBSERVED_PROXY/contextual, not hard cordon equalities.
+NO residual demand is calculated.
+VE04 | SS13 / Sacile group | observed=9871.00 | commuting=1511.49585 | commuting_share_of_observed=15.3125% | OBSERVED_PROXY | DIAGNOSTIC_ONLY_NOT_CORDON_EQUALITY
+VE05 | SS14 Latisana-Fossalta | observed=16233.00 | commuting=1188.79770 | commuting_share_of_observed=7.3233% | OBSERVED_PROXY | DIAGNOSTIC_ONLY_NOT_CORDON_EQUALITY
+
+====================================================================================================
+MASS BALANCE QA
+====================================================================================================
+
+SUM_GATEWAYS_IE = 6195.97590
+SUM_GATEWAYS_EI = 6195.97590
+SUM_GATEWAYS_TOTAL = 12391.95180
+EXPECTED_IE = 6195.97590
+EXPECTED_EI = 6195.97590
+EXPECTED_TOTAL = 12391.95180
+MASS_BALANCE = PASS
+
+====================================================================================================
+SCOPE
+====================================================================================================
+
+This table is the OBSERVED COMMUTING COMPONENT OF GATEWAY FLOW.
+It is NOT total gateway traffic.
+No non-commuting traffic, residual demand, EE, Gravity or ANAS 2025 is used.
+
+====================================================================================================
+HARD STOP
+====================================================================================================
+
+NO NEW ROUTING EXECUTED.
+GH10D / G_EXT_ITALY_B1_v01 NOT MODIFIED.
+RETURN CONTROL TO CHAT MADRE.

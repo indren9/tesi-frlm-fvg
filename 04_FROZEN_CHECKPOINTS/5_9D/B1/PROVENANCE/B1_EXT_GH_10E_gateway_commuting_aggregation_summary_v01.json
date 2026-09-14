@@ -1,0 +1,38 @@
+{
+  "ANAS_2025_used": false,
+  "EI_rows_assigned": 2895,
+  "GH10D_modified": false,
+  "G_EXT_ITALY_B1_v01_modified": false,
+  "IE_rows_assigned": 2895,
+  "ambiguous_rows": 0,
+  "gateways_aggregated": 12,
+  "gravity_used": false,
+  "mass_balance": "PASS",
+  "next": "RETURN_CONTROL_TO_CHAT_MADRE",
+  "observed_gateway_diagnostic": {
+    "gateways_compared": [
+      "VE04",
+      "VE05"
+    ],
+    "residual_demand": "NOT_CALCULATED",
+    "role": "DIAGNOSTIC_ONLY"
+  },
+  "routing_executed": false,
+  "schema": "B1_EXT_GH_10E_GATEWAY_COMMUTING_AGGREGATION_SUMMARY_V01",
+  "source": {
+    "GH10D_manifest_sha256": "d77aff2741d287a812093446439e9faa01cd04bee34872d5fccd96b0eb43bc67",
+    "GH10D_summary_sha256": "f342f00b7a692f2c34b1fc47f71a9220ead0519736b4f2f44b6c54dac904b3f9",
+    "canonical_materialization": "GH10D_V03_APPEND_ONLY"
+  },
+  "top_gateway_by_commuting_flow": {
+    "TOTAL_commuting_daily": 2898.2836499999994,
+    "gateway_id": "A1V03",
+    "gateway_name": "Brugnera-Prata/Livenza"
+  },
+  "total_EI": 6195.9758999999885,
+  "total_IE": 6195.975899999982,
+  "total_bidirectional": 12391.951799999972,
+  "unassigned_rows": 0,
+  "verdict": "PASS",
+  "zero_flow_gateways": []
+}

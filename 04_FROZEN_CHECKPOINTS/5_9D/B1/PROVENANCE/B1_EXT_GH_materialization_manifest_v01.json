@@ -1,0 +1,49 @@
+{
+  "schema": "B1_EXT_GH_MATERIALIZATION_MANIFEST_V01",
+  "created_local": "2026-09-03T18:21:46.2885119+02:00",
+  "role": "EXTERNAL_ITALY_ROUTING_SUPPORT_ONLY",
+  "source_policy": "NEAR_CONTEMPORANEOUS_CANDIDATE",
+  "frozen_source": {
+    "path": "C:\\Tesi\\Tesi_QGIS\\00_originali\\rete_stradale\\osm\\nord-est_2026-08-03.osm.pbf",
+    "sha256": "e3b8be938c6acc58be516d988f0162c768e092a5674398d9c0f43ea9d9663813",
+    "md5": "3ec55014291350bb64fbad6aafe15373",
+    "generator": "osmium/1.16.0",
+    "replication_base_url": "https://download.geofabrik.de/europe/italy/nord-est-updates",
+    "replication_sequence": "3928",
+    "replication_timestamp": "2026-08-03T20:21:36Z"
+  },
+  "national_source": {
+    "file": "italy-260801.osm.pbf",
+    "path": "C:\\Tesi\\Tesi_QGIS\\00_originali\\rete_stradale\\osm\\external_b1\\italy-260801.osm.pbf",
+    "url": "https://download.geofabrik.de/europe/italy-260801.osm.pbf",
+    "official_md5_url": "https://download.geofabrik.de/europe/italy-260801.osm.pbf.md5",
+    "official_md5": "da57eabc25eb8c27cc44a4916122902e",
+    "verified_md5": "da57eabc25eb8c27cc44a4916122902e",
+    "project_sha256": "f7b305c6a267a426619fd03dd0c63b3da3ec72f89defe6431dee71d64b172538",
+    "size_bytes": 2215945433,
+    "generator": "osmium/1.16.0",
+    "replication_base_url": "https://download.geofabrik.de/europe/italy-updates",
+    "replication_sequence": "4866",
+    "replication_timestamp": "2026-08-01T20:21:21Z",
+    "frozen_minus_italy_temporal_offset_hours": 48.004,
+    "identity_relation": "NOT_IDENTICAL_NEAR_CONTEMPORANEOUS"
+  },
+  "graphhopper": {
+    "version": "11.0",
+    "jar_path": "C:\\Tesi\\tools\\graphhopper\\b1_ext_v01\\graphhopper-web-11.0.jar",
+    "jar_sha256": "b59c024afe172ec6ec85b6327006c3138ec58c7d0bcd26253d0e42853f613def"
+  },
+  "java": {
+    "distribution": "Eclipse Temurin",
+    "version": "21.0.10+7",
+    "java_exe": "C:\\Tesi\\tools\\graphhopper\\b1_ext_v01\\temurin_jre_21_0_10_7\\jdk-21.0.10+7-jre\\bin\\java.exe",
+    "major": 21,
+    "zip_sha256": "a6ac6789e51a2c245f41430c42e72b39ec706a449812fc5e4cbfc55ceed1e5ae"
+  },
+  "hard_stop": {
+    "graph_import": "NOT_STARTED",
+    "routing": "NOT_STARTED",
+    "frozen_artifacts_modified": false,
+    "next_gate": "HYBRID_B5_GRAPHHOPPER_INTERFACE_VALIDATION"
+  }
+}

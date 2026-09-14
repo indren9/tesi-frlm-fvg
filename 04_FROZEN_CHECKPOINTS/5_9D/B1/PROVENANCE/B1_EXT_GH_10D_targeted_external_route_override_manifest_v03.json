@@ -1,0 +1,108 @@
+{
+  "created_utc": "2026-09-05T15:11:15.281746+00:00",
+  "inputs": {
+    "GH08F_manifest": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\hybrid_routing_materialization_v02_endpoint_fallback\\B1_EXT_GH_08F_targeted_endpoint_fallback_manifest_v02.json",
+      "sha256": "1e6b53f93db0219f6ee5b6a961c96a5bf6eb1332ede8a4037dded6f7e4aa1433"
+    },
+    "GH08_tool": {
+      "path": "C:\\Tesi\\tools\\B1_EXT_GH_08_hybrid_routing_materialization.py",
+      "sha256": "e60b6655644e50d554c1399a0c7a61cae590ed7add4d12b4970d816c8ee1fe38"
+    },
+    "GH10C_affected_evidence": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\targeted_restriction_counterfactual_v01\\B1_EXT_GH_10C_affected_b1_rows_v01.csv",
+      "sha256": "de7fa8efb40473102e5187d2db586e4992f5c5f0782b3a86d1eb34ffc01fa0c5"
+    },
+    "GH10C_manifest": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\targeted_restriction_counterfactual_v01\\B1_EXT_GH_10C_castelfranco_ei_counterfactual_manifest_v01.json",
+      "sha256": "1ebcb0746a3581411a6ac4cb708d72123846746833979e63852486faa5c22c76"
+    },
+    "GH10C_route_evidence": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\targeted_restriction_counterfactual_v01\\B1_EXT_GH_10C_castelfranco_ei_counterfactual_route_v01.json",
+      "sha256": "26d32d84d3789d24f4184a6613b7674da27d3a48b3807b831d2b14f619fce7e2"
+    }
+  },
+  "next_gate": "B1_FINAL_GATE_REASSESSMENT",
+  "outputs": [
+    {
+      "filename": "B1_EXT_GH_10D_b1_normalized_v03.csv",
+      "sha256": "c7bc5e760db53d978af0703ac06335b6f50e776a938188e9ac545b2721eeddc8",
+      "size_bytes": 577999
+    },
+    {
+      "filename": "B1_EXT_GH_10D_internal_access_crossing_costs_v03.csv",
+      "sha256": "11064b3654f4d0adaed9212fd6aca698acb4d88916e13b12b2918fa3ab3bfedf",
+      "size_bytes": 3590825
+    },
+    {
+      "filename": "B1_EXT_GH_10D_internal_commune_crossing_costs_v03.csv",
+      "sha256": "3a95e29dbe756597dcd32dbc71972569dabf3495f3350bbd217c684111c9bbb9",
+      "size_bytes": 1928244
+    },
+    {
+      "filename": "B1_EXT_GH_10D_external_crossing_route_cache_v03.csv",
+      "sha256": "940234101e0232ecd8b3661d654dd6d16a00162a8e85a25a0d45f411ec0a8ca4",
+      "size_bytes": 7365545
+    },
+    {
+      "filename": "B1_EXT_GH_10D_endpoint_snap_v03.csv",
+      "sha256": "87e6db730e66e03c7cff2a86f0ea1e10f934df0d030ffbf32d53aea668645b39",
+      "size_bytes": 3890450
+    },
+    {
+      "filename": "B1_EXT_GH_10D_IE_routing_v03.csv",
+      "sha256": "c9dc62f7694584eeb418939f7a3ba844415293c1b70f3fe5e9169a593f5adc3e",
+      "size_bytes": 1041403
+    },
+    {
+      "filename": "B1_EXT_GH_10D_EI_routing_v03.csv",
+      "sha256": "b9bbd30346fa3aebda22f17a2c7ad720d42a03cd154537098a0e43996b160e15",
+      "size_bytes": 1042525
+    },
+    {
+      "filename": "B1_EXT_GH_10D_crossing_flow_attribution_v03.csv",
+      "sha256": "cc4dcd46e8f16c02b638a3ae909e7d71b144f011a06b80e56ebdbcdcd58dc742",
+      "size_bytes": 2857
+    },
+    {
+      "filename": "B1_EXT_GH_10D_gateway_flow_attribution_v03.csv",
+      "sha256": "e506f044b2700cacd1c32c94d27661fe3d5117a5dcaaf2a1a8fbaeaf0be77fa0",
+      "size_bytes": 957
+    },
+    {
+      "filename": "B1_EXT_GH_10D_external_route_override_ledger_v03.csv",
+      "sha256": "02812bbe0a5c83ad86b65827e4c4156ab0904538a7bfb24c94e6505d6eaabb11",
+      "size_bytes": 1454
+    },
+    {
+      "filename": "B1_EXT_GH_10D_targeted_external_route_override_summary_v03.json",
+      "sha256": "f342f00b7a692f2c34b1fc47f71a9220ead0519736b4f2f44b6c54dac904b3f9",
+      "size_bytes": 2651
+    }
+  ],
+  "override_count": 1,
+  "schema": "B1_EXT_GH_10D_TARGETED_EXTERNAL_ROUTE_OVERRIDE_MANIFEST_V03",
+  "source_GH10C_output_hashes": {
+    "B1_EXT_GH_10C_affected_b1_rows_v01.csv": "de7fa8efb40473102e5187d2db586e4992f5c5f0782b3a86d1eb34ffc01fa0c5",
+    "B1_EXT_GH_10C_castelfranco_ei_counterfactual_route_v01.json": "26d32d84d3789d24f4184a6613b7674da27d3a48b3807b831d2b14f619fce7e2",
+    "B1_EXT_GH_10C_castelfranco_ei_counterfactual_summary_v01.json": "f8271d04e4bf626d235bc064993f19f9cd571aa0b6b59b09b7611d41cb49f0c5",
+    "B1_EXT_GH_10C_gateway_flow_delta_v01.csv": "43b330019d7fddc4fbb5b643a952edfa6c586d6f4874fe24c521dc7c1d935970",
+    "graphhopper_b1_ext_server_gh10c_v01.log": "b6b1e875accf5cd56d2853369cee87fe3f084decf488a19f03bfc081397f08f9",
+    "graphhopper_b1_ext_server_gh10c_v01.yml": "46544f65dbd9525b420b16cf57253bad14bfe6480a8f08d0a19e970b5617f2e2"
+  },
+  "source_v02_output_hashes": {
+    "B1_EXT_GH_08F_EI_routing_v02.csv": "4e8f9e3431cb7f12f1ccd9c734e05c5610aa02e11d291722d76b912300e8c34c",
+    "B1_EXT_GH_08F_IE_routing_v02.csv": "c9dc62f7694584eeb418939f7a3ba844415293c1b70f3fe5e9169a593f5adc3e",
+    "B1_EXT_GH_08F_b1_normalized_v02.csv": "c7bc5e760db53d978af0703ac06335b6f50e776a938188e9ac545b2721eeddc8",
+    "B1_EXT_GH_08F_crossing_flow_attribution_v02.csv": "f9f26f580f2f44b5b07640db61ba7761dd34335fb98ccf06eea070e0160cb60d",
+    "B1_EXT_GH_08F_endpoint_snap_v02.csv": "87e6db730e66e03c7cff2a86f0ea1e10f934df0d030ffbf32d53aea668645b39",
+    "B1_EXT_GH_08F_external_crossing_route_cache_v02.csv": "a43569eac857c1f879d493ec96756a904042576ee13d74582eb944b7dac8d386",
+    "B1_EXT_GH_08F_gateway_flow_attribution_v02.csv": "e506f044b2700cacd1c32c94d27661fe3d5117a5dcaaf2a1a8fbaeaf0be77fa0",
+    "B1_EXT_GH_08F_internal_access_crossing_costs_v02.csv": "11064b3654f4d0adaed9212fd6aca698acb4d88916e13b12b2918fa3ab3bfedf",
+    "B1_EXT_GH_08F_internal_commune_crossing_costs_v02.csv": "3a95e29dbe756597dcd32dbc71972569dabf3495f3350bbd217c684111c9bbb9",
+    "B1_EXT_GH_08F_targeted_endpoint_fallback_summary_v02.json": "08341355f95fd1bcc17a85db74a276888376b1f729db2e07ae014d4fe9aebac3",
+    "graphhopper_b1_ext_server_gh08f_v02.log": "898fc3a5cc6ac244ad3c915ba689d69554c7426c4b15981e923300b4c1acdc61",
+    "graphhopper_b1_ext_server_gh08f_v02.yml": "5349f4ecc5ee1a82228d61621c193e9cefc324aba85f8ed5634234ae9891be30"
+  },
+  "verdict": "PASS"
+}

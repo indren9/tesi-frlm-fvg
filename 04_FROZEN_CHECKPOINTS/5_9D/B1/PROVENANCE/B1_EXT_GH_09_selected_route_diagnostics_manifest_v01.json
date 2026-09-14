@@ -1,0 +1,97 @@
+{
+  "blocking_reasons": [
+    "IGNORED_RESTRICTION_USED_WAY_INTERSECTION_CANDIDATE"
+  ],
+  "created_utc": "2026-09-04T13:53:20.411453+00:00",
+  "inputs": {
+    "GH06_manifest": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\graph_load_targeted_routing_qa_v01\\B1_EXT_GH_graph_load_targeted_routing_qa_manifest_v01.json",
+      "sha256": "a7590ed3b5dd61670ee509843b6707d14d66fc609ded37056a81aa8214f0353d"
+    },
+    "GH08F_manifest": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\hybrid_routing_materialization_v02_endpoint_fallback\\B1_EXT_GH_08F_targeted_endpoint_fallback_manifest_v02.json",
+      "sha256": "1e6b53f93db0219f6ee5b6a961c96a5bf6eb1332ede8a4037dded6f7e4aa1433"
+    },
+    "GH08F_summary": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\hybrid_routing_materialization_v02_endpoint_fallback\\B1_EXT_GH_08F_targeted_endpoint_fallback_summary_v02.json",
+      "sha256": "08341355f95fd1bcc17a85db74a276888376b1f729db2e07ae014d4fe9aebac3"
+    },
+    "Italy_PBF": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\00_originali\\rete_stradale\\osm\\external_b1\\italy-260801.osm.pbf",
+      "sha256": "f7b305c6a267a426619fd03dd0c63b3da3ec72f89defe6431dee71d64b172538"
+    },
+    "Italy_graph_manifest": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\heavy_import_runs\\run_20260904_113049\\B1_EXT_GH_graph_file_manifest.json",
+      "sha256": "710b2013429cde70eb9fba1652d7af7f4e24a73504be64b9d609ea619fd93189"
+    },
+    "import_log": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\heavy_import_runs\\run_20260904_113049\\graphhopper_b1_ext_heavy_import.log",
+      "sha256": "baddbb9ebcf47b40ea84eeaac27eb156bbd277a609945b891ed5e186d6a9e852"
+    }
+  },
+  "next_gate": "TARGETED_RESTRICTION_DIAGNOSIS",
+  "outputs": [
+    {
+      "filename": "B1_EXT_GH_09_selected_external_route_keys_v01.csv",
+      "sha256": "793964b92d617ed21eca703464ff9da883d1121f2678f3f8e3cd6df685f4bb4e",
+      "size_bytes": 271347
+    },
+    {
+      "filename": "B1_EXT_GH_09_selected_route_detail_audit_v01.csv",
+      "sha256": "77dc80e48a04dc0825cea93c1d587122fb549437cdffe075da5b124946f0f812",
+      "size_bytes": 386563
+    },
+    {
+      "filename": "B1_EXT_GH_09_used_external_edges_v01.csv",
+      "sha256": "af0fe7edc2001da360cd2143c79421140bee3f46c902d5315de6a296c6587a34",
+      "size_bytes": 8497119
+    },
+    {
+      "filename": "B1_EXT_GH_09_used_external_route_nodes_v01.csv",
+      "sha256": "6c6489ad24f69a461ab9a5775d5e6dafd9e03f4dee9f6ba5d302e2eb96b5fd13",
+      "size_bytes": 1239235
+    },
+    {
+      "filename": "B1_EXT_GH_09_ignored_restriction_intersection_v01.csv",
+      "sha256": "536a9772a812373317ebf97cc4594f74a494319d134cce6ba28f5adbe4bdfb74",
+      "size_bytes": 455676
+    },
+    {
+      "filename": "B1_EXT_GH_09_gateway_usage_final_v01.csv",
+      "sha256": "ca24e59335c379d1778900d7db3602c03c781d9aa6ae4009dbc6811ce38efb2b",
+      "size_bytes": 1101
+    },
+    {
+      "filename": "graphhopper_b1_ext_server_gh09_default_v01.yml",
+      "sha256": "5adfc5344abe475c5b447c8bdf5ce19cfbb788fd918f9ced56ae47c8ed6fa3a8",
+      "size_bytes": 1324
+    },
+    {
+      "filename": "graphhopper_b1_ext_server_gh09_default_v01.log",
+      "sha256": "6b22156356c3600c3997f37ebd4382586ed0ca234b6d93454631e986e5ffc927",
+      "size_bytes": 366
+    },
+    {
+      "filename": "graphhopper_b1_ext_server_gh09_fallback64_v01.yml",
+      "sha256": "d2bab7bc4c49045526979578be3f462bba4098199a7977e97c722efa1652d3d2",
+      "size_bytes": 1355
+    },
+    {
+      "filename": "graphhopper_b1_ext_server_gh09_fallback64_v01.log",
+      "sha256": "76239b8942399fedfc7d2c825d21bc5e3e504e1972390893a6093b534458d530",
+      "size_bytes": 366
+    },
+    {
+      "filename": "B1_EXT_GH_09_selected_route_diagnostics_summary_v01.json",
+      "sha256": "ab71ef8b762b30abb764fe88df0bc005e6af1f8e46585fc99458325fa1f8926e",
+      "size_bytes": 8272
+    },
+    {
+      "filename": "B1_EXT_FINAL_GATE_REPORT.txt",
+      "sha256": "3712ee6bc06bf477e53e618c837c6d86e4cecd155c20c7663883aa0cf829bd5a",
+      "size_bytes": 2262
+    }
+  ],
+  "schema": "B1_EXT_GH_09_SELECTED_ROUTE_DIAGNOSTICS_MANIFEST_V01",
+  "verdict": "NOT_READY"
+}

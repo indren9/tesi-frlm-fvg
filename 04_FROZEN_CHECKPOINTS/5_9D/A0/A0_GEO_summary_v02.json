@@ -1,0 +1,82 @@
+{
+  "access_counts": {
+    "AGRICULTURAL_TRACK": 254,
+    "CLOSED": 1,
+    "NON_MOTOR_VEHICLE": 686,
+    "OPEN_LOCAL": 110,
+    "OPEN_ORDINARY": 108,
+    "PRIVATE": 11,
+    "RESTRICTED": 26,
+    "SEASONAL": 0,
+    "UNKNOWN": 0
+  },
+  "boundary": {
+    "bounds_wgs84": [
+      12.320937971244497,
+      45.58092671614103,
+      13.918853091379859,
+      46.6478098057869
+    ],
+    "geometry_type": "MultiPolygon",
+    "municipalities": 215,
+    "source": "C:\\Tesi\\Tesi_QGIS\\00_originali\\Limiti01012026\\Com01012026\\Com01012026_WGS84.shp",
+    "source_crs": "EPSG:32632",
+    "valid": true
+  },
+  "dedup_review_flags": 29,
+  "deduplicated_physical_crossings": 1196,
+  "hard_stop": {
+    "OD_flows_or_EI_IE_EE_built": false,
+    "external_gateway_master_modified": false,
+    "external_zones_or_connectors_built": false,
+    "frozen_artifacts_modified": false,
+    "phi_EE_or_Gravity_computed": false
+  },
+  "highway_values_seen": {
+    "bridleway": 232,
+    "busway": 9,
+    "construction": 1941,
+    "corridor": 502,
+    "cycleway": 48168,
+    "elevator": 7,
+    "footway": 215313,
+    "ladder": 1,
+    "living_street": 3763,
+    "motorway": 5262,
+    "motorway_link": 4388,
+    "path": 157584,
+    "pedestrian": 21592,
+    "planned": 1,
+    "primary": 39437,
+    "primary_link": 2557,
+    "proposed": 1012,
+    "raceway": 508,
+    "residential": 262885,
+    "rest_area": 5,
+    "road": 95,
+    "secondary": 61210,
+    "secondary_link": 1548,
+    "service": 323013,
+    "services": 1,
+    "steps": 20782,
+    "tertiary": 77404,
+    "tertiary_link": 1833,
+    "track": 252517,
+    "trunk": 4705,
+    "trunk_link": 4143,
+    "unclassified": 137873,
+    "via_ferrata": 3
+  },
+  "input_pbf": "C:\\Tesi\\Tesi_QGIS\\00_originali\\rete_stradale\\osm\\nord-est_2026-08-03.osm.pbf",
+  "input_pbf_sha256": "e3b8be938c6acc58be516d988f0162c768e092a5674398d9c0f43ea9d9663813",
+  "materiality_screen_counts": {
+    "CORE_CANDIDATE": 32,
+    "MINOR_LIKELY_EXCLUDABLE": 110,
+    "RESTRICTED_NOT_MODELLABLE": 978,
+    "SECONDARY_BUT_POSSIBLY_MATERIAL": 76
+  },
+  "pbf_scan_seconds": 195.356,
+  "raw_osm_border_intersections": 2002,
+  "status": "RAW_GEOMETRY_AUDIT_COMPLETE__RECONCILIATION_REQUIRED",
+  "ways_examined": 1650294
+}

@@ -1,0 +1,3 @@
+gateway_id,gateway_name,reference_year,count_status,observed_source,observed_semantics,observed_gateway_count,commuting_component,commuting_share_of_observed,residual_demand,interpretation
+VE04,SS13 / Sacile group,2024,OBSERVED_PROXY,ANAS station 920074 Cordignano,BIDIRECTIONAL_TOTAL_ALL_VEHICLES_CONTEXTUAL,9871.0,1511.4958499999964,0.1531248961604697,NOT_CALCULATED,DIAGNOSTIC_ONLY_NOT_CORDON_EQUALITY
+VE05,SS14 Latisana-Fossalta,2024,OBSERVED_PROXY,ANAS station 3192 Fossalta di Portogruaro,BIDIRECTIONAL_TOTAL_ALL_VEHICLES_CONTEXTUAL,16233.0,1188.7976999999976,0.07323339493624084,NOT_CALCULATED,DIAGNOSTIC_ONLY_NOT_CORDON_EQUALITY

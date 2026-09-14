@@ -1,0 +1,54 @@
+{
+  "created_utc": "2026-09-04T09:32:39.608233+00:00",
+  "file_count": 9,
+  "files": [
+    {
+      "relative_path": "edgekv_keys",
+      "sha256": "d4140546aa2e85936e4747f1669adc6afaeb542aed10c023b0c719ea709ecde3",
+      "size_bytes": 8292
+    },
+    {
+      "relative_path": "edgekv_vals",
+      "sha256": "cfe6f76cd01586f7fcb9bb52101db9530265feb4d0d47bbef077f8914ce90574",
+      "size_bytes": 36700260
+    },
+    {
+      "relative_path": "edges",
+      "sha256": "2836804aec55e37e984ced66b99a137e427153ca9a46bc19ba5a4de85fa03d8c",
+      "size_bytes": 187695204
+    },
+    {
+      "relative_path": "geometry",
+      "sha256": "e4416210359038970e529048393a4d92eb8af0af4dd2ad453ce1307dbd353e10",
+      "size_bytes": 125829220
+    },
+    {
+      "relative_path": "location_index",
+      "sha256": "665554d541546c259e9ba6f01b59fc6838bc4f2bbf851e3d0383730a8f0c1f62",
+      "size_bytes": 57671780
+    },
+    {
+      "relative_path": "nodes",
+      "sha256": "86a3dc95b2fad52fd550ccca84cb482e5ff5e73d545a6f7022b17a0bf7c773e5",
+      "size_bytes": 55574628
+    },
+    {
+      "relative_path": "properties",
+      "sha256": "d7b574f868dd0d6e20799dffd86f1d4d515c11701036e6ef7aa0ccf7d6664902",
+      "size_bytes": 32868
+    },
+    {
+      "relative_path": "properties.txt",
+      "sha256": "4a3797a9b928dfeb9b45d2e56570afbeac09a4a11e271594cf5ccf61e63637d2",
+      "size_bytes": 4456
+    },
+    {
+      "relative_path": "turn_costs",
+      "sha256": "2a2c8a15599b471e013cb78e6f7dde510dbf1ef47f29fc83561aadeffef1ebc8",
+      "size_bytes": 4194404
+    }
+  ],
+  "graph_root": "C:\\Tesi\\tools\\graphhopper\\b1_ext_v01\\graph_italy_260801_b5compat_v01",
+  "schema": "B1_EXT_GH_GRAPH_FILE_MANIFEST_V01",
+  "total_size_bytes": 467711112
+}

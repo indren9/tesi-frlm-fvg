@@ -1,0 +1,100 @@
+{
+  "schema": "B1_EXT_GH_PROFILE_IMPORT_PREFLIGHT_MANIFEST_V01",
+  "created_utc": "2026-09-04T09:20:16.117385+00:00",
+  "inputs": {
+    "italy_pbf": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\00_originali\\rete_stradale\\osm\\external_b1\\italy-260801.osm.pbf",
+      "sha256": "f7b305c6a267a426619fd03dd0c63b3da3ec72f89defe6431dee71d64b172538"
+    },
+    "b2": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\02_package\\grafo_operativo_osm\\osm_directed_edges_v02.sqlite",
+      "sha256": "04809af9e13dc32de45e18a34a0917222e3ab9c0794406b1b242a8bab6c11859"
+    },
+    "gh_jar": {
+      "path": "C:\\Tesi\\tools\\graphhopper\\b1_ext_v01\\graphhopper-web-11.0.jar",
+      "sha256": "b59c024afe172ec6ec85b6327006c3138ec58c7d0bcd26253d0e42853f613def"
+    },
+    "jre_zip": {
+      "path": "C:\\Tesi\\tools\\graphhopper\\b1_ext_v01\\downloads\\OpenJDK21U-jre_x64_windows_hotspot_21.0.10_7.zip",
+      "sha256": "a6ac6789e51a2c245f41430c42e72b39ec706a449812fc5e4cbfc55ceed1e5ae"
+    },
+    "topology_way_audit": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\hybrid_topology_scan_v01\\B1_EXT_shared_boundary_way_audit_v01.csv",
+      "sha256": "f3949a0c9cd6cf3ddb16b6c6a05a525fc69d5ba6c27b36be81d3051ec266a1e9"
+    },
+    "topology_geo_audit": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\hybrid_topology_scan_v01\\B1_EXT_shared_boundary_geo_audit_v01.csv",
+      "sha256": "281d116da9b86374e1e4add02d72255a9db11fa70cc70a06265c5e7f1326a2bd"
+    },
+    "topology_gateway_audit": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\hybrid_topology_scan_v01\\B1_EXT_shared_boundary_gateway_audit_v01.csv",
+      "sha256": "723e9f5466e6a2a14fb1f9b8aa896ece42731ccec0d9a80d8fd90b32e8f42191"
+    },
+    "topology_summary": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\hybrid_topology_scan_v01\\B1_EXT_shared_boundary_topology_summary_v01.json",
+      "sha256": "6e9aaa388d9a1fb4dbd8e6748fd35bc61d097a76e569e8c18a02533b8b206940"
+    },
+    "topology_manifest": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\hybrid_topology_scan_v01\\B1_EXT_shared_boundary_topology_manifest_v01.json",
+      "sha256": "77b9dfc8dd6177d01a802ed47e8acaffd8def841e9bc7901e72f2e5dacf1d173"
+    }
+  },
+  "java": {
+    "path": "C:\\Tesi\\tools\\graphhopper\\b1_ext_v01\\temurin_jre_21_0_10_7\\jdk-21.0.10+7-jre\\bin\\java.exe",
+    "major": 21,
+    "version_output": "openjdk version \"21.0.10\" 2026-01-20 LTS\nOpenJDK Runtime Environment Temurin-21.0.10+7 (build 21.0.10+7-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.10+7 (build 21.0.10+7-LTS, mixed mode, sharing)"
+  },
+  "outputs": [
+    {
+      "filename": "b1_ext_car_b5_compat_v01.json",
+      "size_bytes": 3166,
+      "sha256": "29ad0a3a425b43b039c52d1013d0706894d842120995ed607f57406a1f01ea79"
+    },
+    {
+      "filename": "graphhopper_b1_ext_import_v01.yml",
+      "size_bytes": 998,
+      "sha256": "b0302a58670447e684f35acc170ac2b06d9057ea3d7d212ce499ba0dfa3a8ade"
+    },
+    {
+      "filename": "graphhopper_profile_fixture_v01.osm",
+      "size_bytes": 1534,
+      "sha256": "c149a326df7907000f60f045f7a2bf8295f32d46a4757246b2cae5c3cd02a615"
+    },
+    {
+      "filename": "graphhopper_profile_fixture_v01.yml",
+      "size_bytes": 1154,
+      "sha256": "9fd0d872af39a316612309a78fa85115e3514474726db397a6ff8f963d26b8e3"
+    },
+    {
+      "filename": "graphhopper_profile_fixture_import_v01.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "filename": "B1_EXT_GH_b2_core_profile_audit_v01.csv",
+      "size_bytes": 785,
+      "sha256": "59d9a07b0813a6fba55d2dd12cc1c811355a4f6b940ffa1ed29d270ffd0d140b"
+    },
+    {
+      "filename": "B1_EXT_GH_profile_import_preflight_summary_v01.json",
+      "size_bytes": 2957,
+      "sha256": "741b5b15370370557d275aded3d4c3bee2a4b6be63f3c14121e4129f056482d1"
+    }
+  ],
+  "future_national_graph_location": "C:\\Tesi\\tools\\graphhopper\\b1_ext_v01\\graph_italy_260801_b5compat_v01",
+  "native_validation": {
+    "method": "MICRO_FIXTURE_IMPORT",
+    "fixture_input": "graphhopper_profile_fixture_v01.osm",
+    "return_code": 0,
+    "fixture_graph_file_count_before_cleanup": 9,
+    "fixture_graph_bytes_before_cleanup": 6337651,
+    "fixture_graph_cleaned": true,
+    "national_pbf_used_by_native_test": false
+  },
+  "hard_stop": {
+    "national_graph_import": "NOT_STARTED",
+    "routing": "NOT_STARTED",
+    "frozen_artifacts_modified": false
+  },
+  "next_gate": "HEAVY_GRAPHHOPPER_IMPORT"
+}

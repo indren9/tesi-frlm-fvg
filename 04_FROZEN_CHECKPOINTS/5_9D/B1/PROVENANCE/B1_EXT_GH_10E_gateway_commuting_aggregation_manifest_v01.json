@@ -1,0 +1,61 @@
+{
+  "created_utc": "2026-09-05T15:35:39.681875+00:00",
+  "inputs": {
+    "GH10D_EI_routing": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\targeted_external_route_override_materialization_v03\\B1_EXT_GH_10D_EI_routing_v03.csv",
+      "sha256": "b9bbd30346fa3aebda22f17a2c7ad720d42a03cd154537098a0e43996b160e15"
+    },
+    "GH10D_IE_routing": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\targeted_external_route_override_materialization_v03\\B1_EXT_GH_10D_IE_routing_v03.csv",
+      "sha256": "c9dc62f7694584eeb418939f7a3ba844415293c1b70f3fe5e9169a593f5adc3e"
+    },
+    "GH10D_crossing_flow": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\targeted_external_route_override_materialization_v03\\B1_EXT_GH_10D_crossing_flow_attribution_v03.csv",
+      "sha256": "cc4dcd46e8f16c02b638a3ae909e7d71b144f011a06b80e56ebdbcdcd58dc742"
+    },
+    "GH10D_gateway_flow": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\targeted_external_route_override_materialization_v03\\B1_EXT_GH_10D_gateway_flow_attribution_v03.csv",
+      "sha256": "e506f044b2700cacd1c32c94d27661fe3d5117a5dcaaf2a1a8fbaeaf0be77fa0"
+    },
+    "GH10D_manifest": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\targeted_external_route_override_materialization_v03\\B1_EXT_GH_10D_targeted_external_route_override_manifest_v03.json",
+      "sha256": "d77aff2741d287a812093446439e9faa01cd04bee34872d5fccd96b0eb43bc67"
+    },
+    "GH10D_summary": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\targeted_external_route_override_materialization_v03\\B1_EXT_GH_10D_targeted_external_route_override_summary_v03.json",
+      "sha256": "f342f00b7a692f2c34b1fc47f71a9220ead0519736b4f2f44b6c54dac904b3f9"
+    }
+  },
+  "next": "RETURN_CONTROL_TO_CHAT_MADRE",
+  "outputs": [
+    {
+      "filename": "B1_EXT_GH_10E_gateway_commuting_aggregation_v01.csv",
+      "sha256": "54967fb424ae09d446888fc8b06a8a9fdecb97d3f47b90a23a5c20727449dae6",
+      "size_bytes": 2225
+    },
+    {
+      "filename": "B1_EXT_GH_10E_crossing_commuting_detail_v01.csv",
+      "sha256": "355ddfd59f9f65375be10113037e213b3ee29cd540ae5ab2451ba9776c2c5bf1",
+      "size_bytes": 3810
+    },
+    {
+      "filename": "B1_EXT_GH_10E_gateway_observed_diagnostic_v01.csv",
+      "sha256": "856421ef0fda1c2c8373266be3b98b2dd7f8d779592ddf7de1220dd1d1eee9a8",
+      "size_bytes": 640
+    },
+    {
+      "filename": "B1_EXT_GH_10E_gateway_commuting_aggregation_summary_v01.json",
+      "sha256": "e796e72c796055f20f958ca612da77feba8fd838d7d0e7f640f4c09ef5a13262",
+      "size_bytes": 1225
+    },
+    {
+      "filename": "FASE_5_9D_B1_CLOSE_GATEWAY_AGGREGATION_REPORT.txt",
+      "sha256": "2b4042045259b83b48e4eae0def0a097f68ba966181aa4c2a9394c7e0a57b621",
+      "size_bytes": 4428
+    }
+  ],
+  "residual_demand_calculated": false,
+  "routing_executed": false,
+  "schema": "B1_EXT_GH_10E_GATEWAY_COMMUTING_AGGREGATION_MANIFEST_V01",
+  "verdict": "PASS"
+}

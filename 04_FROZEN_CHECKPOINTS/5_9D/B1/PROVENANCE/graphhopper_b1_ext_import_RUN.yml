@@ -1,0 +1,28 @@
+graphhopper:
+  datareader.file: 'C:/Tesi/Tesi_QGIS/00_originali/rete_stradale/osm/external_b1/italy-260801.osm.pbf'
+  graph.location: 'C:/Tesi/tools/graphhopper/b1_ext_v01/_STAGING_graph_italy_260801_b5compat_v01_20260904_113049'
+
+  profiles:
+    - name: b1_ext_car_b5_compat_v01
+      turn_costs:
+        vehicle_types: [motorcar, motor_vehicle]
+        u_turn_costs: 0
+      custom_model_files: [b1_ext_car_b5_compat_v01.json]
+
+  custom_models.directory: 'C:/Tesi/Tesi_QGIS/03_output_temporanei/fase_5_9D_B1_ext_support/profile_import_preflight_v01'
+
+  profiles_ch: []
+  profiles_lm: []
+
+  graph.encoded_values: car_access, car_average_speed, road_class, road_class_link, max_speed, osm_way_id
+  graph.dataaccess.default_type: MMAP
+
+  prepare.min_network_size: 200
+  prepare.subnetworks.threads: 1
+
+  import.osm.ignored_highways: footway,construction,cycleway,path,steps,pedestrian,platform,corridor,bridleway,track,service,road,busway
+
+logging:
+  level: WARN
+  appenders:
+    - type: console

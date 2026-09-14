@@ -1,0 +1,78 @@
+{
+  "created_utc": "2026-09-04T09:30:49.272089+00:00",
+  "elapsed_seconds": 109.862199,
+  "ended_utc": "2026-09-04T09:32:39.139190+00:00",
+  "final_graph": "C:\\Tesi\\tools\\graphhopper\\b1_ext_v01\\graph_italy_260801_b5compat_v01",
+  "frozen_artifacts_modified": false,
+  "graph": {
+    "file_count": 9,
+    "file_manifest_path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\heavy_import_runs\\run_20260904_113049\\B1_EXT_GH_graph_file_manifest.json",
+    "file_manifest_sha256": "710b2013429cde70eb9fba1652d7af7f4e24a73504be64b9d609ea619fd93189",
+    "path": "C:\\Tesi\\tools\\graphhopper\\b1_ext_v01\\graph_italy_260801_b5compat_v01",
+    "total_size_bytes": 467711112
+  },
+  "hardware_preflight": {
+    "avail_pagefile_gib": 10.652854919433594,
+    "avail_phys_gib": 8.093730926513672,
+    "disk_free_gib": 561.2568359375,
+    "memory_load_pct": 48.0,
+    "min_available_commit_gib": 10.0,
+    "min_available_physical_gib": 7.5,
+    "min_free_disk_gib": 40.0,
+    "total_pagefile_gib": 20.70494842529297,
+    "total_phys_gib": 15.704948425292969
+  },
+  "heap": {
+    "gc": "ParallelGC",
+    "xms_mib": 512,
+    "xmx_gib": 6
+  },
+  "import_log": {
+    "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\heavy_import_runs\\run_20260904_113049\\graphhopper_b1_ext_heavy_import.log",
+    "sha256": "baddbb9ebcf47b40ea84eeaac27eb156bbd277a609945b891ed5e186d6a9e852",
+    "size_bytes": 735557
+  },
+  "inputs": {
+    "gh_jar": {
+      "path": "C:\\Tesi\\tools\\graphhopper\\b1_ext_v01\\graphhopper-web-11.0.jar",
+      "sha256": "b59c024afe172ec6ec85b6327006c3138ec58c7d0bcd26253d0e42853f613def"
+    },
+    "import_config": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\profile_import_preflight_v01\\graphhopper_b1_ext_import_v01.yml",
+      "sha256": "b0302a58670447e684f35acc170ac2b06d9057ea3d7d212ce499ba0dfa3a8ade"
+    },
+    "italy_pbf": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\00_originali\\rete_stradale\\osm\\external_b1\\italy-260801.osm.pbf",
+      "sha256": "f7b305c6a267a426619fd03dd0c63b3da3ec72f89defe6431dee71d64b172538"
+    },
+    "jre_zip": {
+      "path": "C:\\Tesi\\tools\\graphhopper\\b1_ext_v01\\downloads\\OpenJDK21U-jre_x64_windows_hotspot_21.0.10_7.zip",
+      "sha256": "a6ac6789e51a2c245f41430c42e72b39ec706a449812fc5e4cbfc55ceed1e5ae"
+    },
+    "profile_manifest": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\profile_import_preflight_v01\\B1_EXT_GH_profile_import_preflight_manifest_v01.json",
+      "sha256": "ca57ab790b1f3a80866c174e272c3f34833e08cd369ef90c4ff37ff87571b110"
+    },
+    "profile_model": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\profile_import_preflight_v01\\b1_ext_car_b5_compat_v01.json",
+      "sha256": "29ad0a3a425b43b039c52d1013d0706894d842120995ed607f57406a1f01ea79"
+    },
+    "profile_summary": {
+      "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\profile_import_preflight_v01\\B1_EXT_GH_profile_import_preflight_summary_v01.json",
+      "sha256": "741b5b15370370557d275aded3d4c3bee2a4b6be63f3c14121e4129f056482d1"
+    }
+  },
+  "next_gate": "GRAPH_LOAD_AND_TARGETED_ROUTING_QA",
+  "profile": "b1_ext_car_b5_compat_v01",
+  "return_code": 0,
+  "routing": "NOT_STARTED",
+  "run_config": {
+    "path": "C:\\Tesi\\Tesi_QGIS\\03_output_temporanei\\fase_5_9D_B1_ext_support\\heavy_import_runs\\run_20260904_113049\\graphhopper_b1_ext_import_RUN.yml",
+    "sha256": "6d552b2373e127f00dfbd7a0cc3dedac5ce324b4b25af26fe1c08b4e63b43953"
+  },
+  "schema": "B1_EXT_GH_HEAVY_IMPORT_RUN_V01",
+  "staging_graph": "C:\\Tesi\\tools\\graphhopper\\b1_ext_v01\\_STAGING_graph_italy_260801_b5compat_v01_20260904_113049",
+  "staging_graph_after_success": "RENAMED_TO_FINAL",
+  "started_utc": "2026-09-04T09:30:49.276991+00:00",
+  "status": "PASS"
+}

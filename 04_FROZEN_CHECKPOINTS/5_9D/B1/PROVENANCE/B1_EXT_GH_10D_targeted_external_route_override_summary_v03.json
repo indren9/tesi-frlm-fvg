@@ -1,0 +1,85 @@
+{
+  "flow_effect": {
+    "EI_daily_flow": 6195.9758999999995,
+    "IE_daily_flow": 6195.9758999999995,
+    "crossing_flow_changed_keys": [
+      [
+        "EI",
+        "VE01",
+        "GEO_0475"
+      ],
+      [
+        "EI",
+        "VE01",
+        "GEO_0484"
+      ]
+    ],
+    "gateway_flow_changed": false
+  },
+  "integrity": {
+    "B5_routing": "NOT_STARTED",
+    "GH08F_v02_modified": false,
+    "GH10C_modified": false,
+    "GraphHopper_server": "NOT_STARTED",
+    "Italy_graph_modified": false,
+    "PBF_import": "NOT_STARTED",
+    "all_IE_rows_unchanged": true,
+    "all_nonaffected_EI_rows_unchanged": true,
+    "endpoint_rows_changed": 0,
+    "endpoint_snap_artifact_preserved_byte_identical": true,
+    "external_cache_rows": 36064,
+    "external_cache_rows_changed": 1
+  },
+  "lineage": {
+    "materialization": "V03_APPEND_ONLY",
+    "source_GH10C_preserved": true,
+    "source_v02": "GH08F_TARGETED_ENDPOINT_FALLBACK_V02",
+    "source_v02_preserved": true
+  },
+  "next_gate": "B1_FINAL_GATE_REASSESSMENT",
+  "override": {
+    "corrected_external_distance_m": 102406.823,
+    "corrected_external_time_s": 4737.901,
+    "corrected_external_weight": 4737.899065,
+    "count": 1,
+    "dest_COMUNE": "Castelfranco Veneto",
+    "destination_key": "5bfd49535005893012d8",
+    "direction": "EI",
+    "gateway_id": "VE01",
+    "illegal_transition": [
+      110879921,
+      1271839041
+    ],
+    "manual_evidence": {
+      "date": "2026-09-04",
+      "observation": "Via P. Piazza joins Via Giacomo Matteotti only in the permitted direction; to return in the opposite direction Google routes to the roundabout and back. Direct shortcut is not allowed.",
+      "roundabout_center_lat": 45.66843920366166,
+      "roundabout_center_lon": 11.928326770104913,
+      "source": "GOOGLE_MAPS_USER_MANUAL_VALIDATION"
+    },
+    "method": "GH10C_WAYPOINT_FORCED_LEGAL_ROUNDABOUT_COUNTERFACTUAL",
+    "overridden_geo_id": "GEO_0484",
+    "relation_id": 9242335,
+    "result_selected_geo_id": "GEO_0475"
+  },
+  "schema": "B1_EXT_GH_10D_TARGETED_EXTERNAL_ROUTE_OVERRIDE_SUMMARY_V03",
+  "selection_effect": {
+    "EI_changed_b1_row_ids": [
+      321,
+      445,
+      741
+    ],
+    "EI_rows_changed": 3,
+    "EI_rows_unchanged": 2892,
+    "IE_rows_changed": 0,
+    "affected_Pendolari_raw": 3.0,
+    "affected_flow_daily": 1.28565,
+    "gateway_changed": false,
+    "new_gateway_id": "VE01",
+    "new_geo_id": "GEO_0475",
+    "old_gateway_id": "VE01",
+    "old_geo_id": "GEO_0484",
+    "selected_combined_time_delta_s_each": 0.08583715124041191
+  },
+  "verdict": "PASS"
+}
