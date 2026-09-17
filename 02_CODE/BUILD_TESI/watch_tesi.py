@@ -103,9 +103,18 @@ def run_build(build_script: Path, notebook: Path, out_dir: Path) -> int:
 
     log("AUTO BUILD START")
 
+    build_python = (
+        Path(sys.executable).with_name("python.exe")
+        if os.name == "nt"
+        else Path(sys.executable)
+    )
+    if not build_python.exists():
+        log(f"ERROR build Python non trovato: {build_python}")
+        return 2
+
     p = subprocess.run(
         [
-            sys.executable,
+            str(build_python),
             str(build_script),
             str(notebook),
             "--out-dir",
@@ -129,16 +138,32 @@ def run_build(build_script: Path, notebook: Path, out_dir: Path) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--notebook", required=True)
-    parser.add_argument("--out-dir", required=True)
+    parser.add_argument("--notebook", default=None)
+    parser.add_argument("--out-dir", default=None)
     parser.add_argument("--poll-seconds", type=float, default=5.0)
     parser.add_argument("--debounce-seconds", type=float, default=15.0)
     parser.add_argument("--once", action="store_true")
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
 
-    notebook = Path(args.notebook).resolve()
-    out_dir = Path(args.out_dir).resolve()
+    repo_root = Path(__file__).resolve().parents[2]
+    notebook = (
+        Path(args.notebook).resolve()
+        if args.notebook
+        else repo_root / "00_NOTEBOOK" / "Tesi_FRLM_FVG.ipynb"
+    )
+    out_dir = (
+        Path(args.out_dir).resolve()
+        if args.out_dir
+        else Path.home()
+        / "OneDrive"
+        / "Universit\u00e0"
+        / "UniUD"
+        / "Tesi"
+        / "TESI_THESIS_STORAGE"
+        / "07_DELIVERIES"
+        / "THESIS_BUILDS"
+    )
     build_script = Path(__file__).with_name("build_tesi.py").resolve()
 
     if not notebook.exists():

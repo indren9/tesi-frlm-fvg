@@ -1,35 +1,33 @@
-﻿param(
-    [string]$Notebook = "Tesi_FRLM_FVG.ipynb",
+param(
+    [string]$Notebook = "",
     [string]$OutDir = ""
 )
 
 $ErrorActionPreference = "Stop"
-
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$RepoRoot = (Resolve-Path (Join-Path $ScriptDir "..\..")).Path
 $PyScript = Join-Path $ScriptDir "build_tesi.py"
 $VenvPython = Join-Path $env:USERPROFILE ".venvs\tesi-build\Scripts\python.exe"
 
-if (-not (Test-Path $PyScript)) {
-    throw "build_tesi.py non trovato accanto a build_tesi.ps1"
+if ($Notebook -eq "") {
+    $Notebook = Join-Path $RepoRoot "00_NOTEBOOK\Tesi_FRLM_FVG.ipynb"
+}
+if ($OutDir -eq "") {
+    $TesiRoot = Join-Path $env:USERPROFILE ("OneDrive\Universit" + [char]0x00E0 + "\UniUD\Tesi")
+    $OutDir = Join-Path $TesiRoot "TESI_THESIS_STORAGE\07_DELIVERIES\THESIS_BUILDS"
 }
 
-if (-not (Test-Path $VenvPython)) {
-    throw "Python della venv Tesi non trovato: $VenvPython"
+foreach ($P in @($PyScript, $VenvPython, $Notebook)) {
+    if (-not (Test-Path $P)) { throw "File richiesto non trovato: $P" }
 }
-
-$argsList = @($PyScript, $Notebook)
-if ($OutDir -ne "") {
-    $argsList += @("--out-dir", $OutDir)
-}
+New-Item -ItemType Directory -Force -Path $OutDir | Out-Null
 
 Write-Host "TESI BUILD v5 - OVERLEAF ONLY / APPEND-ONLY PUBLISH"
-Write-Host "Runtime bloccato sulla venv:"
-Write-Host "  $VenvPython"
-Write-Host "Nessuna compilazione LaTeX locale."
-Write-Host "Ogni build PASS viene pubblicato in una nuova cartella timestamped."
+Write-Host "Notebook: $Notebook"
+Write-Host "Output:   $OutDir"
+Write-Host "Runtime:  $VenvPython"
 
-& $VenvPython @argsList
-
+& $VenvPython $PyScript $Notebook --out-dir $OutDir
 if ($LASTEXITCODE -ne 0) {
     throw "Build tesi FALLITA. Nessun build PASS precedente viene modificato."
 }

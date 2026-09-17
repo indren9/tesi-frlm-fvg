@@ -1,18 +1,20 @@
 TESI FRLM FVG — BUILD V5 / OVERLEAF APPEND-ONLY
 
 Authoritative source:
-  Tesi_FRLM_FVG.ipynb
+  C:\dev\tesi-frlm-fvg\00_NOTEBOOK\Tesi_FRLM_FVG.ipynb
 
-Kept locally:
-- Python
-- %USERPROFILE%\.venvs\tesi-build
+Dedicated runtime:
+  %USERPROFILE%\.venvs\tesi-build
+
+Required locally:
+- Python in tesi-build
 - nbconvert
 - ipykernel / Jupyter kernel tesi-build
 - Pandoc
 
 Not required:
 - MiKTeX
-- XeLaTeX
+- XeLaTeX locale
 - latexmk
 - Strawberry Perl
 
@@ -20,15 +22,12 @@ Canonical PDF compilation:
   Overleaf -> XeLaTeX
 
 Publishing policy:
-  Every PASS creates:
-    Output_Tesi\build_YYYYMMDD_HHMMSS\
+  Every PASS creates a new timestamped directory under:
+  TESI_THESIS_STORAGE\07_DELIVERIES\THESIS_BUILDS
 
-  No previous successful build directory is deleted, renamed, or overwritten.
-  This avoids OneDrive locking/Access Denied failures.
+No previous PASS directory is deleted, renamed or overwritten.
 
-Command:
-  $Base = "C:\Users\visen\OneDrive\Università\UniUD\Tesi\Prompt\Visualizzazioni jupyter e latex"
+Standard command:
+  & C:\dev\tesi-frlm-fvg\02_CODE\BUILD_TESI\build_tesi.ps1
 
-  & "$Base\Build_Tesi\build_tesi.ps1" `
-      -Notebook "$Base\Notebook\Tesi_FRLM_FVG.ipynb" `
-      -OutDir "$Base\Output_Tesi"
+The wrapper resolves the canonical notebook and persistent output directory automatically.
