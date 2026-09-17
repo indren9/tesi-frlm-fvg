@@ -1,9 +1,9 @@
 # TESI_RECORDKEEPING_PROTOCOL_V1
 
-**Project:** TESI FRLM FVG  
-**Status:** V1 — operational protocol  
-**Updated:** 2026-09-17  
-**Canonical scientific/methodological source:** `00_NOTEBOOK/Tesi_FRLM_FVG.ipynb`  
+**Project:** TESI FRLM FVG
+**Status:** V1 — operational protocol
+**Updated:** 2026-09-17
+**Canonical scientific/methodological source:** `00_NOTEBOOK/Tesi_FRLM_FVG.ipynb`
 **Principle:** minimum recordkeeping that preserves reproducibility, provenance and project memory without duplicating information.
 
 ---
@@ -265,8 +265,8 @@ The procedure is change-driven. Verify at least:
 8. next operational step.
 Set explicitly:
 
-`NOTEBOOK_CHANGE = YES / NO`  
-`REGISTER_CHANGE = YES / NO`  
+`NOTEBOOK_CHANGE = YES / NO`
+`REGISTER_CHANGE = YES / NO`
 `GIT_COMMIT_REQUIRED = YES / NO`
 
 All three may legitimately be `NO`.
