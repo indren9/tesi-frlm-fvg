@@ -51,3 +51,7 @@ I build PASS append-only sono conservati in `TESI_THESIS_STORAGE/07_DELIVERIES/T
 Il progetto `.qgz` vive in OneDrive sotto `Tesi_QGIS/01_progetto`.
 Dataset persistenti nuovi vanno in `TESI_THESIS_STORAGE`, mentre cache e temporanei QGIS restano locali.
 `Tesi_QGIS/02_package` non è più destinazione per nuovi dataset canonici.
+
+## Bibliografia e dati legacy
+
+`Ricerca bibliografica` contiene ora solo letteratura e riferimenti. La vecchia raccolta `Dataset - Dati grezzi` è stata spostata senza modificarne il contenuto in `TESI_THESIS_STORAGE/01_RAW/LEGACY_DATASET_COLLECTION`.
