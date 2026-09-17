@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 r"""Auto-watch del notebook autorevole della tesi.
 
-Osserva SOLO:
-    Notebook\Tesi_FRLM_FVG.ipynb
+Osserva SOLO il notebook canonico della repo:
+    00_NOTEBOOK\Tesi_FRLM_FVG.ipynb
 
 Quando il contenuto cambia realmente:
 - attende che il file sia stabile;
 - confronta SHA-256 con l'ultimo build PASS;
 - richiama la pipeline canonica build_tesi.py;
-- crea un nuovo Output_Tesi\build_YYYYMMDD_HHMMSS.
+- pubblica un nuovo build append-only in
+  TESI_THESIS_STORAGE\07_DELIVERIES\THESIS_BUILDS.
 
-V2: forza UTF-8 anche per il subprocess di build, così percorsi come
+Forza UTF-8 anche per il subprocess di build, così percorsi come
 "Università" restano corretti nei log.
 """
 
