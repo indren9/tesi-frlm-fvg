@@ -33,7 +33,7 @@ I file pesanti (GPKG, PBF, NPY, NPZ e grandi output GIS) restano fuori da Git e 
 - `delivery-october` = linea della delivery separata.
 - `main` = baseline comune consolidata.
 - `chore/repo-reorg` = riorganizzazione tecnica corrente.
-- `C:\dev\tesi-dirty-frlm` = repository storico del demonstrator; non è la repo canonica e non va cancellato finché l'archiviazione finale non è chiusa.
+- il vecchio repository operativo `tesi-dirty-frlm` è stato rimosso dal workspace locale dopo archiviazione verificata; storia Git completa, commit locale e scratch ignorati sono preservati in `90_ARCHIVE/GIT_HISTORY/tesi-dirty-frlm`.
 
 ## VS Code
 
