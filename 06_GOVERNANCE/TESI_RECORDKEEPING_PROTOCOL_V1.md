@@ -2,28 +2,34 @@
 
 **Project:** TESI FRLM FVG  
 **Status:** V1 — operational protocol  
-**Canonical scientific/methodological source:** `Tesi_FRLM_FVG.ipynb`  
-**Principle:** minimum recordkeeping that preserves reproducibility and project memory.
+**Updated:** 2026-09-17  
+**Canonical scientific/methodological source:** `00_NOTEBOOK/Tesi_FRLM_FVG.ipynb`  
+**Principle:** minimum recordkeeping that preserves reproducibility, provenance and project memory without duplicating information.
 
 ---
 
-## 1. Architecture
+## 1. Purpose and permanent memory
 
-The permanent memory of the project is split into three complementary layers:
+This protocol defines how the project identifies, stores, preserves and versions relevant scientific and technical artifacts.
+
+Permanent project memory is split into three complementary layers:
 
 1. **NOTEBOOK** — methodological/scientific authority.
-2. **ARTIFACT REGISTER** — canonical index of relevant artifacts.
-3. **GIT HISTORY** — version history of notebook, register, scripts, documentation and other suitable small files.
+2. **ARTIFACT REGISTER** — canonical lightweight index of relevant artifacts.
+3. **GIT HISTORY** — version history of notebook, register, scripts, governance, documentation and other suitable small files.
 
-Large/binary artifacts may remain outside Git. Their identity and location are preserved in the Artifact Register.
+Chat is a coordination environment, not sufficient permanent storage. Large/binary artifacts may remain outside Git; their identity, lifecycle state and location are preserved through the Artifact Register.
 
-Chat is a coordination environment, not sufficient permanent storage.
+This protocol is not a file inventory, a changelog, or a replacement for the authoritative notebook.
 
 ---
+## 2. Authoritative notebook
 
-## 2. What belongs in the notebook
+The only authoritative methodological/scientific notebook is:
 
-Write in `Tesi_FRLM_FVG.ipynb` only information that materially preserves:
+`00_NOTEBOOK/Tesi_FRLM_FVG.ipynb`
+
+The notebook preserves only information that materially affects project memory:
 
 - methodological decisions;
 - relevant scientific results;
@@ -32,196 +38,231 @@ Write in `Tesi_FRLM_FVG.ipynb` only information that materially preserves:
 - roadmap state;
 - references to important artifacts.
 
-Do **not** use the notebook as:
+It must not become a complete file inventory, console-log dump, collection of transient diagnostics, or duplicate of the Artifact Register.
 
-- a complete file inventory;
-- a console-log dump;
-- a repository of transient diagnostics;
-- a duplicate of the Artifact Register.
+Current internal roles:
 
-Integration with the existing notebook:
+- **§20** — consolidated decisions;
+- **§22** — open methodological/scientific questions;
+- **§23** — operational roadmap;
+- **§24** — concise update log.
 
-- **§20 — Decisioni metodologiche consolidate:** only consolidated methodological/project decisions.
-- **§22 — Questioni ancora aperte:** only unresolved methodological/scientific questions.
-- **§23 — Roadmap operativa:** current/next operational phase and material dependencies.
-- **§24 — Registro aggiornamenti:** concise record of meaningful notebook/project-state changes.
-
-If the notebook is modified, `build_tesi.py` must return `STATUS = PASS` before closure.
+If the notebook is modified, `build_tesi.py` must complete with `STATUS = PASS` before closure.
 
 ---
+## 3. Storage architecture
 
-## 3. What belongs in the Artifact Register
+### `C:\dev\tesi-frlm-fvg`
+Canonical Git repository for notebook, reproducible code, governance, Artifact Register and small versionable documentation/outputs. Heavy binaries are not added automatically to Git.
+
+### `TESI_BASELINE_SAFE`
+Physical common baseline **POST-5.8E / PRE-5.9D**. Treat it as an immutable historical baseline. Do not overwrite FROZEN material in place and do not silently rewrite baseline history.
+
+### `TESI_THESIS_STORAGE`
+Persistent thesis storage for post-baseline work and explicit preservation mirrors:
+
+- `01_RAW` — persistent inputs;
+- `03_CANONICAL_DATA` — canonical/current datasets;
+- `04_FROZEN_CHECKPOINTS` — FROZEN artifacts and verified preservation mirrors;
+- `07_DELIVERIES` — deliveries and append-only thesis builds.
+
+### `Tesi_QGIS`
+Lightweight QGIS workspace for active `.qgz` projects, styles/layouts and cartographic exports/QA. It is not the canonical long-term container for heavy datasets. `Tesi_QGIS/02_package` is legacy/deprecated for new canonical data.
+
+### `90_ARCHIVE`
+Historical/non-authoritative storage for legacy workspaces, superseded material, recovery packages, historical Git bundles and obsolete transfer packages when retention is justified.
+
+Archival presence does not make an artifact authoritative.
+
+---
+## 4. Artifact Register
+
+The single canonical register is:
+
+`06_GOVERNANCE/ARTIFACT_REGISTER.csv`
 
 Register an artifact only if losing its exact identity would make future recovery, verification or reuse materially difficult.
 
 Typical registered artifacts:
 
-- frozen/current datasets;
+- FROZEN datasets/packages;
+- important CURRENT canonical datasets;
 - matrices and graph packages;
 - canonical manifests;
-- final validation outputs needed as evidence;
-- models or result packages used downstream;
-- critical intermediate outputs that would be expensive or risky to reconstruct.
+- validation outputs required as evidence;
+- result/model packages used downstream;
+- critical intermediate artifacts expensive or risky to reconstruct.
 
-Do **not** register every temporary file, cache, exploratory export, scratch table or disposable log.
+Do not register every temporary file, cache, exploratory export, scratch table or routine log. No overlapping secondary artifact register should be created.
 
-The single canonical register is:
+Canonical location is identified by:
 
-`ARTIFACT_REGISTER.csv`
+`storage_root + logical_relative_path`
 
-No overlapping secondary artifact register should be created.
+An absolute Windows path may be contextual information, but must not be the artifact identity.
 
 ---
-
-## 4. Canonical Artifact Register schema
+## 5. Canonical Register schema
 
 Fields:
 
-- `artifact_id` — stable unique identifier for this artifact version.
-- `phase` — thesis/project phase that produced or governs the artifact.
-- `name` — short human-readable name.
-- `artifact_status` — lifecycle status.
-- `storage_root` — storage root, independent from the logical identity.
-- `logical_relative_path` — path relative to `storage_root`.
-- `version` — artifact version, normally `v01`, `v02`, ...
-- `source` — principal upstream source/artifact(s).
-- `producer` — script, notebook cell, pipeline step, or other producer.
-- `date` — materialization/freeze date in ISO `YYYY-MM-DD`.
-- `sha256` — SHA-256 when required/available.
-- `size_bytes` — exact byte size when useful and available.
-- `preservation_status` — `VERIFIED`, `TO_VERIFY`, or `N/A`.
+- `artifact_id` — stable unique identifier for this artifact version;
+- `phase` — thesis/project phase;
+- `name` — short human-readable name;
+- `artifact_status` — lifecycle status;
+- `storage_root` — logical storage root;
+- `logical_relative_path` — path relative to `storage_root`;
+- `version` — artifact version, normally `v01`, `v02`, ...;
+- `source` — principal upstream source/artifact(s);
+- `producer` — script, notebook cell or pipeline step;
+- `date` — materialization/freeze date in ISO `YYYY-MM-DD`;
+- `sha256` — SHA-256 when required/available;
+- `size_bytes` — exact byte size when useful;
+- `preservation_status` — `VERIFIED`, `TO_VERIFY`, or `N/A`;
 - `note` — short exceptional note only.
 
-`storage_root + logical_relative_path` is the canonical location reference.
-
-An absolute Windows path may be derivable from `storage_root`, but the artifact must not be identified by an absolute path alone.
+`artifact_id` must be unique per artifact version. Use a stable project-oriented identifier such as `F57_OD_PATH_SYSTEM_OSM_V01`.
 
 ---
 
-## 5. Artifact status semantics
+## 6. Artifact lifecycle states
 
-Allowed V1 statuses:
-
+Allowed states are `CURRENT`, `FROZEN`, `SUPERSEDED`, and `HISTORICAL_NON_AUTHORITATIVE`.
 ### CURRENT
-Authoritative artifact currently in active use but not frozen. It may be replaced by a later version.
+Authoritative artifact currently in active use but not frozen. It may later be replaced by a new version.
 
 ### FROZEN
-Approved immutable artifact. It must never be overwritten or regenerated in-place.
-
-A FROZEN artifact is authoritative for the scope in which it was frozen until explicitly superseded.
+Approved immutable artifact. It must never be overwritten or regenerated in place. It remains authoritative for the scope in which it was frozen until explicitly superseded.
 
 ### SUPERSEDED
 Previously authoritative artifact replaced by a newer artifact/version. It remains preserved for provenance.
 
 ### HISTORICAL_NON_AUTHORITATIVE
-Artifact retained only as historical evidence, rejected attempt, benchmark, or non-authoritative materialization.
+Material retained only as historical evidence, rejected attempt, benchmark, recovery source or non-authoritative materialization.
 
-Artifact status is distinct from gate status. A gate can be PASS/CLOSED while its artifacts have their own lifecycle states.
+Artifact lifecycle state is distinct from methodological gate status. A gate can be `PASS/CLOSED` while its artifacts independently have lifecycle states.
 
 ---
 
-## 6. Naming and versioning
+## 7. Versioning and no-overwrite rule
 
-For new artifacts, prefer:
-
-`<descriptive_name>_vNN.<ext>`
-
-Examples:
-
-`gravity_seed_fvg_v01.csv`  
-`external_gateway_paths_v02.npz`
+For new artifacts, prefer `<descriptive_name>_vNN.<ext>` with zero-padded versions `v01`, `v02`, ...
 
 Rules:
 
-- use zero-padded versions: `v01`, `v02`, ...;
-- do not encode `CURRENT`, `FINAL` or `FROZEN` in new filenames by default;
-- lifecycle state belongs in the Register;
-- do not rename legacy FROZEN artifacts merely to enforce the new convention;
-- correction of a FROZEN artifact requires a **new version**, never in-place overwrite;
-- when `v02` replaces `v01`, update `v01 → SUPERSEDED` and register `v02` separately.
+- lifecycle state belongs primarily in the Register, not in filenames;
+- do not rename legacy FROZEN artifacts only to enforce new naming conventions;
+- correction of a FROZEN artifact requires a **new version**;
+- when `v02` replaces `v01`, register `v02` separately and mark `v01` as `SUPERSEDED` where appropriate;
+- never overwrite a FROZEN artifact in place.
+If a FROZEN preservation mismatch is discovered:
 
-`artifact_id` should be unique per artifact version, e.g. `F57_OD_PATH_SYSTEM_OSM_V01`.
+1. do not silently repair the historical location;
+2. identify the expected byte-stream from authoritative manifest/provenance;
+3. preserve a verified copy separately when recoverable;
+4. document the incident;
+5. update the Register with the authoritative preservation location.
+
+The Phase 5.6 `G_OSM_operativo_v01.gpkg` incident is the reference implementation:
+
+`06_GOVERNANCE/INCIDENT_G_OSM_5_6_PRESERVATION_20260917.md`
 
 ---
 
-## 7. SHA-256 and preservation
+## 8. SHA-256 and preservation
 
-SHA-256 is **required** for:
+SHA-256 is required for critical FROZEN files, canonical manifests, and artifacts whose exact byte identity materially matters.
 
-- FROZEN critical files;
-- canonical manifests;
-- other artifacts whose exact byte identity matters.
+SHA-256 is optional for ordinary CURRENT files cheap to regenerate and non-critical documentation fully versioned by Git.
 
-SHA-256 is optional for:
-
-- ordinary CURRENT files that are cheap to regenerate;
-- non-critical small documentation already fully versioned by Git.
-
-For a directory/package without one canonical byte stream:
+For a directory/package without one canonical byte-stream:
 
 - do not invent a directory SHA;
 - register the package as a logical artifact;
 - use a canonical manifest containing member hashes when available;
 - register the manifest hash.
 
-A hash is an identity check, **not a backup**.
+A hash identifies bytes; it is **not a backup**.
+Before a FROZEN/critical artifact is considered fully preserved, verify when applicable:
 
-Before treating a FROZEN/critical artifact as fully closed, verify:
+1. physical existence at the registered location;
+2. expected byte identity/hash;
+3. actual recoverability/preservation.
 
-1. the artifact actually exists at the registered location;
-2. its expected bytes/hash are recoverable where applicable;
-3. preservation/back-up availability has been checked.
-
-Until this has been directly verified, use:
-
-`preservation_status = TO_VERIFY`
-
-Do not infer `VERIFIED` from a hash alone.
+Until verified, use `preservation_status = TO_VERIFY`. Do not infer `VERIFIED` from a recorded hash alone.
 
 ---
 
-## 8. Temporary outputs and logs
+## 9. Temporary outputs, logs and recovery packages
 
-### TEMPORARY
-A file is temporary when:
+A file is temporary when it is cheap to reproduce, has no independent downstream value, and its exact bytes are irrelevant. Temporary files are not individually registered.
 
-- it is reproducible at low cost;
-- it has no independent historical or downstream value;
-- its exact byte identity is not important.
+Preserve a log/report only when it contains evidence not adequately stored elsewhere, such as parameters, environment identity, cardinality checks, validation results, or freeze/hash verification.
 
-Temporary files are not individually registered.
+A recovered ZIP/workspace is normally:
 
-### LOG / EVIDENCE
-Preserve a log/report only when it provides evidence not already adequately stored elsewhere, for example:
+`HISTORICAL_NON_AUTHORITATIVE`
 
-- command/parameters;
-- environment;
-- cardinality checks;
-- validation results;
-- freeze verification;
-- hash verification.
+until selected contents are independently verified and intentionally promoted/materialized.
 
-Do not create permanent logs for routine runs merely because they exist.
+Recovery packages should remain intact when they provide rollback/provenance value. Selective materialization is preferred to restoring an entire obsolete workspace.
 
 ---
 
-## 9. SESSION CLOSE PROCEDURE V1
+## 10. QGIS recordkeeping
+QGIS is used for visualization, QA and cartography; Python remains the reproducible computational layer.
+
+Rules:
+
+- active `.qgz` projects may be `CURRENT` artifacts when operationally important;
+- persistent heavy data belongs in `TESI_THESIS_STORAGE` or registered FROZEN storage, not in the QGIS workspace by default;
+- recovered QGIS projects must have datasource paths remapped to current registered/canonical storage;
+- legacy `02_package` paths are not reused for new canonical datasets;
+- caches and disposable processing outputs remain outside permanent storage when possible.
+
+A recovery ZIP remains historical even if selected projects/datasets extracted from it become CURRENT.
+
+---
+
+## 11. Git recordkeeping
+
+Current branch roles are governed separately by `06_GOVERNANCE/GIT_BASELINE_ROADMAP_V1.md`.
+
+Operationally:
+
+- `main` — consolidated common baseline;
+- `thesis` — stable scientific thesis line;
+- feature branches — scientific WIP;
+- `delivery-october` — delivery-specific line;
+- `chore/repo-reorg` — technical reorganization branch until closure.
+
+Rules:
+- use explicit staging only;
+- do not use `git add .` by default;
+- do not merge, rebase, reset or delete branches without preflight and explicit approval;
+- heavy binary artifacts are not automatically committed;
+- Git history complements, but does not replace, physical preservation of heavy/FROZEN artifacts.
+
+Historical repositories no longer used operationally may be retired only after their Git history and any unique non-versioned material have been preserved and verified.
+
+---
+
+## 12. SESSION CLOSE procedure
 
 Explicit trigger:
 
 `SESSION CLOSE`
 
-The procedure is **change-driven**.
+The procedure is change-driven. Verify at least:
 
-### Step 1 — Determine what actually changed
-Reconstruct the completed task and identify:
-
-- decisions/results;
-- artifacts created or changed;
-- methodological memory;
-- downstream impact.
-
-### Step 2 — Decide whether permanent changes are required
+1. what actually changed;
+2. decisions/results produced;
+3. artifacts to preserve;
+4. artifact lifecycle state;
+5. whether notebook update is required;
+6. whether Artifact Register update is required;
+7. whether a Git commit is required;
+8. next operational step.
 Set explicitly:
 
 `NOTEBOOK_CHANGE = YES / NO`  
@@ -230,154 +271,25 @@ Set explicitly:
 
 All three may legitimately be `NO`.
 
-### Step 3 — Artifact check
-For every relevant artifact:
+For relevant artifacts:
 
-- determine status;
 - ensure no FROZEN artifact was overwritten;
-- register new/superseded artifacts only when needed;
-- calculate SHA-256 where required;
-- verify preservation for FROZEN/critical artifacts when operational access permits.
+- calculate SHA-256 when required;
+- verify preservation when applicable;
+- register new or superseded artifacts only when needed.
 
-### Step 4 — Notebook check
-Update the notebook only if new permanent methodological/scientific memory exists.
+If the notebook changed, `build_tesi.py → STATUS = PASS` is mandatory.
 
-Use §20/§22/§23/§24 according to their existing roles.
+Use explicit Git staging of only relevant files. Do not create a separate permanent SESSION_CLOSE report by default.
 
-If modified:
-
-`build_tesi.py → STATUS = PASS`
-
-is mandatory.
-
-### Step 5 — Git check
-Git actions occur only if there are relevant versionable changes.
-
-The future `delivery-october` / `thesis` strategy is not assumed until separately defined.
-
-If the Git target is required but cannot be determined safely, ask Andrea.
-
-Use explicit staging only:
-
-`git add <file1> <file2>`
-
-Never default to:
-
-`git add .`
-
-If direct repository access is unavailable, provide the exact Bash commands Andrea must run.
-
-### Step 6 — Final closure output
-Return a compact closure containing:
-
-- task/result;
-- `NOTEBOOK_CHANGE`;
-- `REGISTER_CHANGE`;
-- `GIT_COMMIT_REQUIRED`;
-- artifacts affected and status;
-- build status if applicable;
-- preservation verification status if applicable;
-- explicit files to version if any;
-- next operational step.
-
-Do not create a separate permanent SESSION_CLOSE report by default.
+Notebook + Artifact Register + Git history normally constitute the permanent closure memory.
 
 ---
 
-## 10. Git rules before the historical baseline is defined
+## 13. Scope and maintenance
 
-Allowed now:
+This protocol governs recordkeeping and storage discipline only.
 
-- design the set of files that should eventually be versioned;
-- create/update the canonical Register;
-- prepare explicit staging/commit commands when relevant.
+It does not reopen scientific/methodological gates and does not replace phase-specific methodology in the authoritative notebook.
 
-Not allowed to assume or implement without the separate Git-baseline task:
-
-- existence of `delivery-october` or `thesis` branches;
-- historical fork point;
-- branch creation;
-- merge/cherry-pick policy;
-- baseline reconstruction strategy.
-
-Heavy binary artifacts are not automatically added to normal Git history.
-
----
-
-## 11. Pilot test — Fase 5.7 OD PATH SYSTEM
-
-The pilot uses the already frozen Phase 5.7 without modifying its artifacts.
-
-The notebook identifies:
-
-- `FASE 5.7 = CLOSED / FROZEN`;
-- `OD_PATH_SYSTEM_OSM = FROZEN`;
-- canonical impedance `TIME_B5`;
-- `PRODUCT_LAMBDA_PATH_WEIGHTS = FROZEN`;
-- 46,010 ordered municipal OD;
-- 414,090 access-pair paths;
-- final package at `C:\Tesi\Tesi_QGIS\02_package\od_paths_osm_light\`;
-- canonical manifest `OSM_OD_PATHS_manifest_v01.json`;
-- manifest SHA-256 `9c3279c604685dbb8ebf52d18910658efc5fb7fe0ab1069d36d313476abb8fff`.
-
-The V1 Register records the package as one logical artifact plus its canonical manifest.
-
-This is intentionally **not** a row-per-file inventory.
-
-### Pilot recovery result
-
-Using only notebook + register, V1 can quickly recover:
-
-- **what was done:** persistent internal FVG OSM OD path system;
-- **correct artifact:** `F57_OD_PATH_SYSTEM_OSM_V01`;
-- **where:** `C:\Tesi\Tesi_QGIS\02_package` + `od_paths_osm_light`;
-- **frozen version:** `v01`;
-- **integrity reference:** canonical manifest and its SHA-256;
-- **associated methodological decision:** Phase 5.7 frozen with `TIME_B5` and PRODUCT-LAMBDA.
-
-One gap is intentionally exposed by the pilot:
-
-- the exact producer **script filename** is not recoverable from the notebook material inspected for Phase 5.7.
-
-Therefore the Register records the producer at pipeline level and marks the exact script identity as unresolved. This is a useful V1 rule: future permanent artifacts should record the real producer script at materialization/Session Close time instead of trying to reconstruct it months later.
-
-Preservation status is `TO_VERIFY` because this chat does not have operational access to the actual frozen package storage.
-
-**Pilot verdict: PASS WITH TWO OPERATIONAL FOLLOW-UPS**
-1. verify physical preservation of the frozen Phase 5.7 package;
-2. recover the exact producer script only if it can be done cheaply during the future baseline/workspace audit.
-
-Neither follow-up reopens or modifies Phase 5.7.
-
----
-
-## 12. Implementation plan
-
-### Implemented in V1
-- canonical protocol defined;
-- canonical CSV Register created;
-- schema and lifecycle status fixed;
-- Session Close procedure defined;
-- Phase 5.7 pilot inserted into the Register.
-
-### Next implementation steps
-1. Place `ARTIFACT_REGISTER.csv` in the future Git-controlled thesis project root during the Git-baseline task.
-2. Verify `storage_root` conventions against the real workspace.
-3. Verify preservation for the pilot FROZEN artifacts.
-4. During baseline reconstruction, add only significant CURRENT/FROZEN/SUPERSEDED/HISTORICAL artifacts worth recovering.
-5. Do not attempt to inventory every historical temporary file.
-6. Start using `SESSION CLOSE` prospectively after the baseline strategy is ratified.
-
----
-
-## 13. Structural decisions still outside this mandate
-
-Still reserved to Chat Madre / separate Git-baseline task:
-
-- historical Git baseline;
-- exact repository root;
-- creation/existence of `delivery-october` and `thesis`;
-- fork point and branch policy;
-- merge/cherry-pick/synchronization policy.
-
-No scientific or methodological gate is reopened by this protocol.
+Update this protocol only when project-wide recordkeeping/storage rules materially change. Do not update it for ordinary artifact additions, routine runs or phase-local scientific decisions.
