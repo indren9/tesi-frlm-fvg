@@ -1,5 +1,15 @@
 # GIT_BASELINE_ROADMAP_V1
 
+## CURRENT BRANCH STATUS — 17 settembre 2026
+
+- `thesis` = `0d76c06` — notebook autorevole v0.37 + Heavy 6.0 riconciliato.
+- `feat/heavy-od` = `0d76c06` — feature Heavy chiusa allo stesso commit.
+- `delivery-october` = `2ada62e` — linea delivery separata dalla common baseline.
+- `main` = `2ada62e` — common baseline governance.
+- `chore/repo-reorg` = branch tecnico dedicato alla riorganizzazione; non modifica la metodologia scientifica.
+
+Il common baseline storico resta `d35d9ac` / tag `baseline-post-5.8E-pre-5.9D`. Questa sezione descrive gli HEAD correnti e non modifica la decisione storica di baseline.
+
 ## FINAL BASELINE DECISION — 10 settembre 2026
 
 Questa sezione SUPERA le conclusioni preliminari di ricostruzione
