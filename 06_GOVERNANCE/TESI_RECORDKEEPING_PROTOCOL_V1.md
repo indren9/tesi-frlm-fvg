@@ -2,7 +2,7 @@
 
 **Project:** TESI FRLM FVG
 **Status:** V1 — operational protocol
-**Updated:** 2026-09-17
+**Updated:** 2026-09-25
 **Canonical scientific/methodological source:** `00_NOTEBOOK/Tesi_FRLM_FVG.ipynb`
 **Principle:** minimum recordkeeping that preserves reproducibility, provenance and project memory without duplicating information.
 
@@ -74,6 +74,20 @@ Historical/non-authoritative storage for legacy workspaces, superseded material,
 
 Archival presence does not make an artifact authoritative.
 
+### 3.1 Canonical storage-root resolver
+
+`storage_root` values in the Artifact Register are logical identities. Resolve them through this compact canonical map before accessing storage; do not replace them with absolute Windows paths.
+
+| storage_root | provider | cloud-relative root | role |
+| --- | --- | --- | --- |
+| `TESI_BASELINE_SAFE` | OneDrive | `Università/UniUD/Tesi/TESI_BASELINE_SAFE` | Immutable common baseline and FROZEN checkpoints. |
+| `TESI_THESIS_STORAGE` | OneDrive | `Università/UniUD/Tesi/TESI_THESIS_STORAGE` | Persistent thesis storage for raw, canonical/current, FROZEN preservation and deliveries. |
+| `Tesi_QGIS` | OneDrive | `Università/UniUD/Tesi/Tesi_QGIS` | Active lightweight QGIS workspace; not the canonical heavy-data store. |
+| `90_ARCHIVE` | OneDrive | `Università/UniUD/Tesi/90_ARCHIVE` | Historical/non-authoritative archive and rollback material. |
+| `tesi-frlm-fvg` | Git/GitHub | `indren9/tesi-frlm-fvg` | Canonical Git repository for notebook, code, governance, Register and versionable documentation. |
+
+A local Windows worktree or synced OneDrive path may be used as an operational hint after the logical root has been resolved, but it is not authoritative identity.
+
 ---
 ## 4. Artifact Register
 
@@ -100,6 +114,23 @@ Canonical location is identified by:
 `storage_root + logical_relative_path`
 
 An absolute Windows path may be contextual information, but must not be the artifact identity.
+
+### 4.1 Artifact retrieval — Register first
+
+Before physically searching for an existing project artifact:
+
+1. identify the requested artifact or function;
+2. consult `06_GOVERNANCE/ARTIFACT_REGISTER.csv`;
+3. resolve the applicable `CURRENT`/`FROZEN` `artifact_id`;
+4. read `storage_root + logical_relative_path`;
+5. resolve `storage_root` through the canonical storage-root map in §3.1;
+6. if the artifact is a package, consult its registered manifest before searching storage;
+7. verify physical existence and hash only when necessary;
+8. search by filename in OneDrive, filesystem, cloud storage or another workspace only when Register + manifest do not resolve the target;
+9. for cross-project artifacts, follow the pointer to the authoritative registry of the source project instead of duplicating the source registry or files by default;
+10. never reconstruct an artifact that is already registered and never choose arbitrarily among homonymous copies.
+
+Filename search is therefore a fallback, not the first retrieval step.
 
 ---
 ## 5. Canonical Register schema
