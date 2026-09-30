@@ -2,7 +2,7 @@
 
 Status: CURRENT / APPROVED
 Decision authority: Andrea
-Governance decisions: D57, D58, D59, D69-D80
+Governance decisions: D57, D58, D59, D69-D81
 Branch: thesis
 Date: 2026-09-30
 
@@ -41,6 +41,7 @@ MODEL V1 does not reopen the following:
 - New infrastructure may be physically realized only inside the Friuli Venezia Giulia perimeter (D76). An edge wholly outside FVG is ineligible; for an edge crossing the regional boundary, only its internal portion is admissible and the physical witness must lie on that portion.
 - On motorway TEN-T mainline arcs no new LIGHT infrastructure is placed. TEN-T charging opportunities are realized off-mainline through direction-compatible TEN-T exits (D78-D80).
 - An off-mainline TEN-T charging opportunity must be within 3 km driving distance from the pertinent TEN-T exit. AFIR is a hard overlapping constraint on TEN-T: consecutive AFIR opportunities are limited to 60 km, using the operational road distance including both access legs and the TEN-T section between exits (D80).
+- AFIR 2030 pool power is hard: on TEN-T Core, each direction requires at least 600 kW per pool and at least two recharging points of at least 150 kW each; on TEN-T Comprehensive, each direction requires at least 300 kW per pool and at least one recharging point of at least 150 kW (D81).
 
 D59 supersedes D46-D48 and amends D57 only on the definition of the planning unit. The feasibility/minimax/traffic-weighted structure of D57 remains current.
 
@@ -110,7 +111,7 @@ At minimum:
 
 g_p <= 100 km for every p in P+
 
-Other hard constraints are enforced according to their approved contracts, including D38, D50, D59 and D69-D80. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D77; new infrastructure realizations are restricted to the FVG perimeter under D76; and AFIR TEN-T is a hard overlapping constraint under D78-D80.
+Other hard constraints are enforced according to their approved contracts, including D38, D50, D59 and D69-D81. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D77; new infrastructure realizations are restricted to the FVG perimeter under D76; and AFIR TEN-T is a hard overlapping constraint under D78-D80.
 
 No feasible starting solution is required. The solver/search may reallocate any of the 611 new infrastructures until feasibility is found.
 
