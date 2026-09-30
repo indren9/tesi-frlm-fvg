@@ -2,7 +2,7 @@
 
 Status: CURRENT / APPROVED
 Decision authority: Andrea
-Governance decisions: D57, D58, D59, D69-D76
+Governance decisions: D57, D58, D59, D69-D80
 Branch: thesis
 Date: 2026-09-30
 
@@ -37,7 +37,10 @@ MODEL V1 does not reopen the following:
 - Existing infrastructure is fixed and is not moved or artificially grouped.
 - PUN power accounting follows D40-D42. For the longitudinal 100 km gap, only the 61 PUN locations validated under D70-D73 may contribute; the 29 unresolved locations remain in power accounting but do not interrupt path gaps.
 - Territorial coverage B3 applies to all 215 FVG municipalities (D75). For municipality c, coverage uses the minimum physical network distance from its three frozen Gamma_OSM accesses: d_c(x) = min_{a in Gamma_c} d_G(a,x), with a 10 km threshold (D74). This is separate preprocessing on the frozen LIGHT network and does not reroute canonical OD paths.
+- Existing PUN territorial contribution follows D77: the 61 validated positions may satisfy B3; the other 29 positions do not count for B3.
 - New infrastructure may be physically realized only inside the Friuli Venezia Giulia perimeter (D76). An edge wholly outside FVG is ineligible; for an edge crossing the regional boundary, only its internal portion is admissible and the physical witness must lie on that portion.
+- On motorway TEN-T mainline arcs no new LIGHT infrastructure is placed. TEN-T charging opportunities are realized off-mainline through direction-compatible TEN-T exits (D78-D80).
+- An off-mainline TEN-T charging opportunity must be within 3 km driving distance from the pertinent TEN-T exit. AFIR is a hard overlapping constraint on TEN-T: consecutive AFIR opportunities are limited to 60 km, using the operational road distance including both access legs and the TEN-T section between exits (D80).
 
 D59 supersedes D46-D48 and amends D57 only on the definition of the planning unit. The feasibility/minimax/traffic-weighted structure of D57 remains current.
 
@@ -95,7 +98,7 @@ edge_id
 -> admissible physical realization on the edge
 -> longitudinal contribution to the path gap
 
-Assignment to an edge alone does not automatically cover every path traversing that edge. The selected physical realization must actually be traversed by the canonical path for that infrastructure to interrupt its gap.
+Assignment to an edge alone does not automatically cover every path traversing that edge. For ordinary non-TEN-T siting, the selected physical realization must be traversed by the canonical path. For TEN-T off-mainline siting, D78-D80 define the exception: the canonical path must traverse the direction-compatible exit relation, and the longitudinal distance includes the road access leg between exit and station.
 
 ## 6. Phase I - feasibility
 
@@ -107,7 +110,7 @@ At minimum:
 
 g_p <= 100 km for every p in P+
 
-Other hard constraints are enforced according to their approved contracts, including D38, D50, D59 and D69-D76. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D75, and new infrastructure realizations are restricted to the FVG perimeter under D76. AFIR enters only when its LIGHT interpretation is deterministic and approved.
+Other hard constraints are enforced according to their approved contracts, including D38, D50, D59 and D69-D80. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D77; new infrastructure realizations are restricted to the FVG perimeter under D76; and AFIR TEN-T is a hard overlapping constraint under D78-D80.
 
 No feasible starting solution is required. The solver/search may reallocate any of the 611 new infrastructures until feasibility is found.
 
