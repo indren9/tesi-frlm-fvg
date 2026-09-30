@@ -2,9 +2,9 @@
 
 Status: CURRENT / APPROVED
 Decision authority: Andrea
-Governance decisions: D57, D58, D59
+Governance decisions: D57, D58, D59, D69-D76
 Branch: thesis
-Date: 2026-09-23
+Date: 2026-09-30
 
 ## 1. Purpose
 
@@ -35,7 +35,9 @@ MODEL V1 does not reopen the following:
 - A physical realization must lie on the geometry of the selected edge (D59).
 - A facility contributes to a path only if that canonical path actually traverses its physical realization (D59, preserving the D48 principle).
 - Existing infrastructure is fixed and is not moved or artificially grouped.
-- PUN power accounting follows D40-D42. Geographic/path contribution of existing PUN is not inferred unless separately approved and verified.
+- PUN power accounting follows D40-D42. For the longitudinal 100 km gap, only the 61 PUN locations validated under D70-D73 may contribute; the 29 unresolved locations remain in power accounting but do not interrupt path gaps.
+- Territorial coverage B3 applies to all 215 FVG municipalities (D75). For municipality c, coverage uses the minimum physical network distance from its three frozen Gamma_OSM accesses: d_c(x) = min_{a in Gamma_c} d_G(a,x), with a 10 km threshold (D74). This is separate preprocessing on the frozen LIGHT network and does not reroute canonical OD paths.
+- New infrastructure may be physically realized only inside the Friuli Venezia Giulia perimeter (D76). An edge wholly outside FVG is ineligible; for an edge crossing the regional boundary, only its internal portion is admissible and the physical witness must lie on that portion.
 
 D59 supersedes D46-D48 and amends D57 only on the definition of the planning unit. The feasibility/minimax/traffic-weighted structure of D57 remains current.
 
@@ -81,6 +83,8 @@ For every canonical positive-flow path p:
 
 g_p = maximum longitudinal interval without a valid charging opportunity along p
 
+Under D69, the interval is evaluated on the full canonical origin-to-destination path, including origin -> first charging opportunity and last charging opportunity -> destination.
+
 The gap is a property of the ordered canonical path. It is not one OSM edge and it is not a customer-to-facility distance.
 
 Because the planning unit is one edge, the first computational mapping is direct in identity but still path-dependent:
@@ -103,7 +107,7 @@ At minimum:
 
 g_p <= 100 km for every p in P+
 
-Other hard constraints are enforced according to their approved contracts, including D38, D50 and D59. Territorial coverage and AFIR enter only where their LIGHT interpretation is deterministic and approved.
+Other hard constraints are enforced according to their approved contracts, including D38, D50, D59 and D69-D76. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D75, and new infrastructure realizations are restricted to the FVG perimeter under D76. AFIR enters only when its LIGHT interpretation is deterministic and approved.
 
 No feasible starting solution is required. The solver/search may reallocate any of the 611 new infrastructures until feasibility is found.
 
@@ -198,7 +202,7 @@ Next work:
 2. test Phase I feasibility with exactly 611;
 3. define the dynamic constraint/cut strategy;
 4. define the auxiliary geometric feasibility check on selected edges;
-5. close remaining deterministic LIGHT contracts for territorial/AFIR constraints;
+5. materialize the approved B3 territorial preprocessing and close the remaining deterministic LIGHT AFIR contract;
 6. only if useful, evaluate a later edge-aggregation reduction with equivalence checks.
 
 No corrective deployment rerun or canonical promotion occurs before these gates are closed.
