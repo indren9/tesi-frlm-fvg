@@ -2,7 +2,7 @@
 
 Status: CURRENT / APPROVED
 Decision authority: Andrea
-Governance decisions: D57, D58, D59, D69-D83
+Governance decisions: D57, D58, D59, D69-D84
 Branch: thesis
 Date: 2026-10-01
 
@@ -42,6 +42,7 @@ MODEL V1 does not reopen the following:
 - On motorway TEN-T mainline arcs no new LIGHT infrastructure is placed. TEN-T charging opportunities are realized off-mainline through direction-compatible TEN-T exits (D78-D80).
 - An off-mainline TEN-T charging opportunity must be within 3 km driving distance from the pertinent TEN-T exit. AFIR is a hard overlapping constraint on TEN-T: consecutive AFIR opportunities are limited to 60 km, using the operational road distance including both access legs and the TEN-T section between exits (D80).
 - AFIR 2030 pool power is hard: on TEN-T Core, each direction requires at least 600 kW per pool and at least two recharging points of at least 150 kW each; on TEN-T Comprehensive, each direction requires at least 300 kW per pool and at least one recharging point of at least 150 kW (D81).
+- AFIR pool micro-siting is an execution-level requirement (D84): when multiple new D51/D82 stations are marked as one AFIR pool, they must ultimately be realized in the same physically identifiable AFIR specific location. MODEL V1 does not choose parcel/parking-bay geometry. Same TEN-T exit or mere proximity is not sufficient by itself to establish one pool; existing PUN are not artificially grouped.
 
 D59 supersedes D46-D48 and amends D57 only on the definition of the planning unit. The feasibility/minimax/traffic-weighted structure of D57 remains current.
 
@@ -56,6 +57,8 @@ Subject to:
 sum_e n_e = 611
 
 All 611 new infrastructures remain reallocatable during optimization. They are not inserted greedily and frozen one by one.
+
+For reporting, a selected unit may be exposed as readable attributes such as comune + edge_id + direzione, while edge_id remains the canonical decision identity. Where 2 or 4 new stations are assigned to satisfy one AFIR pool, the optimization marks them as belonging to one pool; the exact common specific location is deferred to execution under D84.
 
 An edge is not automatically one physical point. If n_e > 1, one or more physical realizations on that edge may be required. Every physical point remains subject to the D83 cap of at most 4 new infrastructures, and distinct relevant physical positions remain subject to D50.
 
@@ -111,7 +114,7 @@ At minimum:
 
 g_p <= 100 km for every p in P+
 
-Other hard constraints are enforced according to their approved contracts, including D50, D59, D69-D83. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D77; new infrastructure realizations are restricted to the FVG perimeter under D76; and AFIR TEN-T is a hard overlapping constraint under D78-D80.
+Other hard constraints are enforced according to their approved contracts, including D50, D59, D69-D84. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D77; new infrastructure realizations are restricted to the FVG perimeter under D76; and AFIR TEN-T is a hard overlapping constraint under D78-D80.
 
 No feasible starting solution is required. The solver/search may reallocate any of the 611 new infrastructures until feasibility is found.
 
