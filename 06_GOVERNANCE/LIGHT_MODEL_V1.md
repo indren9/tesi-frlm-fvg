@@ -2,7 +2,7 @@
 
 Status: CURRENT / APPROVED
 Decision authority: Andrea
-Governance decisions: D57, D58, D59, D69-D81
+Governance decisions: D57, D58, D59, D69-D82
 Branch: thesis
 Date: 2026-09-30
 
@@ -24,7 +24,7 @@ The physical point is not the planning unit. Geometry is auxiliary and is used o
 
 MODEL V1 does not reopen the following:
 - N_new = 611.
-- Each new infrastructure = 150 kW total nominal power and 2 charging points.
+- Each new infrastructure remains a 150 kW-total recharging station with 2 charging points (D51). Under D82, those two points are treated as two AFIR recharging points, each with individual power output >=150 kW, while the station total power output remains 150 kW shared; simultaneous 150+150 kW delivery is not required.
 - Maximum 3 new infrastructures co-located at one physical point (D38).
 - Canonical LIGHT OD/path system is FROZEN; no rerouting.
 - Only paths with path_flow_veh_day > 0 enter the longitudinal 100 km constraint (D43).
@@ -111,7 +111,7 @@ At minimum:
 
 g_p <= 100 km for every p in P+
 
-Other hard constraints are enforced according to their approved contracts, including D38, D50, D59 and D69-D81. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D77; new infrastructure realizations are restricted to the FVG perimeter under D76; and AFIR TEN-T is a hard overlapping constraint under D78-D80.
+Other hard constraints are enforced according to their approved contracts, including D38, D50, D59 and D69-D82. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D77; new infrastructure realizations are restricted to the FVG perimeter under D76; and AFIR TEN-T is a hard overlapping constraint under D78-D80.
 
 No feasible starting solution is required. The solver/search may reallocate any of the 611 new infrastructures until feasibility is found.
 
