@@ -2,7 +2,7 @@
 
 Status: CURRENT / APPROVED
 Decision authority: Andrea
-Governance decisions: D57, D58, D59, D69-D84
+Governance decisions: D57, D58, D59, D69-D85
 Branch: thesis
 Date: 2026-10-01
 
@@ -62,6 +62,21 @@ For reporting, a selected unit may be exposed as readable attributes such as com
 
 An edge is not automatically one physical point. If n_e > 1, one or more physical realizations on that edge may be required. Every physical point remains subject to the D83 cap of at most 4 new infrastructures, and distinct relevant physical positions remain subject to D50.
 
+### 3.1 B5 physical realization encoding — CLOSED / D85
+
+B5 adopts an adapted Heavy D34 Selective Exact Expansion principle.
+
+- `edge_id` and `n_e` remain the canonical planning decisions.
+- No universal continuous coordinate, metric grid, sampling lattice or manually selected candidate point is introduced.
+- Each hard-constraint instance is screened on the admissible edge geometry with exact min/max bounds and classified as `ROBUST_COMPATIBLE`, `INCOMPATIBLE` or `LOCATION_SENSITIVE`.
+- Only `LOCATION_SENSITIVE` instances activate a continuous physical witness.
+- The same witness must satisfy all applicable hard constraints simultaneously.
+- One witness may host 1–4 new stations under D83.
+- If `n_e > 4`, or feasibility genuinely requires more than one physical point on the same edge, multiple witnesses are allowed; each hosts at most 4 stations and distinct witnesses must satisfy D50 and all other geographic/directional gates.
+- Witness coordinates are mathematical feasibility certificates only, not executive construction locations; D84 remains controlling for AFIR micro-siting.
+
+The exact variable implementation, linearizations and constraint-generation mechanics belong to B6 and may not change this B5 semantic contract.
+
 ## 4. Edge identity and future aggregation
 
 Primary technical key:
@@ -114,7 +129,7 @@ At minimum:
 
 g_p <= 100 km for every p in P+
 
-Other hard constraints are enforced according to their approved contracts, including D50, D59, D69-D84. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D77; new infrastructure realizations are restricted to the FVG perimeter under D76; and AFIR TEN-T is a hard overlapping constraint under D78-D80.
+Other hard constraints are enforced according to their approved contracts, including D50, D59, D69-D85. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D77; new infrastructure realizations are restricted to the FVG perimeter under D76; and AFIR TEN-T is a hard overlapping constraint under D78-D80.
 
 No feasible starting solution is required. The solver/search may reallocate any of the 611 new infrastructures until feasibility is found.
 
@@ -204,12 +219,12 @@ MODEL V1 does not:
 
 ## 13. Current implementation gate
 
-Next work:
-1. materialize/verify the edge_id -> canonical path/sub-path longitudinal mapping;
-2. test Phase I feasibility with exactly 611;
-3. define the dynamic constraint/cut strategy;
-4. define the auxiliary geometric feasibility check on selected edges;
-5. materialize the approved B3 territorial preprocessing and close the remaining deterministic LIGHT AFIR contract;
+Current sequence:
+1. B5 physical realization encoding = CLOSED / D85;
+2. resolve ISS-003 on local over-clustering before the canonical Phase I run;
+3. define B6 computational architecture while preserving D85 semantics;
+4. run Phase I feasibility with exactly 611;
+5. if feasible, continue with Phase II-A and Phase II-B;
 6. only if useful, evaluate a later edge-aggregation reduction with equivalence checks.
 
 No corrective deployment rerun or canonical promotion occurs before these gates are closed.
