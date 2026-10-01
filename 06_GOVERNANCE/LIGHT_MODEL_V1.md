@@ -2,7 +2,7 @@
 
 Status: CURRENT / APPROVED
 Decision authority: Andrea
-Governance decisions: D57, D58, D59, D69-D85
+Governance decisions: D57, D58, D59, D69-D86
 Branch: thesis
 Date: 2026-10-01
 
@@ -221,10 +221,11 @@ MODEL V1 does not:
 
 Current sequence:
 1. B5 physical realization encoding = CLOSED / D85;
-2. resolve ISS-003 on local over-clustering before the canonical Phase I run;
+2. ISS-003 local over-clustering = DEFERRED / NOT CANCELLED under D86; it does not block B6 or the first diagnostic Phase I run;
 3. define B6 computational architecture while preserving D85 semantics;
-4. run Phase I feasibility with exactly 611;
-5. if feasible, continue with Phase II-A and Phase II-B;
-6. only if useful, evaluate a later edge-aggregation reduction with equivalence checks.
+4. run the first diagnostic Phase I feasibility with exactly 611;
+5. reassess ISS-003 after the first Phase I result and before canonical/final LIGHT promotion;
+6. if feasible and governance gates are satisfied, continue with Phase II-A and Phase II-B;
+7. only if useful, evaluate a later edge-aggregation reduction with equivalence checks.
 
 No corrective deployment rerun or canonical promotion occurs before these gates are closed.
