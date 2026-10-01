@@ -2,7 +2,7 @@
 
 Status: CURRENT / APPROVED
 Decision authority: Andrea
-Governance decisions: D57, D58, D59, D69-D86
+Governance decisions: D57, D58, D59, D69-D87
 Branch: thesis
 Date: 2026-10-01
 
@@ -165,18 +165,18 @@ The second stage may accept a larger gap on a lower-flow path in exchange for a 
 
 Traffic therefore refines the solution after fairness; it cannot sacrifice any path beyond the G* ceiling.
 
-## 9. Computational architecture - open
+## 9. Computational architecture - B6-A APPROVED / B6-B OPEN
 
-The mathematical objective and sequencing are approved. The exact solver architecture is not yet canonized.
+D87 approves the B6-A architecture for the first diagnostic Phase I run:
+- discrete MILP master on `edge_id` / `n_e`, with `sum_e n_e = 611`;
+- B3 and the finite AFIR contract represented upfront after deterministic preprocessing;
+- LIGHT 100 km path-gap constraints handled by outer row generation rather than full upfront materialization;
+- D85 Selective Exact Expansion preserved: continuous witnesses appear only for `LOCATION_SENSITIVE` instances;
+- common geometric feasibility, including D50, is checked by a logic-based geometry oracle that may return only logically justified conflict/no-good cuts.
 
-H-061 identifies relevant families:
-- full-cover path/sub-path covering;
-- fixed-threshold covering with constraint/row generation;
-- Branch-and-Cut with dynamic separation;
-- Benders decomposition;
-- Logic-Based Benders for edge allocation versus geometric feasibility.
+The solver/backend is deliberately NOT selected by D87. HiGHS/highspy remains only a technical benchmark candidate. B6-B must first materialize and verify the real candidate universe and solver-ready PUN/B3/AFIR mappings, quantify actual model size, and benchmark representative backends before Andrea selects a canonical solver.
 
-Because the canonical path set is large, MODEL V1 must not assume that every path/sub-path constraint must be materialized at initialization. Constraint generation/separation is a candidate implementation principle, not yet a project decision.
+`PHASE_I_RUN_READY` remains NO until the B6-B blockers are closed.
 
 ## 10. Geometry
 
@@ -222,10 +222,11 @@ MODEL V1 does not:
 Current sequence:
 1. B5 physical realization encoding = CLOSED / D85;
 2. ISS-003 local over-clustering = DEFERRED / NOT CANCELLED under D86; it does not block B6 or the first diagnostic Phase I run;
-3. define B6 computational architecture while preserving D85 semantics;
-4. run the first diagnostic Phase I feasibility with exactly 611;
-5. reassess ISS-003 after the first Phase I result and before canonical/final LIGHT promotion;
-6. if feasible and governance gates are satisfied, continue with Phase II-A and Phase II-B;
-7. only if useful, evaluate a later edge-aggregation reduction with equivalence checks.
+3. B6-A computational architecture = APPROVED / D87;
+4. B6-B = materialize/verify the real solver-ready candidate universe and PUN/B3/AFIR mappings, quantify actual cardinalities, then benchmark candidate backends;
+5. Andrea selects the solver/backend only after B6-B evidence; no solver is canonical yet;
+6. run the first diagnostic Phase I feasibility with exactly 611;
+7. reassess ISS-003 after the first Phase I result and before canonical/final LIGHT promotion;
+8. if feasible and governance gates are satisfied, continue with Phase II-A and Phase II-B.
 
 No corrective deployment rerun or canonical promotion occurs before these gates are closed.
