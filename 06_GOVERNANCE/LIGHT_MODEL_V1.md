@@ -2,9 +2,9 @@
 
 Status: CURRENT / APPROVED
 Decision authority: Andrea
-Governance decisions: D57, D58, D59, D69-D82
+Governance decisions: D57, D58, D59, D69-D83
 Branch: thesis
-Date: 2026-09-30
+Date: 2026-10-01
 
 ## 1. Purpose
 
@@ -25,7 +25,7 @@ The physical point is not the planning unit. Geometry is auxiliary and is used o
 MODEL V1 does not reopen the following:
 - N_new = 611.
 - Each new infrastructure remains a 150 kW-total recharging station with 2 charging points (D51). Under D82, those two points are treated as two AFIR recharging points, each with individual power output >=150 kW, while the station total power output remains 150 kW shared; simultaneous 150+150 kW delivery is not required.
-- Maximum 3 new infrastructures co-located at one physical point (D38).
+- Maximum 4 new infrastructures co-located at one physical point (D83, superseding D38).
 - Canonical LIGHT OD/path system is FROZEN; no rerouting.
 - Only paths with path_flow_veh_day > 0 enter the longitudinal 100 km constraint (D43).
 - Minimum separation between distinct physical positions involving new infrastructure is 1,000 m Euclidean (D50).
@@ -57,7 +57,7 @@ sum_e n_e = 611
 
 All 611 new infrastructures remain reallocatable during optimization. They are not inserted greedily and frozen one by one.
 
-An edge is not automatically one physical point. If n_e > 1, one or more physical realizations on that edge may be required. Every physical point remains subject to D38, and distinct relevant physical positions remain subject to D50.
+An edge is not automatically one physical point. If n_e > 1, one or more physical realizations on that edge may be required. Every physical point remains subject to the D83 cap of at most 4 new infrastructures, and distinct relevant physical positions remain subject to D50.
 
 ## 4. Edge identity and future aggregation
 
@@ -111,7 +111,7 @@ At minimum:
 
 g_p <= 100 km for every p in P+
 
-Other hard constraints are enforced according to their approved contracts, including D38, D50, D59 and D69-D82. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D77; new infrastructure realizations are restricted to the FVG perimeter under D76; and AFIR TEN-T is a hard overlapping constraint under D78-D80.
+Other hard constraints are enforced according to their approved contracts, including D50, D59, D69-D83. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D77; new infrastructure realizations are restricted to the FVG perimeter under D76; and AFIR TEN-T is a hard overlapping constraint under D78-D80.
 
 No feasible starting solution is required. The solver/search may reallocate any of the 611 new infrastructures until feasibility is found.
 
