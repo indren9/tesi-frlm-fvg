@@ -2,7 +2,7 @@
 
 Status: CURRENT / APPROVED
 Decision authority: Andrea
-Governance decisions: D57, D58, D59, D69-D87
+Governance decisions: D57, D58, D59, D69-D88
 Branch: thesis
 Date: 2026-10-01
 
@@ -177,6 +177,28 @@ D87 approves the B6-A architecture for the first diagnostic Phase I run:
 The solver/backend is deliberately NOT selected by D87. HiGHS/highspy remains only a technical benchmark candidate. B6-B must first materialize and verify the real candidate universe and solver-ready PUN/B3/AFIR mappings, quantify actual model size, and benchmark representative backends before Andrea selects a canonical solver.
 
 `PHASE_I_RUN_READY` remains NO until the B6-B blockers are closed.
+
+### 9.1 PUN-61 membership and directed offsets — CLOSED / D88
+
+Andrea approved the exact Chat 10.15 reconstruction: 42 first-stage positions
+plus 19 second-automatch positions. The second stage requires strong road
+name/ref evidence within 75 m and no more than 6 m above the distance to the
+physically nearest segment. D88 approves this exact membership, including the
+five preserved first-stage normalization/coherence cases, not a new generic matcher.
+
+Resolve `LIGHT_PUN61_SOLVER_READY_PACKAGE_V01` through the Artifact Register.
+The CURRENT/VERIFIED package contains 61 positions / 163 EVSE and 106 directed
+edge/offset relations on 93 distinct edge IDs, with manifest and QA evidence.
+Only on an actual canonical occurrence of the same edge, use
+`cum_start_m + edge_offset_from_start_m`; retain path_idx/edge_order for repeats.
+There is no rerouting or forced snap to positive-flow paths. The 29 residual
+positions / 139 EVSE remain in power accounting and outside geographic gates.
+Do not double-count physical PUN power across directed relation rows.
+
+This closes the exact-membership/offset blocker only. B3 contribution remains
+separate D74/D77 preprocessing; AFIR qualification is not inferred. B6-B AFIR
+exit grouping, directional access/re-entry and boundary opportunities remain
+open. Complete A-D before any backend benchmark; `PHASE_I_RUN_READY = NO`.
 
 ## 10. Geometry
 
