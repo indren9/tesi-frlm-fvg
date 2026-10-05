@@ -2,7 +2,7 @@
 
 Status: CURRENT / APPROVED
 Decision authority: Andrea
-Governance decisions: D57, D58, D59, D69-D88
+Governance decisions: D57, D58, D59, D69-D90
 Branch: thesis
 Date: 2026-10-01
 
@@ -195,10 +195,16 @@ There is no rerouting or forced snap to positive-flow paths. The 29 residual
 positions / 139 EVSE remain in power accounting and outside geographic gates.
 Do not double-count physical PUN power across directed relation rows.
 
+D89-D90 add a source-first AFIR access contract: official/governed access identity comes first, then FROZEN-graph verification; official service-area/parking accesses are admissible only when direction-compatible exit/re-entry is confirmed.
+
 This closes the exact-membership/offset blocker only. B3 contribution remains
 separate D74/D77 preprocessing; AFIR qualification is not inferred. B6-B AFIR
 exit grouping, directional access/re-entry and boundary opportunities remain
 open. Complete A-D before any backend benchmark; `PHASE_I_RUN_READY = NO`.
+
+### 9.2 AFIR access identity - D89/D90
+
+D89 makes AFIR access-group identity source-first: official/governed source identity first, then FROZEN-graph verification of ramps and direction. D90 also permits official service-area or parking-area accesses when source-supported and graph-verified. The 110 raw transitions are diagnostic evidence only and are not assumed to be a complete exit set.
 
 ## 10. Geometry
 
