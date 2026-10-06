@@ -2,7 +2,7 @@
 
 Status: CURRENT / APPROVED
 Decision authority: Andrea
-Governance decisions: D57, D58, D59, D69-D90, D96
+Governance decisions: D57, D58, D59, D69-D90, D96-D97
 Branch: thesis
 Date: 2026-10-06
 
@@ -174,9 +174,9 @@ D87 approves the B6-A architecture for the first diagnostic Phase I run:
 - D85 Selective Exact Expansion preserved: continuous witnesses appear only for `LOCATION_SENSITIVE` instances;
 - common geometric feasibility, including D50, is checked by a logic-based geometry oracle that may return only logically justified conflict/no-good cuts.
 
-The solver/backend is deliberately NOT selected by D87. HiGHS/highspy remains only a technical benchmark candidate. B6-B must first materialize and verify the real candidate universe and solver-ready PUN/B3/AFIR mappings, quantify actual model size, and benchmark representative backends before Andrea selects a canonical solver.
+B6-B is CLOSED/PASS. Under D97, HiGHS/highspy is the approved primary backend for the first diagnostic Phase I; SCIP/PySCIPOpt remains the comparison/fallback backend. Google Colab is an allowed alternate execution environment when moving computation off the laptop is advantageous. D97 does not change the D87 architecture.
 
-`PHASE_I_RUN_READY` remains NO until the B6-B blockers are closed.
+PHASE_I_RUN_READY remains NO until the diagnostic Phase I run gate is defined and verified.
 
 ### 9.1 PUN-61 membership and directed offsets — CLOSED / D88
 
@@ -197,7 +197,7 @@ Do not double-count physical PUN power across directed relation rows.
 
 D89-D90 define the source-first AFIR evidence contract: official/governed access identity comes first, then FROZEN-graph verification. Under D96, completed service-area/parking mapping is retained as auxiliary AFIR evidence, but locations directly on the TEN-T mainline are not eligible MODEL V1 candidate locations; D80 off-mainline siting remains binding.
 
-The global AFIR evidence gate is now PASS under D89-D90: the official access universe and source-to-FROZEN mapping are complete. B3 contribution remains separate D74/D77 preprocessing. D96 fixes candidate eligibility for MODEL V1; the next implementation step is B6-B/backend benchmarking before solver selection and diagnostic Phase I. PHASE_I_RUN_READY = NO.
+The global AFIR evidence gate is PASS under D89-D90 and B6-B is PASS. B3 contribution remains separate D74/D77 preprocessing. D96 fixes candidate eligibility for MODEL V1 and D97 selects HiGHS/highspy as the primary backend for the first diagnostic Phase I, with SCIP as fallback/comparison and Colab allowed as an alternate execution environment. PHASE_I_RUN_READY = NO until the diagnostic run gate is closed.
 
 ### 9.2 AFIR access identity and candidate eligibility - D89/D90/D96
 
@@ -248,10 +248,11 @@ Current sequence:
 1. B5 physical realization encoding = CLOSED / D85;
 2. ISS-003 local over-clustering = DEFERRED / NOT CANCELLED under D86; it does not block B6 or the first diagnostic Phase I run;
 3. B6-A computational architecture = APPROVED / D87;
-4. B6-B = materialize/verify the real solver-ready candidate universe and PUN/B3/AFIR mappings, quantify actual cardinalities, then benchmark candidate backends;
-5. Andrea selects the solver/backend only after B6-B evidence; no solver is canonical yet;
-6. run the first diagnostic Phase I feasibility with exactly 611;
-7. reassess ISS-003 after the first Phase I result and before canonical/final LIGHT promotion;
-8. if feasible and governance gates are satisfied, continue with Phase II-A and Phase II-B.
+4. B6-B = CLOSED / PASS: real solver-ready candidate universe and PUN/B3/AFIR mappings verified; backend benchmark completed;
+5. solver/backend = APPROVED / D97: HiGHS/highspy primary, SCIP fallback/comparison; Colab allowed as alternate execution environment;
+6. define and verify the diagnostic Phase I run gate;
+7. run the first diagnostic Phase I feasibility with exactly 611;
+8. reassess ISS-003 after the first Phase I result and before canonical/final LIGHT promotion;
+9. if feasible and governance gates are satisfied, continue with Phase II-A and Phase II-B.
 
 No corrective deployment rerun or canonical promotion occurs before these gates are closed.
