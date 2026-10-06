@@ -2,9 +2,9 @@
 
 Status: CURRENT / APPROVED
 Decision authority: Andrea
-Governance decisions: D57, D58, D59, D69-D90
+Governance decisions: D57, D58, D59, D69-D90, D96
 Branch: thesis
-Date: 2026-10-01
+Date: 2026-10-06
 
 ## 1. Purpose
 
@@ -195,16 +195,13 @@ There is no rerouting or forced snap to positive-flow paths. The 29 residual
 positions / 139 EVSE remain in power accounting and outside geographic gates.
 Do not double-count physical PUN power across directed relation rows.
 
-D89-D90 add a source-first AFIR access contract: official/governed access identity comes first, then FROZEN-graph verification; official service-area/parking accesses are admissible only when direction-compatible exit/re-entry is confirmed.
+D89-D90 define the source-first AFIR evidence contract: official/governed access identity comes first, then FROZEN-graph verification. Under D96, completed service-area/parking mapping is retained as auxiliary AFIR evidence, but locations directly on the TEN-T mainline are not eligible MODEL V1 candidate locations; D80 off-mainline siting remains binding.
 
-This closes the exact-membership/offset blocker only. B3 contribution remains
-separate D74/D77 preprocessing; AFIR qualification is not inferred. B6-B AFIR
-exit grouping, directional access/re-entry and boundary opportunities remain
-open. Complete A-D before any backend benchmark; `PHASE_I_RUN_READY = NO`.
+The global AFIR evidence gate is now PASS under D89-D90: the official access universe and source-to-FROZEN mapping are complete. B3 contribution remains separate D74/D77 preprocessing. D96 fixes candidate eligibility for MODEL V1; the next implementation step is B6-B/backend benchmarking before solver selection and diagnostic Phase I. PHASE_I_RUN_READY = NO.
 
-### 9.2 AFIR access identity - D89/D90
+### 9.2 AFIR access identity and candidate eligibility - D89/D90/D96
 
-D89 makes AFIR access-group identity source-first: official/governed source identity first, then FROZEN-graph verification of ramps and direction. D90 also permits official service-area or parking-area accesses when source-supported and graph-verified. The 110 raw transitions are diagnostic evidence only and are not assumed to be a complete exit set.
+D89 makes AFIR access-group identity source-first: official/governed source identity first, then FROZEN-graph verification of ramps and direction. D90 permits source-supported, graph-verified service-area or parking-area accesses in the AFIR evidence mapping. D96 clarifies candidate eligibility: MODEL V1 new infrastructure remains off-mainline under D80, so on-mainline service/parking identities are retained as auxiliary evidence but excluded from the solver candidate set. The 110 raw transitions are diagnostic evidence only and are not assumed to be a complete exit set.
 
 ## 10. Geometry
 
