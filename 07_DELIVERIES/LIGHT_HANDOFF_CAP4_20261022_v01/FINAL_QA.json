@@ -1,0 +1,17 @@
+{
+  "file": "LIGHT_ONESHOT_INPUTS_20261020_v01.zip",
+  "path": "C:\\Users\\visen\\OneDrive\\Universit\u00e0\\UniUD\\Tesi\\TESI_THESIS_STORAGE\\07_DELIVERIES\\LIGHT_ONESHOT_20261020_CHAT12_3_DRAFT\\LIGHT_ONESHOT_INPUTS_20261020_v01.zip",
+  "size_bytes": 6207219263,
+  "sha256": "459995666b76d3c27e454b967858605c25f7fdd59413f02dac96c8ae6a974f69",
+  "quickXorHash": "PxrA2ZlaV0lWj2RVQC60WnNtiFE=",
+  "members": 108,
+  "uncompressed_payload_bytes": 9473002383,
+  "CRC": "PASS_ALL_MEMBERS",
+  "member_SHA256": "PASS_ALL_MEMBERS",
+  "expected_member_set": "PASS",
+  "ZIP64": "PASS",
+  "relational_QA": "PASS_FOR_DECLARED_CHECKS",
+  "scientific_global_readiness": "NOT_CERTIFIED; documented gaps retained",
+  "free_bytes_after": 27975778304,
+  "cloud_readback": "PENDING"
+}
