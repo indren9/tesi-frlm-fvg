@@ -1,0 +1,3 @@
+# P4-B3: preserve authoritative P3 file SHA256 byte-for-byte
+00_NOTEBOOK/Tesi_FRLM_FVG.ipynb -text
+06_GOVERNANCE/LIGHT_MODEL_V1.md -text
