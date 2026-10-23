@@ -1,0 +1,3 @@
+# P5: canonical LF in Git for reviewable documentation diffs; original P3 byte hashes preserved in prior commit.
+00_NOTEBOOK/Tesi_FRLM_FVG.ipynb text eol=lf
+06_GOVERNANCE/LIGHT_MODEL_V1.md text eol=lf

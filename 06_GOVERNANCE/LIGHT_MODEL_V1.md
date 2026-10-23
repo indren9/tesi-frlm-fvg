@@ -2,9 +2,9 @@
 
 Status: CURRENT / APPROVED
 Decision authority: Andrea
-Governance decisions: D57, D58, D59, D69-D90, D96-D97
+Governance decisions: D57, D58, D59, D69-D90, D96-D99, D102, D104-D107, D111-D112
 Branch: thesis
-Date: 2026-10-06
+Date: 2026-10-23
 
 ## 1. Purpose
 
@@ -39,10 +39,13 @@ MODEL V1 does not reopen the following:
 - Territorial coverage B3 applies to all 215 FVG municipalities (D75). For municipality c, coverage uses the minimum physical network distance from its three frozen Gamma_OSM accesses: d_c(x) = min_{a in Gamma_c} d_G(a,x), with a 10 km threshold (D74). This is separate preprocessing on the frozen LIGHT network and does not reroute canonical OD paths.
 - Existing PUN territorial contribution follows D77: the 61 validated positions may satisfy B3; the other 29 positions do not count for B3.
 - New infrastructure may be physically realized only inside the Friuli Venezia Giulia perimeter (D76). An edge wholly outside FVG is ineligible; for an edge crossing the regional boundary, only its internal portion is admissible and the physical witness must lie on that portion.
-- On motorway TEN-T mainline arcs no new LIGHT infrastructure is placed. TEN-T charging opportunities are realized off-mainline through direction-compatible TEN-T exits (D78-D80).
-- An off-mainline TEN-T charging opportunity must be within 3 km driving distance from the pertinent TEN-T exit. AFIR is a hard overlapping constraint on TEN-T: consecutive AFIR opportunities are limited to 60 km, using the operational road distance including both access legs and the TEN-T section between exits (D80).
+- Under D102, no new LIGHT infrastructure may be located on any OSM edge with `highway=motorway` or `highway=motorway_link`. This is a location-only exclusion: motorway and motorway_link remain traversable in routing under the governed directed network and turn restrictions. Existing/PUN capacities are not deleted or reclassified by D102.
+- Under D111, an off-mainline TEN-T candidate location on a directed corridor requires governed exit A and governed re-entry B, with two **independent directional** driving-distance limits: `d_B5(A, location) <= 3 km` and `d_B5(location, B) <= 3 km`. An aggregate detour <= 3 km is neither required nor a substitute for checking each leg separately. B may be A or a distinct source-first access_group downstream on the same TEN-T corridor and in the same travel direction. The complete route must be B5-valid: no U-turn, opposite-carriageway/direction return or upstream re-entry. Under D104-D106, local intermediate movement on another axis is not automatically disqualifying when the final continuation/re-entry respects the original corridor and direction.
+- For the FVG-internal AFIR contract, consecutive active/fixed opportunities remain subject to the D80 60 km rule with the governed road access legs. D111 does not change D102 candidate-location exclusions or qualify any previously reviewed location automatically.
 - AFIR 2030 pool power is hard: on TEN-T Core, each direction requires at least 600 kW per pool and at least two recharging points of at least 150 kW each; on TEN-T Comprehensive, each direction requires at least 300 kW per pool and at least one recharging point of at least 150 kW (D81).
 - AFIR pool micro-siting is an execution-level requirement (D84): when multiple new D51/D82 stations are marked as one AFIR pool, they must ultimately be realized in the same physically identifiable AFIR specific location. MODEL V1 does not choose parcel/parking-bay geometry. Same TEN-T exit or mere proximity is not sufficient by itself to establish one pool; existing PUN are not artificially grouped.
+
+D99 clarifies the AFIR activation contract for the first diagnostic Phase I: qualified AFIR access_groups are optional opportunities rather than mandatory individual activations. The solver may select a subset, while consecutive active/fixed pools in the same direction must satisfy the D80 60 km rule inside the governed FVG scope. Pool power remains governed by D81; existing validated capacity may contribute only when attributable to the same specific pool under D84, and new D51 units cover only the residual deficit. No fictitious boundary pools or anchors are allowed. D105 subsequently removes foreign PUN, foreign AFIR pools/compliance and the foreign-side 60 km check from MODEL V1: those items are OUT_OF_SCOPE_BY_ASSUMPTION rather than a pending boundary certificate. D104-D106 retain only the border topology/direction requirement needed to prove valid same-direction, non-upstream continuation/re-entry.
 
 D59 supersedes D46-D48 and amends D57 only on the definition of the planning unit. The feasibility/minimax/traffic-weighted structure of D57 remains current.
 
@@ -117,7 +120,7 @@ edge_id
 -> admissible physical realization on the edge
 -> longitudinal contribution to the path gap
 
-Assignment to an edge alone does not automatically cover every path traversing that edge. For ordinary non-TEN-T siting, the selected physical realization must be traversed by the canonical path. For TEN-T off-mainline siting, D78-D80 define the exception: the canonical path must traverse the direction-compatible exit relation, and the longitudinal distance includes the road access leg between exit and station.
+Assignment to an edge alone does not automatically cover every path traversing that edge. For ordinary non-TEN-T siting, the selected physical realization must be traversed by the canonical path. For TEN-T off-mainline siting, D78-D80 and D111 govern the exception through a direction-compatible TEN-T exit A, candidate location and re-entry B. The two directional access legs are assessed independently for D111 eligibility, and the applicable access distances remain part of D80's governed longitudinal AFIR accounting. The canonical OD paths remain FROZEN; this does not authorize rerouting.
 
 ## 6. Phase I - feasibility
 
@@ -129,7 +132,7 @@ At minimum:
 
 g_p <= 100 km for every p in P+
 
-Other hard constraints are enforced according to their approved contracts, including D50, D59, D69-D85. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D77; new infrastructure realizations are restricted to the FVG perimeter under D76; and AFIR TEN-T is a hard overlapping constraint under D78-D80.
+Other hard constraints are enforced according to their approved contracts, including D50, D59, D69-D85, D99, D102, D104-D107, D111 and D112. In particular, B3 territorial coverage is a hard constraint for all 215 FVG municipalities under D74-D77; new infrastructure realizations are restricted to the FVG perimeter under D76; AFIR TEN-T remains a hard overlapping constraint inside the governed FVG scope under D78-D81; D102 governs candidate-location eligibility; D104-D106 govern border continuation/re-entry directionality; D107/D112 govern the TEN-T directed edge-membership and longitudinal-continuity preprocessing; and D111 governs both independent 3 km directional access/re-entry legs for off-mainline TEN-T candidate eligibility.
 
 No feasible starting solution is required. The solver/search may reallocate any of the 611 new infrastructures until feasibility is found.
 
@@ -165,7 +168,7 @@ The second stage may accept a larger gap on a lower-flow path in exchange for a 
 
 Traffic therefore refines the solution after fairness; it cannot sacrifice any path beyond the G* ceiling.
 
-## 9. Computational architecture - B6-A APPROVED / B6-B OPEN
+## 9. Computational architecture - B6-A APPROVED / B6-B CLOSED/PASS
 
 D87 approves the B6-A architecture for the first diagnostic Phase I run:
 - discrete MILP master on `edge_id` / `n_e`, with `sum_e n_e = 611`;
@@ -174,7 +177,7 @@ D87 approves the B6-A architecture for the first diagnostic Phase I run:
 - D85 Selective Exact Expansion preserved: continuous witnesses appear only for `LOCATION_SENSITIVE` instances;
 - common geometric feasibility, including D50, is checked by a logic-based geometry oracle that may return only logically justified conflict/no-good cuts.
 
-B6-B is CLOSED/PASS. Under D97, HiGHS/highspy is the approved primary backend for the first diagnostic Phase I; SCIP/PySCIPOpt remains the comparison/fallback backend. Google Colab is an allowed alternate execution environment when moving computation off the laptop is advantageous. D97 does not change the D87 architecture.
+B6-B is CLOSED/PASS for its historically verified candidate universe, PUN/B3/AFIR mapping and backend benchmark. That PASS does not certify global D107/D111/D112 implementation or Phase I readiness. Under D97, HiGHS/highspy is the approved primary backend for the first diagnostic Phase I; SCIP/PySCIPOpt remains the comparison/fallback backend. Google Colab is an allowed alternate execution environment when moving computation off the laptop is advantageous. D97 does not change the D87 architecture. Under D99, the diagnostic AFIR master selects among qualified opportunities rather than activating all of them and applies residual pool-power requirements after valid existing contribution inside the governed FVG scope. Under D105, foreign PUN/pools/AFIR compliance and foreign-side 60 km verification are OUT_OF_SCOPE_BY_ASSUMPTION; D104-D106 retain the local border topology/direction checks, now closed with `BORDER_DIRECTIONAL_CONSISTENCY_READY=YES`.
 
 PHASE_I_RUN_READY remains NO until the diagnostic Phase I run gate is defined and verified.
 
@@ -195,13 +198,28 @@ There is no rerouting or forced snap to positive-flow paths. The 29 residual
 positions / 139 EVSE remain in power accounting and outside geographic gates.
 Do not double-count physical PUN power across directed relation rows.
 
-D89-D90 define the source-first AFIR evidence contract: official/governed access identity comes first, then FROZEN-graph verification. Under D96, completed service-area/parking mapping is retained as auxiliary AFIR evidence, but locations directly on the TEN-T mainline are not eligible MODEL V1 candidate locations; D80 off-mainline siting remains binding.
+D89-D90 define the source-first AFIR evidence contract: official/governed access identity comes first, then FROZEN-graph verification. D102 supersedes D96 on candidate-location scope: all motorway and motorway_link edges are excluded as new locations, while remaining traversable for access/re-entry routing.
 
-The global AFIR evidence gate is PASS under D89-D90 and B6-B is PASS. B3 contribution remains separate D74/D77 preprocessing. D96 fixes candidate eligibility for MODEL V1 and D97 selects HiGHS/highspy as the primary backend for the first diagnostic Phase I, with SCIP as fallback/comparison and Colab allowed as an alternate execution environment. PHASE_I_RUN_READY = NO until the diagnostic run gate is closed.
+The historical AFIR evidence gate is PASS under D89-D90 and B6-B is PASS within the perimeter then verified. B3 contribution remains separate D74/D77 preprocessing. D102 fixes current candidate eligibility; D97 selects HiGHS/highspy as the primary backend for the first diagnostic Phase I, with SCIP as fallback/comparison and Colab allowed as an alternate execution environment. `TEN_T_3KM_ELIGIBILITY_READY=YES` and `BORDER_DIRECTIONAL_CONSISTENCY_READY=YES` refer to historical local D102/D104-D106 checks, not global certification of D107 directed membership, D111's independent two-leg 3 km requirements or D112 connector classification. `PHASE_I_RUN_READY = NO`.
 
-### 9.2 AFIR access identity and candidate eligibility - D89/D90/D96
+### 9.2 AFIR access identity, candidate eligibility and border-direction contract - D89/D90/D99/D102/D104-D106
 
-D89 makes AFIR access-group identity source-first: official/governed source identity first, then FROZEN-graph verification of ramps and direction. D90 permits source-supported, graph-verified service-area or parking-area accesses in the AFIR evidence mapping. D96 clarifies candidate eligibility: MODEL V1 new infrastructure remains off-mainline under D80, so on-mainline service/parking identities are retained as auxiliary evidence but excluded from the solver candidate set. The 110 raw transitions are diagnostic evidence only and are not assumed to be a complete exit set.
+D89 makes AFIR access-group identity source-first: official/governed source identity first, then FROZEN-graph verification of ramps and direction. D90 permits source-supported, graph-verified service-area or parking-area accesses in the AFIR evidence mapping. D102 excludes `motorway` and `motorway_link` only from new-location eligibility and preserves their routing traversability. D99 retains the first-diagnostic activation rule: qualified access_groups are opportunities, not mandatory activations; active/fixed pools inside the governed FVG scope satisfy D80/D81 and validated existing capacity may contribute only under D84. D104 allows the immediate transborder continuation of the same corridor as the local same-direction target where the national road name changes; RA14 FORWARD -> A3 FORWARD is the verified case. D105 requires final re-entry/continuation to be same-direction and non-upstream relative to the original TEN-T corridor, and places foreign PUN/pools/AFIR/60 km outside MODEL V1 by assumption. D106 clarifies that intermediate travel on another axis does not violate D105 if the B5-valid path finally rejoins the original corridor same-direction and non-upstream. The border audit closed 11/11 cases; the two formerly UNKNOWN cases were resolved as B5-valid re-entry existence checks: A4 Latisana REVERSE `132561 -> 460202` (6.63 km) and RA13 Fernetti REVERSE `1666798 -> 39903` (5.99 km). These two existence checks do not certify individual candidate locations within 3 km. RA14 Fernetti FORWARD independently confirmed 416/527 D102 outbound candidates satisfying both local 3 km legs under D104. The 110 raw transitions remain diagnostic evidence only and are not assumed to be a complete exit set.
+
+### 9.3 Governed TEN-T directed membership and off-mainline two-leg eligibility - D107/D111/D112
+
+**D107 - route-level TEN-T to B5 edge membership (APPROVED contract, not a global PASS).** Use the validated official FVG TENtec route-level crosswalk as corridor authority and the FROZEN OSM/B5 network as physical authority. Directed classification must jointly consider OSM `ref` and `name` (never `ref` alone), `highway` for mainline/link distinction, `way_id`, topological continuity through `u/v`, and graph direction. Previously audited TEN-T accesses are anchors for source/graph QA. One governed corridor can traverse multiple OSM road references (e.g. A/SS202) when official identity and topology justify continuity. Target output: `edge_id -> axis -> direction -> membership_type` with provenance. Flag unresolved edge identities, discontinuities and directional ambiguities to the CURRENT Madre rather than inferring a membership automatically. TEN-T membership is independent of eligibility for a new location under D102.
+
+**D112 - longitudinal link through a toll/interchange complex (APPROVED contract).** A B5 edge with `highway=motorway_link` or `highway=trunk_link` may be `LONGITUDINAL_CONNECTOR` only when the governed route-level crosswalk, directed B5 topology, corridor direction and available source/visual QA jointly establish longitudinal TEN-T through movement rather than an ordinary exit/re-entry branch. Such membership carries corridor continuity for D107 and D80 while retaining the original OSM/B5 highway class; `highway=link` alone never establishes this role. Andrea approved A4 Monfalcone Est/Lisert FORWARD `289903 -> 289904 -> 289857` and REVERSE `1688252 -> 1688258` as longitudinal movements. Prior component-level association of edge `289903` as an exit does not override the verified edge-level movement. The separate governed source-first identity remains `A4::Monfalcone Est`; neither access_group identities nor D89-D90 qualification are merged or redefined. D102 remains unchanged: `motorway` and `motorway_link` are traversable where B5 permits but cannot host new candidate locations. Monfalcone's approved result is not an automatic classification of other complexes.
+
+**D111 - two independent directional 3 km legs (APPROVED contract).** For each TEN-T off-mainline candidate location, prove a governed exit A and governed re-entry B: `d_B5(A, location) <= 3 km` **and independently** `d_B5(location, B) <= 3 km`. Do not replace either limit by a single total-detour threshold. B may be A or a separate, downstream governed access_group of the same TEN-T corridor in the same direction. The complete route must be B5-valid, without U-turn, opposite-carriageway/direction return or upstream re-entry. Where A and B differ, their D89-D90 source-first identities stay distinct: access_group identity/qualification and candidate-route eligibility are separate checks. Previously excluded cases based solely on requiring exit and re-entry within one access_group (including H-113/H-115/H-151) require individual re-examination, not automatic qualification or promotion.
+
+**Scope of checks and outstanding scientific QA:**
+- Historical `TEN_T_3KM_ELIGIBILITY_READY=YES`, `BORDER_DIRECTIONAL_CONSISTENCY_READY=YES` (11/11 in the historical border audit), B6-B PASS, and PUN/AFIR evidence PASS/READY apply only to the rules, objects and evidence actually checked. The two historical B5-valid re-entry existence witnesses and the RA14 Fernetti FORWARD case-specific two-leg screening in §9.2 are not a global D111 certificate.
+- Directed TEN-T membership v03 and D112 classification are not globally certified: `D107_V03 = NOT_READY`. Lacotisce REVERSE exit versus `LONGITUDINAL_CONNECTOR` remains `NON_CONFERMATO` pending governed directional evidence; do not generalize the approved Monfalcone case.
+- Global D111 two-leg 3 km testing remains `NOT_TESTED`; `B_SOURCE_FIRST_GLOBAL = NOT_READY` and 11 access reviews remain formally `OPEN`. Neither existing source-first access_group qualification nor older PASS/READY certifies a new candidate location.
+- D105 retains the applicable *local* cross-border same-direction/non-upstream continuation/re-entry checks, while foreign PUN, foreign AFIR pools/compliance and foreign-side 60 km gaps are `OUT_OF_SCOPE_BY_ASSUMPTION`, not an external AFIR gate to close later.
+- ISS-002 and ISS-004 remain `OPEN`; `PHASE_I_RUN_READY = NO`. No new scientific run, automatic edge/location promotion, FROZEN change or methodological approval follows from this documentation synchronization.
 
 ## 10. Geometry
 
@@ -250,9 +268,12 @@ Current sequence:
 3. B6-A computational architecture = APPROVED / D87;
 4. B6-B = CLOSED / PASS: real solver-ready candidate universe and PUN/B3/AFIR mappings verified; backend benchmark completed;
 5. solver/backend = APPROVED / D97: HiGHS/highspy primary, SCIP fallback/comparison; Colab allowed as alternate execution environment;
-6. define and verify the diagnostic Phase I run gate;
-7. run the first diagnostic Phase I feasibility with exactly 611;
-8. reassess ISS-003 after the first Phase I result and before canonical/final LIGHT promotion;
-9. if feasible and governance gates are satisfied, continue with Phase II-A and Phase II-B.
+6. AFIR activation contract = APPROVED / D99 for the governed FVG scope: qualified access_groups optional, residual pool-power logic, no fictitious anchors;
+7. candidate/border contract = APPROVED / D102 + D104-D106: motorway/motorway_link excluded only as new locations, historical local TEN-T 3 km eligibility READY and border directional consistency READY 11/11, foreign PUN/pools/AFIR/60 km OUT_OF_SCOPE_BY_ASSUMPTION;
+8. D107/D111/D112 = APPROVED semantic contracts but newly required global scientific QA remains OPEN: D107_V03 NOT_READY, D111 double-leg NOT_TESTED, B_SOURCE_FIRST_GLOBAL NOT_READY, 11 access reviews OPEN; case-specific Monfalcone D112 classification is APPROVED, Lacotisce remains NON_CONFERMATO, no automatic candidate promotion;
+9. define and verify the diagnostic Phase I run gate, including closure of the applicable newly introduced D107/D111/D112 scientific checks; PHASE_I_RUN_READY = NO;
+10. run the first diagnostic Phase I feasibility with exactly 611 only after that gate is approved;
+11. reassess ISS-003 after the first Phase I result and before canonical/final LIGHT promotion;
+12. if feasible and governance gates are satisfied, continue with Phase II-A and Phase II-B.
 
 No corrective deployment rerun or canonical promotion occurs before these gates are closed.
