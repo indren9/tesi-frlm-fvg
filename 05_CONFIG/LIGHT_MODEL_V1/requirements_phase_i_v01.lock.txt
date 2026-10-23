@@ -1,0 +1,16 @@
+# LIGHT MODEL V1 Phase-I diagnostic lock v01
+# Interpreter used for B6-B / 11.14 local harness: CPython 3.12.10
+annotated-types==0.8.0
+cpsat-logutils==1.0.0
+highspy==1.15.1
+numpy==2.5.3
+orloge==1.0.0
+psutil==7.2.2
+PuLP==4.0.0
+pyarrow==25.0.1
+pydantic==2.13.5
+pydantic_core==2.46.5
+PySCIPOpt==6.2.1
+shapely==2.1.2
+typing-inspection==0.4.4
+typing_extensions==4.16.0
