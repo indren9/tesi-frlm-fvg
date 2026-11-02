@@ -1,6 +1,6 @@
 # LIGHT MODEL V1 - Optimization Specification
 
-Status: CURRENT / APPROVED
+Status: HISTORICAL_BY_DESIGN / APPROVED within the MODEL V1 OSM scope
 Decision authority: Andrea
 Governance decisions: D57, D58, D59, D69-D90, D96-D99, D102, D104-D107, D111-D112
 Branch: thesis
@@ -8,7 +8,9 @@ Date: 2026-10-23
 
 ## 1. Purpose
 
-MODEL V1 is the current LIGHT optimization model for allocating the 611 new charging infrastructures fixed by D51-D53.
+MODEL V1 is the historical OSM LIGHT optimization contract for allocating the 611 new charging infrastructures fixed by D51-D53.
+
+Under D118/D141 it remains APPROVED only within that historical scope; it is not the CURRENT specification of the regional VISUM/FVG 2024 LIGHT model. The regional specification requires its own explicit approvals in Governance Live. All formulas, parameters, tests, gates and MODEL V1 contracts below are preserved in their original scope.
 
 The approved elementary planning unit is one directed topological edge of the frozen LIGHT OSM network.
 

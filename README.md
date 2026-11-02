@@ -1,6 +1,12 @@
 # TESI FRLM FVG
 
-Repository canonico e leggero della tesi.
+Repository del MODEL V1 OSM storico e delle fonti condivise autorevoli della tesi.
+
+## Perimetro dei repository — D118/D141
+
+- `indren9/tesi-frlm-fvg` conserva MODEL V1 OSM nel suo perimetro storico e continua a ospitare notebook scientifico (sezioni storiche e regionali), Artifact Register, resolver e protocolli condivisi autorevoli nei rispettivi domini.
+- `indren9/tesi-light-regionale` è il repository operativo CURRENT per sviluppo, codice e test del LIGHT regionale VISUM/FVG 2024.
+- I ruoli Git e i riferimenti operativi al MODEL V1 riportati nel seguito descrivono il perimetro di questo repository; non impongono la stessa ripartizione dei branch al repository regionale. Nessuna migrazione o sincronizzazione automatica fra repository è autorizzata da questa nota.
 
 ## Fonte autorevole
 
