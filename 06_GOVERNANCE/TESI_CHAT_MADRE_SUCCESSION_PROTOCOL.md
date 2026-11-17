@@ -3,13 +3,14 @@
 **Status:** CURRENT — governance protocol  
 **Scope:** succession of the TESI Chat Madre only  
 **Authority:** Andrea → Project Instructions → Governance Live → domain authorities  
-**Repository role:** governance / infrastructure common
+**Repository role:** governance / infrastructure common  
+**Global precedence:** Agent Operating Guide §1-bis governs common trigger, nomination, handoff, protected bootstrap, and STOP; this file retains TESI-specific technical rules.
 
 ## 1. Purpose
 
 This protocol governs replacement of the current Chat Madre without transferring scientific authority through conversation history. It preserves continuity while keeping persistent live sources authoritative.
 
-A succession prompt is an orientation and recovery instrument. It is never itself an authority source.
+An optional succession prompt or handoff is an orientation and recovery instrument, never an authority source. Its absence is not an automatic succession STOP.
 
 ## 2. Who is the current Madre
 
@@ -19,7 +20,7 @@ A prompt, chat title, handoff, self-description, or audit mandate does not confe
 
 ## 3. Trigger
 
-Succession is activated before the current Madre's conversational context becomes unreliable, or when Andrea explicitly orders replacement/migration.
+Andrea authorizes the succession trigger and nominates the successor. Unreliable conversational context may justify proposing replacement but does not itself authorize activation.
 
 After activation, the outgoing Madre must not:
 - open new substantial work;
@@ -32,7 +33,7 @@ It may complete the minimum persistence and verification needed for a safe hando
 
 ## 4. Persistent authority first
 
-The succession prompt must direct the successor to persistent live sources instead of copying large historical dumps.
+Bootstrap relies on persistent live sources, not on a required succession prompt. Any optional handoff or prompt must point to those sources instead of copying large historical dumps.
 
 Minimum verification order:
 1. Project Instructions;
@@ -45,7 +46,7 @@ If sources conflict, authority-by-domain and freshness govern. No implicit recon
 
 ## 5. What the handover transfers
 
-Transfer only fragile conversational state that cannot be recovered reliably from persistent sources, when relevant:
+If useful and feasible, an optional handoff transfers only fragile conversational state that cannot be recovered reliably from persistent sources:
 - rationale and trade-offs still needed to continue;
 - caveats and blockers;
 - work partially completed;
@@ -57,6 +58,8 @@ Transfer only fragile conversational state that cannot be recovered reliably fro
 - log or checkpoint/recovery state;
 - results not yet persisted;
 - items requiring explicit verification.
+
+Any succession handoff is `HISTORY / DERIVED EVIDENCE`, not `CURRENT`, nomination, or permission. Its absence alone never blocks a source-first bootstrap.
 
 For long local runs, apply `DESKTOP_COMMANDER_PLAYBOOK_v02`: retain the same process handle, recover actual state before retry, and preserve command/config/log/result/artifact evidence.
 
@@ -73,7 +76,7 @@ Technical evidence such as `PASS`, build success, QA success, hash match or gate
 
 ## 7. Freshness / discrepancy labels
 
-When comparing the succession prompt with live sources, use:
+When comparing an optional succession prompt or handoff with live sources, use:
 - `COHERENT` — prompt and authority agree;
 - `STALE` — prompt reflects an older state;
 - `PENDING_SYNC` — approved/current state exists but a secondary source still requires synchronization;
@@ -82,19 +85,19 @@ When comparing the succession prompt with live sources, use:
 
 These are freshness/discrepancy labels, not scientific artifact lifecycle states.
 
-If the prompt diverges from a live authority, the domain authority prevails and the discrepancy is reported. Do not silently reconcile.
+If an optional prompt or handoff diverges from a live authority, the domain authority prevails and the discrepancy is reported. Do not silently reconcile.
 
 ## 8. First turn of the successor
 
 The first turn is `BOOTSTRAP + VERIFICA DELLA SUCCESSIONE` and is READ-ONLY.
 
 The successor must:
-1. identify itself as the successor in bootstrap; assume the Madre role only if Governance Live already names it as `CURRENT_MADRE`, otherwise remain successor-pending-cutover;
-2. read the Project Instructions;
+1. verify Andrea's authorization/nomination and `CURRENT_MADRE` in Governance Live; remain successor-pending-cutover unless the authorized cutover is reflected in LIVE;
+2. read the Project Instructions and, when accessible, Agent Operating Guide §1-bis;
 3. verify Governance Live;
 4. read only relevant decisions/issues;
 5. verify notebook/Git/Register only when needed;
-6. compare the succession prompt with live sources;
+6. compare any available optional prompt or handoff with live sources; if absent, reconstruct directly from LIVE;
 7. classify discrepancies;
 8. identify the exact resume point;
 9. report to Andrea.
@@ -116,15 +119,15 @@ Required output:
 - exact resume point;
 - `BOOTSTRAP = PASS / PASS WITH LIMITATIONS / STOP`.
 
-Then STOP.
+Then STOP for Andrea's review, even with `PASS`.
 
 ## 9. Bootstrap gate
 
 `PASS` requires that the successor can reconstruct CURRENT from persistent sources without relying on chat history and can identify the exact resume point without reopening approved decisions.
 
-Use `PASS WITH LIMITATIONS` only when continuity is safe but a non-blocking source or sync is unavailable.
+Use `PASS WITH LIMITATIONS` only when continuity is safe but a non-blocking source or sync is unavailable. Missing an optional handoff alone is not a limitation.
 
-Use `STOP` when CURRENT, current Madre identity, authoritative source resolution, or the resume point cannot be established reliably.
+Use `STOP` when Andrea's nomination, `CURRENT_MADRE`, indispensable LIVE authority, or the exact resume point cannot be established reliably. If Notion is unavailable, report the gap and proceed only with innocuous READ-ONLY activity supported by other adequate sources; STOP on dependent protected actions.
 
 ## 10. Relationship with ordinary handoff and SESSION CLOSE
 
@@ -132,7 +135,7 @@ Ordinary `HANDOFFS` remain the standard mechanism for operational transfers. Thi
 
 `SESSION CLOSE` remains change-driven and does not by itself trigger succession.
 
-A Madre succession may use a HANDOFF row, but the successor must still perform the read-only bootstrap above. Handoff content never overrides the authoritative live sources.
+An optional succession handoff may use a row in the existing `HANDOFFS` register; no succession-only row is mandatory. The successor still performs the protected READ-ONLY bootstrap above. Handoff content never overrides authoritative LIVE sources.
 
 ## 11. Scope guardrails
 
